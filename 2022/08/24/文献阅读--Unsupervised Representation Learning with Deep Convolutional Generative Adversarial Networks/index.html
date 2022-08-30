@@ -1,0 +1,360 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>文献阅读--Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks | JoeGoodyLv</title><meta name="keywords" content="GAN,DCGAN"><meta name="author" content="JoeGoodyLv"><meta name="copyright" content="JoeGoodyLv"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="DCGAN论文翻译">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文献阅读--Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks">
+<meta property="og:url" content="https://guojin_lv.gitee.io/hexo-blogs/2022/08/24/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB--Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks/index.html">
+<meta property="og:site_name" content="JoeGoodyLv">
+<meta property="og:description" content="DCGAN论文翻译">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://w.wallhaven.cc/full/o3/wallhaven-o3k9v7.png">
+<meta property="article:published_time" content="2022-08-24T09:09:40.000Z">
+<meta property="article:modified_time" content="2022-08-30T03:17:20.069Z">
+<meta property="article:author" content="JoeGoodyLv">
+<meta property="article:tag" content="GAN">
+<meta property="article:tag" content="DCGAN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://w.wallhaven.cc/full/o3/wallhaven-o3k9v7.png"><link rel="shortcut icon" href="/hexo-blogs/img/favicon1.png"><link rel="canonical" href="https://guojin_lv.gitee.io/hexo-blogs/2022/08/24/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB--Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/hexo-blogs/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/hexo-blogs/',
+  algolia: undefined,
+  localSearch: {"path":"/hexo-blogs/search.json","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '文献阅读--Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-30 11:17:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/hexo-blogs/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/hexo-blogs/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/hexo-blogs/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/hexo-blogs/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexo-blogs/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://w.wallhaven.cc/full/o3/wallhaven-o3k9v7.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/hexo-blogs/">JoeGoodyLv</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexo-blogs/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">文献阅读--Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-24T09:09:40.000Z" title="发表于 2022-08-24 17:09:40">2022-08-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-30T03:17:20.069Z" title="更新于 2022-08-30 11:17:20">2022-08-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/hexo-blogs/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/">文献阅读</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>21分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="文献阅读--Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>文献阅读：Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks(DCGAN)</h1>
+<blockquote>
+<div class="timeline  blue"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>更新时间线</p>
+</div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2022.08.30</p>
+</div></div><div class='timeline-item-content'><blockquote>
+<p>第一次提交</p>
+</blockquote>
+</div></div></div>
+</blockquote>
+<h2 id="译文-3">译文</h2>
+<h3 id="摘要-3">摘要</h3>
+<p>​		近年来，使用卷积网络（CNNs）的监督学习在计算机视觉应用中被广泛采用。相比之下，CNNs的无监督学习却很少有人关注。在这项工作中，我们希望帮助弥合CNNs在监督学和和无监督学习上的成功之间的差距。我们介绍了这样一类CNNs：深度卷积生成对抗网络（DCGANs），它具有一定的架构约束，并且证明了它是无监督学习的有力候选者。在各种图像数据集上进行训练，我们展示了令人信服的证据，表明我们的深度卷积对抗对在生成器和判别器上学习了从对象部分到场景的表示层次。此外，我们将学习到的新特征用于新任务——证明了它作为一般图像表示的通用性。</p>
+<h3 id="1-引言-2">1 引言</h3>
+<p>​		从大型未标记数据集中学习可重用的特征表示一直是一个活跃的研究领域。在计算机视觉的背景下，人们可以充分利用几乎不限数量的未标记图像和视频来学习良好的中间表示，然后可以用于诸如图像分类的各种监督学习任务。我们提出一种通过训练生成对抗网络（GANs）来构建良好图像表示的方法，接着继续重用生成器和判别器网络的部分作为监督任务中的特征抽取器。GANs为最大似然技术提供了一种有吸引力的替代方案。人们还可以争辩说他们的学习过程和无需启发式成本函数（例如逐像素独立均方误差）对表示学习很有吸引力。众所周知，GANs训练不稳定，经常导致生成器产生出荒谬的输出。在试图理解和可视化GANs的学习内容和多层GANs的中间学习方面，目前已发表的研究十分有限。</p>
+<p>​		本文中，我们作出如下贡献：</p>
+<ul>
+<li>我们提出并评估了一组在卷积GANs的架构拓朴上的约束，这些约束使它们能够在大多数环境中稳定训练。我们将这类架构命名为深度卷积GANs（DCGANs）。</li>
+<li>我们将训练好的判别器用于图像分类任务，展现出了与其他无监督算法有竞争力的性能。</li>
+<li>我们将GANs学习到的过滤器可视化，凭经验表明这种特定的过滤器学会了绘制特定的对象。我们展示了生成器具有有趣的向量算术特性，可以轻松操作生成样本的许多语义特征。</li>
+</ul>
+<h3 id="2-相关工作-3">2 相关工作</h3>
+<h4 id="2-1未标注数据的表示学习">2.1未标注数据的表示学习</h4>
+<p>​		在一般计算机视觉研究和图像相关研究中，无监督表示学习是一个研究得相当好的问题。无监督表示学习的一个经典方法是对数据进行聚类（如使用K-means），并且使用聚类提高分类分数。在图像研究中，可以对图像块进行层次聚类来学习优秀的图像表示。另一个流行的方法是训练自动编码器（卷积，堆叠），将代码组件的内容和位置分离，使用梯形结构来将图像编码为简洁的代码，然后将代码解码来重建尽可能准确的图像。这些方法都表明了可以从图片像素中学习优秀的特征表示。深度置信网络也被证明在学习层次表示上效果很好。</p>
+<h4 id="2-2-生成自然图像">2.2 生成自然图像</h4>
+<p>​		生成图像模型得到了很好的研究，主要分成两类：参数的和非参数的。</p>
+<p>​		非参数模型通常是从已有图像的数据库中进行匹配，通常是匹配图像块，然后用于纹理合成、超分辨率和图像修复。</p>
+<p>​		用于生成图像的参数模型得到了广泛的探索（例如在MNIST数字或者纹理合成上）。然而，直到最近，生成真实世界中的自然图像也没有取得大的成功。一种生成图像的变分采样方法取得了一些成功，但是样本通常会变得模糊。另一种生成图像的方法运用迭代前向扩散过程。生成对抗网络生成的图像嘈杂且难以理解。这种方法的一种拉普拉斯金字塔扩展展示了更高质量的图像，但由于链接多个模型引入的噪声，他们仍然受到对象看起来不稳定的影响。近来一种循环网络方法和一种去卷积网络在生成自然图像上取得了一些成功。然而，他们都没有在监督任务中利用生成器。</p>
+<h4 id="2-3-可视化CNNs内核">2.3 可视化CNNs内核</h4>
+<p>​		对使用神经网络的一个持续批评是，它们是黑盒方法，很少能知道这网络在以一种简单的人类可消耗算法的形式做什么。在CNNs相关研究中，Zeiler等人表明，通过使用反卷积和过滤最大激活值，可以找到网络中每个卷积过滤器的大致用途。同样，在输入上使用梯度下降可以让我们检查激活某些过滤器子集的理想图像。</p>
+<h3 id="3-方法和模型架构">3 方法和模型架构</h3>
+<p>​		使用CNNs对图像建模来扩展GANs的历史尝试并不成功。这促使了LAPGAN的作者开发了一种迭代升级低分辨率生成图像的替代方案，这种方案可以更加可靠地建模。我们尝试使用监督文献中常用的CNN架构来扩展GANs也遇到了困难。然而，经过了广泛的模型探索，我们确立了一系列架构，这些架构在一系列数据集上进行了稳定的训练，并可以训练更高分辨率和更深层的生成模型。</p>
+<p>​		我们方法的核心是采用和修改最近展示的CNN架构的三个变化。</p>
+<p>​		首先，全卷积网络使用跨步卷积（strided convolution）代替确定性的空间池化函数（例如maxpooling），它允许网络学习自己的空间下采样。我们在生成器中采用这种方法，让它能够学习自己的空间上采样和判别器。</p>
+<p>​		其次，在卷积特征上消除全连接层的趋向。关于此最好的例子就是全局平均池化被用到最先进的图像分类模型中。我们发现全局平均池化增加了模型稳定性但降低了收敛速度。将最高卷积特征直接连接到生成器和判别器各自的输入输出的中间地带的效果很好。GAN的第一层，使用一个均匀噪声分布<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span></span></span></span>作为输入，因为它只是一个矩阵乘法，所以可以看作为全连接的。但是结果会被重塑为一个4维的张量并用作卷积堆栈的开始。对判别器来说，最后一个卷积层被展平，然后馈入单个sigmoid输出。图1展示了一个示例模型架构的可视化。</p>
+<p>​		第三，批量归一化，它通过将每个单元的输入归一化为零均值和单元方差来稳定学习。这可以帮助处理由于不好的初始化导致的训练问题，并有助于梯度在更深层的模型中流动。事实证明，让深度生成器开始学习非常重要，避免生成器将所有样本崩溃到一个点，是GAN中观察到的常见故障模式。然而，直接将批归一化应用于所有层会导致样本振荡和模型不稳定。这可以通过不要再生成器输出层和判别器输入层中使用批归一化来避免。</p>
+<p>​		除了输出层使用Tanh函数外，生成器的其他层使用ReLU函数。我们观察到使用有界激活可以使模型更快地学习到饱和并覆盖训练分布的颜色空间。在判别器中我们发现带泄露修正激活（Leaky ReLU）表现很不错，特别是针对更高分辨率的建模。这是与原始使用maxout激活的GAN论文相比。</p>
+<p>​		稳定深度卷积GANs架构指南</p>
+<ul>
+<li>使用跨步卷积代替池化层（判别器），使用小跨步卷积代替池化层（生成器）。</li>
+<li>在生成器和判别器中使用批归一化（batchnorm）。</li>
+<li>移除更深层架构中的全连接隐藏层。</li>
+<li>除了输出层使用Tanh，生成器其他层使用ReLU激活。</li>
+<li>判别器所有层都使用LeakyReLU激活。</li>
+</ul>
+<h3 id="4-对抗训练细节">4 对抗训练细节</h3>
+<p>​		我们在三个数据集上训练了DCGANs：大规模场景理解（LSUN），Imagenet-1k，一个新组装的Faces数据集。这些数据集每个的详细用法在下面给出。</p>
+<p>![image-20220827150147217](文献阅读–Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks.assets/image-20220827150147217.png)</p>
+<p><font size="2">图1：用于LSUN场景建模的DCGAN生成器。将100维的均匀分布<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span></span></span></span>投影到具有许多特征图的小空间范围卷积表示。一系列四个小跨步卷积（在近期某些论文中，它们被错误的叫做反卷积）将这种高级表示转换为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>64</mn><mo>×</mo><mn>64</mn></mrow><annotation encoding="application/x-tex">64\times64</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">64</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">64</span></span></span></span>的像素图片。值得注意的是，这里没有使用全连接层或者池化层。</font></p>
+<p>​		除了将训练图像缩放到Tanh激活函数的范围[-1,1]之外，不进行其他的预处理。所有模型使用小批量随机梯度下降（SGD）来训练，小批量大小为128。所有权重初始化为服从以零为中心的正太分布，标准差为0.02。在LeakyReLU中，所有模型的泄露斜率设置为0.2。虽然之前的GAN工作采用动量来加速训练，但我们采用可以调节超参数的Adam优化器。我们发现建议的0.001学习率太高，改用了0.0002。此外，我们发现将动量项<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>β</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\beta_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>留在0.9的建议值会导致训练振荡和不稳定，因此我们减少到了0.5来维持稳定训练。</p>
+<h4 id="4-1-LSUN">4.1 LSUN</h4>
+<p>​		随着生成图像模型的样本视觉质量的提高，对训练样本过拟合和记忆的担忧也随之上升。为了展示我们的模型如何随着更多的数据和更高的分辨率生成而扩展，我们在包含超过300万个训练示例的LSUN卧室数据集上训练了一个模型。最近的分析表明，模型的训练速度和它们的泛化性能存在直接关系。我们展示了来自一轮训练的样本（图2），模仿在线学习，以及收敛后的样本（图3），以此证明我们的模型没有通过简单的过拟合/记忆训练示例来生成高质量的样本。图像中没有采用数据增强。</p>
+<p><font size="2">图2（图略）：数据集上经过一次训练生成的卧室。理论上，模型可以学习到记忆训练示例，但这在实验上不太可能，因为我们采用小的学习率和小批量SGD来训练。我们知道没有先前的经验证据表明能够使用SGD和小学习率来进行记忆。</font></p>
+<p><font size="2">图3（图略）：经过4轮训练后生成的卧室。通过在多个样本（例如一些床的底板）中重复噪声纹理，这成为出现了视觉欠拟合的证据。</font></p>
+<h5 id="4-1-1-去重">4.1.1 去重</h5>
+<p>​		为了进一步降低生成器记忆输入示例的可能性（图2），我们进行了一个简单的图像去重过程。我们在训练示例的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>32</mn><mo>×</mo><mn>32</mn></mrow><annotation encoding="application/x-tex">32\times32</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">32</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">32</span></span></span></span>下采样center-crops上拟合了一个3072-128-3072去噪dropout正则化RELU自动编码器。然后通过对ReLU激活阈值化，来对生成的代码层激活进行二值化，这已经被证明是一种有效的信息保存方法，并且提供了一种方便的寓意散列形式，这种形式允许线性时间去重。对哈希冲突的目视检查显示出高精度，估计误报率不到 100 分之一。此外，这项技术检测和移除了大约275,000个相近的重复项，这表明召回率很高。</p>
+<h4 id="4-2-FACEs">4.2 FACEs</h4>
+<p>​		我们从人名的随机网络图像查询中抓取包含人脸的图像。以生于现代为标准，人名从数据库百科中获取。该数据集有来自10K个人的300万张图像。我们在这些图像上运行OpenCV面部检测器，在保持充分高分辨率的检测下，给了我们大概35,000张面部框。我们将这些面部框用于训练。图像不采用数据增强。</p>
+<h4 id="4-3-IMAGENET-1K">4.3 IMAGENET-1K</h4>
+<p>​		我们使用 Imagenet-1k作为自然图像来源进行无监督训练。在<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>32</mn><mo>×</mo><mn>32</mn></mrow><annotation encoding="application/x-tex">32\times32</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">32</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">32</span></span></span></span>的最小调整大小的center-crops上训练。图像不采用数据增强。</p>
+<h3 id="5-实验验证DCGANs性能">5 实验验证DCGANs性能</h3>
+<h4 id="5-1-使用GANs作为特征提取器对CIFAR-10进行分类">5.1 使用GANs作为特征提取器对CIFAR-10进行分类</h4>
+<p>​		一个常用的评估无监督表示学习算法质量的方法是将这些算法作为监督数据集的特征提取器，然后评估拟合在这些特征之上的线性模型的性能。</p>
+<p>​		在CIFAR-10数据集上，使用K-means作为特征学习算法，一个经过良好调整的单层特征提取管道已经表现出了非常好的基线性能。当使用大量特征图（4800）时，该技术可实现80.6%的精度。一个基于上述算法的无监督多层扩展达到了82.0%的精度。为了评估将DCGANs学习到的表示用于监督任务的质量，我们在Iamgenet=1k上进行训练，然后将判别器的卷积特征用于所有层，最大池化每一层表示来生成一个<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>×</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">4\times4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span>的空间网格。然后将这些特征展平并连接组成一个28672维的向量，并在上面训练一个正则化线性L2-SVM分类器。这实现了82.8%的精度，优于所有基于K-means的算法。值得注意的是，相比基于K-means的方法，判别器的特征图要少得多（最高层为512个），但是由于<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>×</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">4\times4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span>个空间位置的多层结构，确实会导致更大的总特征向量大小。DCGANs的性能仍然低于Exemplar CNNs，Exemplar CNNs是一种以无监督方式训练常规判别性CNNs的技术，以区分在源数据集中专门选择的和积极增强的示例样本。可以通过微调判别器的表示来进一步改进，但我们将其留作未来的工作。此外，由于我们的DCGAN从未在CIFAR-10上进行过训练，因此，该实验还展示了学习特征的域鲁棒性。</p>
+<h4 id="5-2-使用GANs作为特征提取器对SVHN数字进行分类">5.2 使用GANs作为特征提取器对SVHN数字进行分类</h4>
+<p>​		在街景门牌号数据集（SVHN，StreeView House Numbers）上，当缺少标记数据时，我们将DCGAN判别器的特征用于监督目的。使用与CIFAR-10实现中类似的数据集准备规则，我们从非额外集合中划分出一个由10,000个示例组成的验证集，并将其用于所有的超参数以及模型的选择。随机选择1000个均匀类分布训练示例，用来在用于CIFAR-10的相同特征提取管道上训练一个正则化线性L2-SVM分类器。这在22.48%的测试误差下实现了最好的结果（使用1000个标签进行分类），改进了旨在利用未标记数据的另一种改进CNN。我们在相同的数据上训练一个同样架构的纯监督CNN，并通过对64个超参数实验的随机搜索来优化模型，验证了在DCGAN中使用的CNN架构不是模型性能的关键因素。它实现了显著更高的28.87%的验证误差。</p>
+<h3 id="6-调查和可视化网络的内部结构">6 调查和可视化网络的内部结构</h3>
+<p>我们以各种方式对训练的生成器和判别器进行探索。我们不再训练集上执行任何类型的最近邻搜索。像素或特征空间中最近邻会被小的图像变换所愚弄。我们也没有使用对数似然指标来定量评估模型，因为他是一个很差的指标。</p>
+<h4 id="6-1-隐空间漫游（探索隐空间）">6.1 隐空间漫游（探索隐空间）</h4>
+<p>​		我们做的第一个实验是了解隐空间的景象。在所学的流形上漫游通常可以告诉我们记忆的迹象（如果有急剧的转变），以及空间分层坍塌的方式。如果在这个隐空间中漫游会导致图像生成的语义变化（例如添加和删除对象），我们可以推断模型已经学习了相关且有趣的表示。结果如图4所示。</p>
+<p><font size="2">图4（图略）：顶行：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span></span></span></span>中一系列9个随机点之间的插值表明，所学习的空间具有平滑的过渡，空间中的每个图象看起来都像一间卧室。在第6行，你可以看到一个没有窗户的房间慢慢编程一个有巨大窗户的房间。在第10行中，你可以看到看起来像是电视的对象慢慢变成窗户。  </font></p>
+<h4 id="6-2-可视化判别器特征">6.2 可视化判别器特征</h4>
+<p>先前的工作已经表明，在大型图像数据集上对CNN进行监督训练会产生非常强大的学习特征。此外，还有工作是在场景分类上训练监督CNNs来学习目标检测。我们证明了在大型图像数据集上训练一个无监督DCGAN也可以学习到有趣的特征层次结构。使用文献中提出的指导性反向传播，判别器学习到的特征在卧室的典型部分（如床和窗户）上激活，这在图5中表明。为了进行比较，在同一图中，我们为随机初始化的特征提供了一个基线，这些特征未在语义相关或有趣的任何事物上激活。</p>
+<p><font size="2">图5（图略）：在右边，判别器中最后一个卷积层中前 6 个学习到的卷积特征的最大轴对齐响应的引导反向传播可视化。请注意，有少数的特征对床做出响应——LSUN卧室数据集中的中心对象。左边是一个随机过滤器基线。与之前的响应相比，几乎没有判别和随机结构。</font></p>
+<h4 id="6-3-篡改生成器表示">6.3 篡改生成器表示</h4>
+<h5 id="6-3-1-忘记绘制某些对象">6.3.1 忘记绘制某些对象</h5>
+<p>​		除了判别器学习到的表示之外，还有一个问题，即生成器学习了什么表示。示例质量表明，生成器学习主要场景组件（如床，窗户，灯，门和杂项家具）的特定对象表示。为了探索这些表示形式，我们进行了一个实验，试图从生成器中完全删除窗户。</p>
+<p>​		在150个样本中，手动绘制了52个窗口边界框。在第二高的卷积层特征上，逻辑回归适合预测特征激活是否在窗户上（或不在窗户上），方法是使用这样的标准：即绘制的边界框内的激活是正向的，来自相同图像的随机样本是负向的。使用这种简单的模型，从所有空间位置删除所有权重大于零（总共200）的特征图。然后，在删除和不删除特征图的情况下随机生成新样本。</p>
+<p>​		删除和不删除窗户生成的图像如图6所示，有趣的是，网络大多忘记在卧室里画窗户，并且用其他对象代替它们。</p>
+<p><font size="2">图6（图略）：顶行：模型的未修改示例。底行：删除了窗户的相同生成样本。一些窗户被删除了，剩下的被转换成具有相似视觉外观的物体，如门和镜子。虽然视觉质量有所下降，但整体场景构图仍然相似，这表明生成器在将场景表示与对象表示分开方面做得很好。可以进行扩展实验以从图像中删除其他对象并修改生成器绘制的对象。</font></p>
+<h5 id="6-3-2-面部样本上的向量算术">6.3.2 面部样本上的向量算术</h5>
+<p>​		在评估单词的学习表示的文章中表明，简单的算术运算揭示了表示空间中丰富的线性结构。一个典型的例子表明，向量（“King”）-向量（Man）+向量（“Woman”）产生了最近邻是Queen的向量。我们研究了生成器的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span></span></span></span> 表示中是否会出现类似的结构。我们对视觉概念的示例样本集的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span></span></span></span> 向量执行了类似的算术运算。对每个概念只进行单个样本的实验是不稳定的，但对三个样本的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span></span></span></span>向量求平均表明，在语义上符合算术的生成是一致和稳定的。除了（图7）中所示的对象操作外，我们还演示了在Z空间中对面部姿态进行线性建模（图8）。</p>
+<p><font size="2">图7（图略）：视觉概念的向量计算。对每一列，对样本的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span></span></span></span>向量求均值。然后在平均向量上执行算术运算来创建一个新向量<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span>。右手边的中心样本是通过将<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span>作为生成器的输入来生成的。为了演示生成器的插值能力，将采样比例为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mo>−</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">+-0.25</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.25</span></span></span></span>的均匀噪声添加到<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span>中来生成其他8个样本。在输入空间中采用算术（底部两个示例）会导致由于未对准而导致的噪声重叠。</font></p>
+<p><font size="2">图8（图略）：&quot;turn&quot;向量是根据四张向左看和向右看的面部平均样本创建的。通过沿着这条轴向随机样本中添加插值，我们可以可靠地改变他们的姿态。</font></p>
+<p>​		这些演示表明，可以使用我们的模型所学到的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span></span></span></span> 表示来开发有趣的应用程序。之前（的文献）已经证明，条件生成模型可以学习对令人信服的对象属性（如比例、旋转和位置）进行建模。据我们所知，这是在纯无监督模型下首次演示这种发生情况。进一步探索和开发上述提到的向量算术可以显著减少复杂图像分布的条件生成建模所需要的数据数量。</p>
+<h3 id="7-结论和未来工作-2">7 结论和未来工作</h3>
+<p>​		我们提出了一个训练生成对抗网络的更加稳定的架构集合，并且证明了对抗网络在监督学习和生成建模方面可以学习良好的图像表示。但仍然存在某些形式的模型不稳定性——我们注意到，随着模型训练时间越来越长，它们有时候会将过滤器的子集折叠到单个振荡模式。</p>
+<p>​		未来的工作需要解决这一不稳定问题。我们认为将这个框架扩展到其他领域，例如视频（用于帧预测）和音频（用于语音合成的预训练特征）应当会非常有趣。对学习到的潜在空间（隐空间）的进一步研究也会是十分有趣的。</p>
+<h3 id="致谢-3">致谢</h3>
+<p>略。</p>
+<h3 id="参看文献-2">参看文献</h3>
+<p>略。</p>
+<h3 id="8-补充材料">8 补充材料</h3>
+<h4 id="8-1-评估-DCGANs-捕获数据分布的能力">8.1 评估 DCGANs 捕获数据分布的能力</h4>
+<p>​		我们提出将标准分类指标应用于我们模型的条件版本，来评估学习到的条件分布。我们在MNIST上训练了一个DCGAN（划分了一个10K的验证集），并且排列不变GAN基线，使用最近邻分类器将真实数据与生成的条件样本进行比较来评估模型。我们发现，从batchnorm中删除比例和偏差参数对两个模型都产生了更好的结果。我们推测batchnorm引入的噪声有助于生成模型更好地探索和生成底层数据分布。表3的结果展示了我们的模型与其他方法的对比。DCGAN模型与在训练数据集上拟合的最近邻分类器具有相同的测试误差——表明DCGAN在建模这个数据集的条件分布上表现出色。当每类100万个样本时，DCGAN性能优于InfiMNIST，一个使用平移和弹性形变训练示例的手工开发的数据增强管道。与利用学习到的每类转换的概率性生成数据增强技术相竞争，DCGAN会更加通用，因为它直接对数据建模而不是对数据进行变换。</p>
+<h2 id="其他-3">其他</h2>
+<blockquote>
+<ol>
+<li>相关术语
+<ul>
+<li>Latent Space（隐空间）</li>
+<li>Leaky ReLU</li>
+</ul>
+</li>
+<li>数据集
+<ul>
+<li>MNIST：<a target="_blank" rel="noopener" href="http://t.csdn.cn/9RJg1">MNIST数据集</a></li>
+<li>LSUN：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39909808/article/details/124652219">LSUN数据集读取和解压-CSDN博客</a></li>
+<li>ImageNet-1k：<a target="_blank" rel="noopener" href="http://t.csdn.cn/4lJn3">ImageNet数据集 &amp; 下载-CSDN博客</a></li>
+<li>CIFAR-10：<a target="_blank" rel="noopener" href="https://aistudio.csdn.net/62e38a6fcd38997446774c71.html?spm=1001.2101.3001.6650.2&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~activity-2-82793025-blog-125194540.t5_layer_eslanding_D_0&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~activity-2-82793025-blog-125194540.t5_layer_eslanding_D_0&amp;utm_relevant_index=5">Dataset之CIFAR-10：CIFAR-10数据集的简介、下载、使用方法之详细攻略</a></li>
+</ul>
+</li>
+<li>相关资源
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/482748077">UNSUPERVISED REPRESENTATION LEARNING WITH DEEP CONVOLUTIONAL GENERATIVE ADVERSARIAL NETWORKS - 知乎 (zhihu.com)</a></li>
+</ul>
+</li>
+<li>引用：[1] Radford A ,  Metz L ,  Chintala S . Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks[J]. Computer ence, 2015.</li>
+</ol>
+</blockquote>
+<h2 id="单词-3">单词</h2>
+<blockquote>
+<ol>
+<li>adoption 采用；接纳</li>
+<li>side-by-side 并排的，并行的</li>
+<li>critical 批判的，关键的，极其重要的</li>
+<li>concatenate  连接，连结</li>
+<li>elastic  有弹性的，灵活的</li>
+<li>superb 极佳的，非同一般的</li>
+<li>speculate  猜测，推测</li>
+<li>underlying 根本的，潜在的，下层的</li>
+<li>furniture  家具</li>
+<li>tackle  解决，与…交涉</li>
+<li>dramatically  剧烈地，明显地，夸张地</li>
+<li>obey 遵守，服从</li>
+<li>this is to our knowledge (that)… 据我们所知</li>
+<li>consistent 持续的，一致的</li>
+<li>canonical   标准的，典型的</li>
+<li>assess  evaluate 评估</li>
+<li>differentiate 区分，使不同</li>
+<li>theoretically 理论上</li>
+<li>attribute 属性，特质</li>
+<li>trivially  无能地，琐细地</li>
+<li>scarce 稀有的，缺少的</li>
+<li>oscillation  振荡，摆动</li>
+<li>supplementary material 补充材料</li>
+<li>inspection 视察，检查</li>
+<li>robustness 鲁棒性</li>
+<li>visual inspection 目测，目检</li>
+<li>hash collision 哈希碰撞</li>
+<li>false positive rate 假阳性率，误报率</li>
+<li>information preserving technique 信息保存方法</li>
+<li>notably 特别，尤其</li>
+<li>metric 度量，衡量标准</li>
+<li>contrast  差异 ，对比</li>
+<li>augmentation  增大，增强</li>
+<li>a direct link 直接联系</li>
+<li>generalization performance 泛化性能</li>
+<li>multiplication 乘法</li>
+<li>demonstrate  证明，示范，演示</li>
+<li>collapse  倒塌，崩溃，瓦解</li>
+<li>standard deviation 标准差</li>
+<li>deviation 偏差</li>
+<li>utilize 利用，使用</li>
+<li>comparatively 相对地</li>
+<li>flatten 变平，击败</li>
+<li>tensor 张量</li>
+<li>spatial 空间的</li>
+<li>criticism 批评</li>
+<li>approximate 大概的，近似的；类似，接近</li>
+<li>texture 质地，纹理</li>
+<li>wobbly 不稳定的，摆动的  unstable</li>
+<li>diffusion 扩散，传播</li>
+<li>in the form of 以····形式</li>
+<li>synthesis 综合，合成</li>
+<li>incomprehensible 费解的</li>
+<li>suffer from 忍受，遭受</li>
+<li>applicability 适用性</li>
+<li>heuristic  启发式的</li>
+<li>super-resolution 超分辨率</li>
+<li>in-painting 图像修复</li>
+<li>property  特性，特质，财产，所有权</li>
+<li>compact  紧凑的，简洁的</li>
+<li>manipulation 操纵，处理</li>
+<li>arithmetic 算术的；算术</li>
+<li>empirical  经验主义的</li>
+<li>novel 新颖的</li>
+<li>nonsensical 无意义的，荒谬的</li>
+<li>intermediate  中间的</li>
+<li>context  背景；语境</li>
+<li>practically  几乎，实际上</li>
+<li>candidate 候选人，申请者</li>
+<li>hierarchy 等级制度，层次</li>
+<li>reusable 可重复使用的</li>
+</ol>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://guojin_lv.gitee.io/hexo-blogs">JoeGoodyLv</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://guojin_lv.gitee.io/hexo-blogs/2022/08/24/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB--Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks/">https://guojin_lv.gitee.io/hexo-blogs/2022/08/24/文献阅读--Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://guojin_lv.gitee.io/hexo-blogs" target="_blank">JoeGoodyLv</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/hexo-blogs/tags/GAN/">GAN</a><a class="post-meta__tags" href="/hexo-blogs/tags/DCGAN/">DCGAN</a></div><div class="post_share"><div class="social-share" data-image="https://w.wallhaven.cc/full/o3/wallhaven-o3k9v7.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/hexo-blogs/2022/08/19/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB--Conditional%20Generative%20Adversarial%20Nets/"><img class="next-cover" src="https://w.wallhaven.cc/full/wq/wallhaven-wqzx2p.png" onerror="onerror=null;src='/hexo-blogs/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">文献阅读--Conditional Generative Adversarial Nets</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/hexo-blogs/2022/08/19/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB--Conditional%20Generative%20Adversarial%20Nets/" title="文献阅读--Conditional Generative Adversarial Nets"><img class="cover" src="https://w.wallhaven.cc/full/wq/wallhaven-wqzx2p.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-19</div><div class="title">文献阅读--Conditional Generative Adversarial Nets</div></div></a></div><div><a href="/hexo-blogs/2022/08/19/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB--Generative%20Adversarial%20Nets/" title="文献阅读：《Generative Adversarial Nets》"><img class="cover" src="https://w.wallhaven.cc/full/28/wallhaven-2879mg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-19</div><div class="title">文献阅读：《Generative Adversarial Nets》</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">文献阅读：Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks(DCGAN)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%91%E6%96%87-3"><span class="toc-number">1.1.</span> <span class="toc-text">译文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%98%E8%A6%81-3"><span class="toc-number">1.1.1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BC%95%E8%A8%80-2"><span class="toc-number">1.1.2.</span> <span class="toc-text">1 引言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C-3"><span class="toc-number">1.1.3.</span> <span class="toc-text">2 相关工作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1%E6%9C%AA%E6%A0%87%E6%B3%A8%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">2.1未标注数据的表示学习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E7%94%9F%E6%88%90%E8%87%AA%E7%84%B6%E5%9B%BE%E5%83%8F"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">2.2 生成自然图像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E5%8F%AF%E8%A7%86%E5%8C%96CNNs%E5%86%85%E6%A0%B8"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">2.3 可视化CNNs内核</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%96%B9%E6%B3%95%E5%92%8C%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84"><span class="toc-number">1.1.4.</span> <span class="toc-text">3 方法和模型架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%AF%B9%E6%8A%97%E8%AE%AD%E7%BB%83%E7%BB%86%E8%8A%82"><span class="toc-number">1.1.5.</span> <span class="toc-text">4 对抗训练细节</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-LSUN"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">4.1 LSUN</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-1-%E5%8E%BB%E9%87%8D"><span class="toc-number">1.1.5.1.1.</span> <span class="toc-text">4.1.1 去重</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-FACEs"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">4.2 FACEs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-IMAGENET-1K"><span class="toc-number">1.1.5.3.</span> <span class="toc-text">4.3 IMAGENET-1K</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%AE%9E%E9%AA%8C%E9%AA%8C%E8%AF%81DCGANs%E6%80%A7%E8%83%BD"><span class="toc-number">1.1.6.</span> <span class="toc-text">5 实验验证DCGANs性能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E4%BD%BF%E7%94%A8GANs%E4%BD%9C%E4%B8%BA%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E5%99%A8%E5%AF%B9CIFAR-10%E8%BF%9B%E8%A1%8C%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.6.1.</span> <span class="toc-text">5.1 使用GANs作为特征提取器对CIFAR-10进行分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E4%BD%BF%E7%94%A8GANs%E4%BD%9C%E4%B8%BA%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E5%99%A8%E5%AF%B9SVHN%E6%95%B0%E5%AD%97%E8%BF%9B%E8%A1%8C%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.6.2.</span> <span class="toc-text">5.2 使用GANs作为特征提取器对SVHN数字进行分类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%B0%83%E6%9F%A5%E5%92%8C%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BD%91%E7%BB%9C%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.7.</span> <span class="toc-text">6 调查和可视化网络的内部结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-%E9%9A%90%E7%A9%BA%E9%97%B4%E6%BC%AB%E6%B8%B8%EF%BC%88%E6%8E%A2%E7%B4%A2%E9%9A%90%E7%A9%BA%E9%97%B4%EF%BC%89"><span class="toc-number">1.1.7.1.</span> <span class="toc-text">6.1 隐空间漫游（探索隐空间）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%88%A4%E5%88%AB%E5%99%A8%E7%89%B9%E5%BE%81"><span class="toc-number">1.1.7.2.</span> <span class="toc-text">6.2 可视化判别器特征</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-3-%E7%AF%A1%E6%94%B9%E7%94%9F%E6%88%90%E5%99%A8%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.7.3.</span> <span class="toc-text">6.3 篡改生成器表示</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#6-3-1-%E5%BF%98%E8%AE%B0%E7%BB%98%E5%88%B6%E6%9F%90%E4%BA%9B%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.7.3.1.</span> <span class="toc-text">6.3.1 忘记绘制某些对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-3-2-%E9%9D%A2%E9%83%A8%E6%A0%B7%E6%9C%AC%E4%B8%8A%E7%9A%84%E5%90%91%E9%87%8F%E7%AE%97%E6%9C%AF"><span class="toc-number">1.1.7.3.2.</span> <span class="toc-text">6.3.2 面部样本上的向量算术</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E7%BB%93%E8%AE%BA%E5%92%8C%E6%9C%AA%E6%9D%A5%E5%B7%A5%E4%BD%9C-2"><span class="toc-number">1.1.8.</span> <span class="toc-text">7 结论和未来工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%B4%E8%B0%A2-3"><span class="toc-number">1.1.9.</span> <span class="toc-text">致谢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E7%9C%8B%E6%96%87%E7%8C%AE-2"><span class="toc-number">1.1.10.</span> <span class="toc-text">参看文献</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E8%A1%A5%E5%85%85%E6%9D%90%E6%96%99"><span class="toc-number">1.1.11.</span> <span class="toc-text">8 补充材料</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-1-%E8%AF%84%E4%BC%B0-DCGANs-%E6%8D%95%E8%8E%B7%E6%95%B0%E6%8D%AE%E5%88%86%E5%B8%83%E7%9A%84%E8%83%BD%E5%8A%9B"><span class="toc-number">1.1.11.1.</span> <span class="toc-text">8.1 评估 DCGANs 捕获数据分布的能力</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96-3"><span class="toc-number">1.2.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E8%AF%8D-3"><span class="toc-number">1.3.</span> <span class="toc-text">单词</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By JoeGoodyLv</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/hexo-blogs/js/utils.js"></script><script src="/hexo-blogs/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/hexo-blogs/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
