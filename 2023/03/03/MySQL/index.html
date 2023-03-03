@@ -1,0 +1,1068 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>MySQL | JoeGoodyLv</title><meta name="keywords" content="SQL,MySQL"><meta name="author" content="JoeGoodyLv"><meta name="copyright" content="JoeGoodyLv"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="MySQL基础综合">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL">
+<meta property="og:url" content="https://guojin_lv.gitee.io/hexo-blogs/2023/03/03/MySQL/index.html">
+<meta property="og:site_name" content="JoeGoodyLv">
+<meta property="og:description" content="MySQL基础综合">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://w.wallhaven.cc/full/5g/wallhaven-5gzdr5.png">
+<meta property="article:published_time" content="2023-03-03T06:09:40.000Z">
+<meta property="article:modified_time" content="2023-03-03T05:35:04.378Z">
+<meta property="article:author" content="JoeGoodyLv">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://w.wallhaven.cc/full/5g/wallhaven-5gzdr5.png"><link rel="shortcut icon" href="/hexo-blogs/img/favicon1.png"><link rel="canonical" href="https://guojin_lv.gitee.io/hexo-blogs/2023/03/03/MySQL/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/hexo-blogs/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/hexo-blogs/',
+  algolia: undefined,
+  localSearch: {"path":"/hexo-blogs/search.json","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MySQL',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-03 13:35:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/hexo-blogs/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/hexo-blogs/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/hexo-blogs/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/hexo-blogs/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexo-blogs/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://w.wallhaven.cc/full/5g/wallhaven-5gzdr5.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/hexo-blogs/">JoeGoodyLv</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexo-blogs/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blogs/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MySQL</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-03T06:09:40.000Z" title="发表于 2023-03-03 14:09:40">2023-03-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-03T05:35:04.378Z" title="更新于 2023-03-03 13:35:04">2023-03-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/hexo-blogs/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">18.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>57分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="MySQL"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>MySQL</h1>
+<blockquote>
+<div class="timeline  pink"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>更新时间线</p>
+</div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2023.03.03</p>
+</div></div><div class='timeline-item-content'><blockquote>
+<p>第一次提交</p>
+</blockquote>
+</div></div></div>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://turnon.gitee.io/db-tutorial/pages/0a031b/">MySQL | DB-TUTORIAL (gitee.io)</a></p>
+</blockquote>
+<h2 id="SQL其他">SQL其他</h2>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031334282.png" alt="img"></p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335112.png" alt="img"></p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335113.png" alt="image-20230303131813682"></p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335114.png" alt="sql-join"></p>
+<h2 id="MySQL基础">MySQL基础</h2>
+<h3 id="2-存储引擎">2 存储引擎</h3>
+<p><strong>不同的存储引擎保存数据和索引的方式是不同的，但表的定义则是在 Mysql 服务层统一处理的。</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SHOW</span> ENGINES;</span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------+---------+----------------------------------------------------------------+--------------+------+------------+</span></span><br><span class="line"><span class="operator">|</span> Engine             <span class="operator">|</span> Support <span class="operator">|</span> Comment                                                        <span class="operator">|</span> Transactions <span class="operator">|</span> XA   <span class="operator">|</span> Savepoints <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------+---------+----------------------------------------------------------------+--------------+------+------------+</span></span><br><span class="line"><span class="operator">|</span> FEDERATED          <span class="operator">|</span> <span class="keyword">NO</span>      <span class="operator">|</span> Federated MySQL storage engine                                 <span class="operator">|</span> <span class="keyword">NULL</span>         <span class="operator">|</span> <span class="keyword">NULL</span> <span class="operator">|</span> <span class="keyword">NULL</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> MEMORY             <span class="operator">|</span> YES     <span class="operator">|</span> Hash based, stored <span class="keyword">in</span> memory, useful <span class="keyword">for</span> temporary tables      <span class="operator">|</span> <span class="keyword">NO</span>           <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> <span class="keyword">NO</span>         <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> InnoDB             <span class="operator">|</span> <span class="keyword">DEFAULT</span> <span class="operator">|</span> Supports transactions, <span class="type">row</span><span class="operator">-</span>level locking, <span class="keyword">and</span> <span class="keyword">foreign</span> keys     <span class="operator">|</span> YES          <span class="operator">|</span> YES  <span class="operator">|</span> YES        <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> PERFORMANCE_SCHEMA <span class="operator">|</span> YES     <span class="operator">|</span> Performance Schema                                             <span class="operator">|</span> <span class="keyword">NO</span>           <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> <span class="keyword">NO</span>         <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> MyISAM             <span class="operator">|</span> YES     <span class="operator">|</span> MyISAM storage engine                                          <span class="operator">|</span> <span class="keyword">NO</span>           <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> <span class="keyword">NO</span>         <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> MRG_MYISAM         <span class="operator">|</span> YES     <span class="operator">|</span> Collection <span class="keyword">of</span> identical MyISAM tables                          <span class="operator">|</span> <span class="keyword">NO</span>           <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> <span class="keyword">NO</span>         <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> BLACKHOLE          <span class="operator">|</span> YES     <span class="operator">|</span> <span class="operator">/</span>dev<span class="operator">/</span><span class="keyword">null</span> storage engine (anything you write <span class="keyword">to</span> it disappears) <span class="operator">|</span> <span class="keyword">NO</span>           <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> <span class="keyword">NO</span>         <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> CSV                <span class="operator">|</span> YES     <span class="operator">|</span> CSV storage engine                                             <span class="operator">|</span> <span class="keyword">NO</span>           <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> <span class="keyword">NO</span>         <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> ARCHIVE            <span class="operator">|</span> YES     <span class="operator">|</span> Archive storage engine                                         <span class="operator">|</span> <span class="keyword">NO</span>           <span class="operator">|</span> <span class="keyword">NO</span>   <span class="operator">|</span> <span class="keyword">NO</span>         <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------+---------+----------------------------------------------------------------+--------------+------+------------+</span></span><br><span class="line"><span class="number">9</span> <span class="keyword">rows</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>InnoDB</strong> - Mysql 的默认事务型存储引擎，并且提供了行级锁和外键的约束。性能不错且支持自动崩溃恢复。</li>
+<li><strong>MyISAM</strong> - <strong>Mysql 5.5 版本前的默认存储引擎</strong>。特性丰富但不支持事务，也不支持行级锁和外键，也没有崩溃恢复功能。</li>
+<li><strong>CSV</strong> - 可以将 CSV 文件作为 Mysql 的表来处理，但这种表不支持索引。</li>
+<li><strong>Memory</strong> - 适合快速访问数据，且数据不会被修改，重启丢失也没有关系。</li>
+<li><strong>NDB</strong> - 用于 Mysql 集群场景。</li>
+</ul>
+<h4 id="2-1-MyISAM">2.1 MyISAM</h4>
+<p>MyISAM 设计简单，数据以紧密格式存储。对于只读数据，或者表比较小、可以容忍修复操作，则依然可以使用 MyISAM。</p>
+<p>MyISAM 引擎使用 B+Tree 作为索引结构，<strong>叶节点的 data 域存放的是数据记录的地址</strong>。</p>
+<p>MyISAM 提供了大量的特性，包括：全文索引、压缩表、空间函数等。但是，MyISAM 不支持事务和行级锁。并且 MyISAM 不支持崩溃后的安全恢复。</p>
+<h4 id="2-2-InnoDB">2.2 InnoDB</h4>
+<p>InnoDB 是 MySQL 默认的事务型存储引擎，只有在需要 InnoDB 不支持的特性时，才考虑使用其它存储引擎。</p>
+<p>MyISAM 索引文件和数据文件是分离的，索引文件仅保存数据记录的地址。而<strong>在 InnoDB 中，表数据文件本身就是按 B+Tree 组织的一个索引结构</strong>，这棵树的叶节点 data 域保存了完整的数据记录。这个<strong>索引的 key 是数据表的主键</strong>，因此<strong>InnoDB 表数据文件本身就是主索引</strong>。</p>
+<p><strong>InnoDB 采用 MVCC 来支持高并发，并且实现了四个标准的隔离级别。其默认级别是可重复读（REPEATABLE READ），并且通过间隙锁（next-key locking）防止幻读。</strong></p>
+<p>InnoDB 是基于聚簇索引建立的，与其他存储引擎有很大不同。在索引中保存了数据，从而避免直接读取磁盘，因此对查询性能有很大的提升。</p>
+<p>内部做了很多优化，包括从磁盘读取数据时采用的可预测性读、能够加快读操作并且自动创建的自适应哈希索引、能够加速插入操作的插入缓冲区等。</p>
+<p>支持真正的在线热备份。其它存储引擎不支持在线热备份，要获取一致性视图需要停止对所有表的写入，而在读写混合场景中，停止写入可能也意味着停止读取。</p>
+<h3 id="3-数据类型">3 数据类型</h3>
+<h4 id="3-1-整型">3.1 整型</h4>
+<p><code>TINYINT</code>, <code>SMALLINT</code>, <code>MEDIUMINT</code>, <code>INT</code>, <code>BIGINT</code> 分别使用 <code>8</code>, <code>16</code>, <code>24</code>, <code>32</code>, <code>64</code> 位存储空间，一般情况下越小的列越好。</p>
+<p><strong><code>UNSIGNED</code> 表示不允许负值，大致可以使正数的上限提高一倍</strong>。</p>
+<p><code>INT(11)</code> 中的数字只是规定了交互工具显示字符的个数，对于存储和计算来说是没有意义的。</p>
+<h4 id="3-2-浮点型">3.2 浮点型</h4>
+<p><code>FLOAT</code> 和 <code>DOUBLE</code> 为浮点类型。</p>
+<p><code>DECIMAL</code> 类型主要用于精确计算，代价较高，应该尽量只在对小数进行精确计算时才使用 <code>DECIMAL</code> ——例如存储财务数据。数据量比较大的时候，可以使用 <code>BIGINT</code> 代替 <code>DECIMAL</code>。</p>
+<p><code>FLOAT</code>、<code>DOUBLE</code> 和 <code>DECIMAL</code> 都可以指定列宽，例如 <code>DECIMAL(18, 9)</code> 表示总共 18 位，取 9 位存储小数部分，剩下 9 位存储整数部分。</p>
+<h4 id="3-3-字符串">3.3 字符串</h4>
+<p>主要有 <code>CHAR</code> 和 <code>VARCHAR</code> 两种类型，一种是定长的，一种是变长的。</p>
+<p><strong><code>VARCHAR</code> 这种变长类型能够节省空间，因为只需要存储必要的内容。但是在执行 UPDATE 时可能会使行变得比原来长</strong>。当超出一个页所能容纳的大小时，就要执行额外的操作。MyISAM 会将行拆成不同的片段存储，而 InnoDB 则需要分裂页来使行放进页内。</p>
+<p><code>VARCHAR</code> 会保留字符串末尾的空格，而 <code>CHAR</code> 会删除。</p>
+<h4 id="3-4-时间和日期">3.4 时间和日期</h4>
+<p>MySQL 提供了两种相似的日期时间类型：<code>DATATIME</code> 和 <code>TIMESTAMP</code>。</p>
+<p>默认情况下，MySQL 以一种可排序的、无歧义的格式显示 <code>DATATIME</code> 值，例如“2008-01-16 22:37:08”，这是 ANSI 标准定义的日期和时间表示方法。</p>
+<p><code>TIMESTAMP</code>和时区有关，也就是说一个时间戳在不同的时区所代表的具体时间是不同的。MySQL 提供了 FROM_UNIXTIME() 函数把 UNIX 时间戳转换为日期，并提供了 UNIX_TIMESTAMP() 函数把日期转换为 UNIX 时间戳。</p>
+<p>应该尽量使用 TIMESTAMP，因为它比 DATETIME 空间效率更高。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>范围</th>
+<th>时区相关性</th>
+<th>大小</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DATETIME</code></td>
+<td>1001年-9999年，精度为秒</td>
+<td>无关</td>
+<td>8 byte</td>
+</tr>
+<tr>
+<td><code>TIMESTAMP</code></td>
+<td>1970年-2038年，精度为秒</td>
+<td>有关</td>
+<td>4 byte</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-5-BLOB和TEXT">3.5 BLOB和TEXT</h4>
+<p><code>BLOB</code> 和 <code>TEXT</code> 都是为了存储大的数据而设计，前者存储二进制数据，后者存储字符串数据。</p>
+<p>不能对 <code>BLOB</code> 和 <code>TEXT</code> 类型的全部内容进行排序、索引。</p>
+<h4 id="3-6-枚举类型">3.6 枚举类型</h4>
+<p>大多数情况下没有使用枚举类型的必要。</p>
+<h4 id="3-7-类型的选择">3.7 类型的选择</h4>
+<ul>
+<li>整数类型通常是标识列最好的选择，因为它们很快并且可以使用 <code>AUTO_INCREMENT</code>。</li>
+<li><code>ENUM</code> 和 <code>SET</code> 类型通常是一个糟糕的选择，应尽量避免。</li>
+<li>应该尽量避免用字符串类型作为标识列，因为它们很消耗空间，并且通常比数字类型慢。对于 <code>MD5</code>、<code>SHA</code>、<code>UUID</code> 这类随机字符串，由于比较随机，所以可能分布在很大的空间内，导致 <code>INSERT</code> 以及一些 <code>SELECT</code> 语句变得很慢。
+<ul>
+<li>如果存储 UUID ，应该移除 <code>-</code> 符号；更好的做法是，用 <code>UNHEX()</code> 函数转换 UUID 值为 16 字节的数字，并存储在一个 <code>BINARY(16)</code> 的列中，检索时，可以通过 <code>HEX()</code> 函数来格式化为 16 进制格式。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-复制">4 复制</h3>
+<h4 id="4-1-主从复制">4.1 主从复制</h4>
+<p>Mysql 支持两种复制：基于行的复制和基于语句的复制。</p>
+<p>这两种方式都是在主库上记录二进制日志，然后在从库重放日志的方式来实现异步的数据复制。这意味着：复制过程存在时延，这段时间内，主从数据可能不一致。</p>
+<p>主要涉及三个线程：binlog 线程、I/O 线程和 SQL 线程。</p>
+<ul>
+<li><strong>binlog 线程</strong> ：负责将主服务器上的数据更改写入二进制文件（binlog）中。</li>
+<li><strong>I/O 线程</strong> ：负责从主服务器上读取二进制日志文件，并写入从服务器的中继日志中。</li>
+<li><strong>SQL 线程</strong> ：负责读取中继日志并重放其中的 SQL 语句。</li>
+</ul>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335115.png" alt="img"></p>
+<h4 id="4-2-读写分离">4.2 读写分离</h4>
+<p>主服务器用来处理写操作以及实时性要求比较高的读操作，而从服务器用来处理读操作。</p>
+<p>读写分离常用代理方式来实现，代理服务器接收应用层传来的读写请求，然后决定转发到哪个服务器。</p>
+<p>MySQL 读写分离能提高性能的原因在于：</p>
+<ul>
+<li>主从服务器负责各自的读和写，极大程度缓解了锁的争用；</li>
+<li>从服务器可以配置 MyISAM 引擎，提升查询性能以及节约系统开销；</li>
+<li>增加冗余，提高可用性。</li>
+</ul>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335116.png" alt="img"></p>
+<h2 id="MySQL工作流">MySQL工作流</h2>
+<h3 id="1-基础架构">1 基础架构</h3>
+<blockquote>
+<p>大体来说，MySQL 可以分为 <strong>Server 层</strong>和<strong>存储引擎层</strong>两部分。</p>
+</blockquote>
+<blockquote>
+<p><strong>Server 层包括连接器、查询缓存、分析器、优化器、执行器等</strong>，涵盖 MySQL 的大多数核心服务功能，以及所有的内置函数（如日期、时间、数学和加密函数等），所有跨存储引擎的功能都在这一层实现，比如存储过程、触发器、视图等。</p>
+<p><strong>存储引擎层负责数据的存储和提取</strong>。其架构模式是插件式的，支持 InnoDB、MyISAM、Memory 等多个存储引擎。现在最常用的存储引擎是 InnoDB，它从 MySQL 5.5.5 版本开始成为了默认存储引擎。</p>
+</blockquote>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335117.jpg" alt=""></p>
+<h3 id="2-查询过程">2 查询过程</h3>
+<p>MySQL 整个查询执行过程，总的来说分为 6 个步骤：</p>
+<ol>
+<li>客户端和 MySQL 服务器建立连接；客户端向 MySQL 服务器发送一条查询请求。</li>
+<li>MySQL 服务器首先检查查询缓存，如果命中缓存，则立刻返回结果。否则进入下一阶段。</li>
+<li>MySQL 服务器进行 SQL 分析：语法分析、词法分析。</li>
+<li>MySQL 服务器用优化器生成对应的执行计划。</li>
+<li>MySQL 服务器根据执行计划，调用存储引擎的 API 来执行查询。</li>
+<li>MySQL 服务器将结果返回给客户端，同时缓存查询结果</li>
+</ol>
+<h4 id="2-1（一）连接">2.1（一）连接</h4>
+<p>MySQL 客户端/服务端通信是<strong>半双工模式</strong>：即任一时刻，要么是服务端向客户端发送数据，要么是客户端向服务器发送数据。</p>
+<p>MySQL 客户端连接命令：<code>mysql -h&lt;主机&gt; -P&lt;端口&gt; -u&lt;用户名&gt; -p&lt;密码&gt;</code>。如果没有显式指定密码，会要求输入密码才能访问。</p>
+<p>连接完成后，如果你没有后续的动作，这个连接就处于空闲状态，你可以在 <code>show processlist</code> 命令中看到它。客户端如果太长时间没动静，连接器就会自动将它断开。<strong>客户端连接维持时间是由参数 <code>wait_timeout</code> 控制的，默认值是 8 小时</strong>。如果在连接被断开之后，客户端再次发送请求的话，就会收到一个错误提醒： <code>Lost connection to MySQL server during query</code>。这时候如果你要继续，就需要重连，然后再执行请求了。</p>
+<h4 id="2-2（二）查询缓存">2.2（二）查询缓存</h4>
+<blockquote>
+<p><strong>不建议使用数据库缓存，因为往往弊大于利</strong>。</p>
+</blockquote>
+<blockquote>
+<p>注意：MySQL 8.0 版本直接将查询缓存的整块功能删掉了。</p>
+</blockquote>
+<h4 id="2-3（三）语法分析">2.3（三）语法分析</h4>
+<p>MySQL 通过关键字对 SQL 语句进行解析，并生成一颗对应的语法解析树。</p>
+<ol>
+<li>分析器先会先做“<strong>词法分析</strong>”。</li>
+<li>接下来，要做“<strong>语法分析</strong>”。</li>
+</ol>
+<h4 id="2-4（四）查询优化">2.4（四）查询优化</h4>
+<p>经过前面的步骤生成的语法树被认为是合法的了，并且由优化器将其转化成执行计划。多数情况下，一条查询可以有很多种执行方式，最后都返回相应的结果。<strong>优化器的作用就是找到这其中最好的执行计划。</strong></p>
+<p>MySQL 的查询优化器是一个非常复杂的部件，它使用了非常多的优化策略来生成一个最优的执行计划：</p>
+<ul>
+<li>重新定义表的关联顺序（多张表关联查询时，并不一定按照 SQL 中指定的顺序进行，但有一些技巧可以指定关联顺序）</li>
+<li>优化<code>MIN()</code>和<code>MAX()</code>函数（找某列的最小值，如果该列有索引，只需要查找 B+Tree 索引最左端，反之则可以找到最大值，具体原理见下文）</li>
+<li>提前终止查询（比如：使用 Limit 时，查找到满足数量的结果集后会立即终止查询）</li>
+<li>优化排序（在老版本 MySQL 会使用两次传输排序，即先读取行指针和需要排序的字段在内存中对其排序，然后再根据排序结果去读取数据行，而新版本采用的是单次传输排序，也就是一次读取所有的数据行，然后根据给定的列排序。对于 I/O 密集型应用，效率会高很多）</li>
+</ul>
+<h4 id="2-5（五）查询执行引擎">2.5（五）查询执行引擎</h4>
+<p>在完成解析和优化阶段以后，MySQL 会生成对应的执行计划，查询执行引擎根据执行计划给出的指令逐步执行得出结果。</p>
+<h4 id="2-6（六）返回结果">2.6（六）返回结果</h4>
+<p>查询过程的最后一个阶段就是将结果返回给客户端。即使查询不到数据，MySQL 仍然会返回这个查询的相关信息，比如该查询影响到的行数以及执行时间等等。</p>
+<h3 id="3-更新过程">3 更新过程</h3>
+<p>MySQL 更新过程和 MySQL 查询过程类似，也会将流程走一遍。不一样的是：更新流程还涉及两个重要的日志模块，：<font color=red><strong>redo log（重做日志）和 bin log（归档日志）</strong></font>。</p>
+<h4 id="3-1-redo-log">3.1 redo log</h4>
+<p><strong>redo log 是 InnoDB 引擎特有的日志</strong>。<strong>redo log 即重做日志</strong>。redo log 是物理日志，记录的是“在某个数据页上做了什么修改”</p>
+<p><strong>redo log 是基于 WAL 技术</strong>。WAL 的全称是 <strong>Write-Ahead Logging</strong>，它的关键点就是<strong>先写日志，再写磁盘</strong>。具体来说，当有一条记录需要更新的时候，InnoDB 引擎就会先把记录写到 redo log 里，并更新内存，这个时候更新就算完成了。同时，InnoDB 引擎会在适当的时候，将这个操作记录更新到磁盘里面，而这个更新往往是在系统比较空闲的时候做。</p>
+<p>有了 redo log，InnoDB 就可以保证即使数据库发生异常重启，之前提交的记录都不会丢失，这个能力称为<strong>crash-safe</strong>。</p>
+<h4 id="3-2-bin-log">3.2 bin log</h4>
+<p><strong>bin log 即归档日志</strong>。binlog 是逻辑日志，记录的是这个语句的原始逻辑。</p>
+<p><strong>binlog 是 MySQL 的 Server 层实现的，所有引擎都可以使用</strong>。</p>
+<h4 id="3-3-redo-log-vs-bin-log">3.3 redo log vs. bin log</h4>
+<ul>
+<li>redo log 是 InnoDB 引擎特有的；binlog 是 MySQL 的 Server 层实现的，所有引擎都可以使用。</li>
+<li>redo log 是物理日志，记录的是“在某个数据页上做了什么修改”；binlog 是逻辑日志，记录的是这个语句的原始逻辑，比如“给 ID=2 这一行的 c 字段加 1 ”。</li>
+<li>redo log 是循环写的，空间固定会用完；binlog 是可以追加写入的。“追加写”是指 binlog 文件写到一定大小后会切换到下一个，并不会覆盖以前的日志。</li>
+</ul>
+<p>简单update 语句的执行流程图，图中浅色框表示是在 InnoDB 内部执行的，深色框表示是在执行器中执行的。</p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335118.png" alt="img"></p>
+<h4 id="3-4-两阶段提交">3.4 两阶段提交</h4>
+<p>redo log 的写入拆成了两个步骤：<code>prepare</code> 和 <code>commit</code>，这就是&quot;两阶段提交&quot;。为什么日志需要“两阶段提交”。</p>
+<p>由于 redo log 和 binlog 是两个独立的逻辑，如果不用两阶段提交，要么就是先写完 redo log 再写 binlog，或者采用反过来的顺序。我们看看这两种方式会有什么问题。</p>
+<ul>
+<li><strong>先写 redo log 后写 binlog</strong>。假设在 redo log 写完，binlog 还没有写完的时候，MySQL 进程异常重启。由于我们前面说过的，redo log 写完之后，系统即使崩溃，仍然能够把数据恢复回来，所以恢复后这一行 c 的值是 1。 但是由于 binlog 没写完就 crash 了，这时候 binlog 里面就没有记录这个语句。因此，之后备份日志的时候，存起来的 binlog 里面就没有这条语句。 然后你会发现，如果需要用这个 binlog 来恢复临时库的话，由于这个语句的 binlog 丢失，这个临时库就会少了这一次更新，恢复出来的这一行 c 的值就是 0，与原库的值不同。</li>
+<li><strong>先写 binlog 后写 redo log</strong>。如果在 binlog 写完之后 crash，由于 redo log 还没写，崩溃恢复以后这个事务无效，所以这一行 c 的值是 0。但是 binlog 里面已经记录了“把 c 从 0 改成 1”这个日志。所以，在之后用 binlog 来恢复的时候就多了一个事务出来，恢复出来的这一行 c 的值就是 1，与原库的值不同。</li>
+</ul>
+<p>可以看到，如果不使用“两阶段提交”，那么数据库的状态就有可能和用它的日志恢复出来的库的状态不一致。</p>
+<h2 id="MySQL索引">MySQL索引</h2>
+<h3 id="1-索引简介">1 索引简介</h3>
+<blockquote>
+<p><strong>索引是数据库为了提高查找效率的一种数据结构</strong>。</p>
+</blockquote>
+<p>索引对于良好的性能非常关键，在数据量小且负载较低时，不恰当的索引对于性能的影响可能还不明显；但随着数据量逐渐增大，性能则会急剧下降。因此，索引优化应该是查询性能优化的最有效手段。</p>
+<h4 id="1-1-索引的优缺点">1.1 索引的优缺点</h4>
+<p>✔ 索引的优点：</p>
+<ul>
+<li><strong>索引大大减少了服务器需要扫描的数据量</strong>，从而加快检索速度。</li>
+<li><strong>索引可以帮助服务器避免排序和临时表</strong>。</li>
+<li><strong>索引可以将随机 I/O 变为顺序 I/O</strong>。</li>
+<li>支持行级锁的数据库，如 InnoDB 会在访问行的时候加锁。<strong>使用索引可以减少访问的行数，从而减少锁的竞争，提高并发</strong>。</li>
+<li>唯一索引可以确保每一行数据的唯一性，通过使用索引，可以在查询的过程中使用优化隐藏器，提高系统的性能。</li>
+</ul>
+<p>❌ 索引的缺点：</p>
+<ul>
+<li><strong>创建和维护索引要耗费时间</strong>，这会随着数据量的增加而增加。</li>
+<li><strong>索引需要占用额外的物理空间</strong>，除了数据表占数据空间之外，每一个索引还要占一定的物理空间，如果要建立组合索引那么需要的空间就会更大。</li>
+<li><strong>写操作（<code>INSERT</code>/<code>UPDATE</code>/<code>DELETE</code>）时很可能需要更新索引，导致数据库的写操作性能降低</strong>。</li>
+</ul>
+<h4 id="1-2-何时使用索引">1.2 何时使用索引</h4>
+<p>✔ 什么情况<strong>适用</strong>索引：</p>
+<ul>
+<li><strong>频繁读操作（ <code>SELECT</code> ）</strong></li>
+<li><strong>表的数据量比较大</strong>。</li>
+<li><strong>列名经常出现在 <code>WHERE</code> 或连接（<code>JOIN</code>）条件中</strong>。</li>
+</ul>
+<p>❌ 什么情况<strong>不适用</strong>索引：</p>
+<ul>
+<li><strong>频繁写操作</strong>（ <code>INSERT</code>/<code>UPDATE</code>/<code>DELETE</code> ），也就意味着需要更新索引。</li>
+<li><strong>列名不经常出现在 <code>WHERE</code> 或连接（<code>JOIN</code>）条件中</strong>，也就意味着索引会经常无法命中，没有意义，还增加空间开销。</li>
+<li><strong>非常小的表</strong>，对于非常小的表，大部分情况下简单的全表扫描更高效。</li>
+<li><strong>特大型的表</strong>，建立和使用索引的代价将随之增长。可以考虑使用分区技术或 NoSQL。</li>
+</ul>
+<h3 id="2-索引的数据结构">2 索引的数据结构</h3>
+<blockquote>
+<p>在 Mysql 中，索引是在存储引擎层而不是服务器层实现的。所以，并没有统一的索引标准；不同存储引擎的索引的数据结构也不相同。</p>
+</blockquote>
+<h4 id="2-1-哈希索引">2.1 哈希索引</h4>
+<p>哈希索引基于哈希表实现，<strong>只适用于等值查询</strong>。</p>
+<p>在 Mysql 中，只有 Memory 存储引擎显示支持哈希索引。</p>
+<p>✔ 哈希索引的<strong>优点</strong>：</p>
+<ul>
+<li>因为索引数据结构紧凑，所以<strong>查询速度非常快</strong>。</li>
+</ul>
+<p>❌ 哈希索引的<strong>缺点</strong>：</p>
+<ul>
+<li>
+<p>哈希索引值包含哈希值和行指针，而不存储字段值，所以不能使用索引中的值来避免读取行。不过，访问内存中的行的速度很快，所以大部分情况下这一点对性能影响不大。</p>
+</li>
+<li>
+<p><strong>哈希索引数据不是按照索引值顺序存储的</strong>，所以<strong>无法用于排序</strong>。</p>
+</li>
+<li>
+<p>哈希索引<strong>不支持部分索引匹配查找</strong>，因为哈希索引时使用索引列的全部内容来进行哈希计算的。如，在数据列 (A,B) 上建立哈希索引，如果查询只有数据列 A，无法使用该索引。</p>
+</li>
+<li>
+<p>哈希索引<strong>只支持等值比较查询</strong>，包括 <code>=</code>、<code>IN()</code>、<code>&lt;=&gt;</code>；不支持任何范围查询，如 <code>WHERE price &gt; 100</code>。</p>
+</li>
+<li>
+<p>哈希索引有</p>
+<p>可能出现哈希冲突</p>
+<ul>
+<li>出现哈希冲突时，必须遍历链表中所有的行指针，逐行比较，直到找到符合条件的行。</li>
+<li>如果哈希冲突多的话，维护索引的代价会很高。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>因为种种限制，所以哈希索引只适用于特定的场合。而一旦使用哈希索引，则它带来的性能提升会非常显著。</p>
+</blockquote>
+<h4 id="2-2-B-树索引">2.2 B 树索引</h4>
+<ul>
+<li><strong>二叉搜索树</strong></li>
+</ul>
+<p>一种行之有效的解决方法是减少树的深度，将<strong>二叉树变为 N 叉树</strong>（多路搜索树），而 <strong>B+ 树就是一种多路搜索树</strong>。</p>
+<ul>
+<li><strong>B+ 树</strong></li>
+</ul>
+<p>B+ 树索引适用于<strong>全键值查找</strong>、<strong>键值范围查找</strong>和<strong>键前缀查找</strong>，其中键前缀查找只适用于最左前缀查找。</p>
+<p>理解<code>B+Tree</code>时，只需要理解其最重要的两个特征即可：</p>
+<ul>
+<li>
+<p>第一，所有的关键字（可以理解为数据）都存储在叶子节点，非叶子节点并不存储真正的数据，所有记录节点都是按键值大小顺序存放在同一层叶子节点上。</p>
+</li>
+<li>
+<p>其次，所有的叶子节点由指针连接。如下图为简化了的<code>B+Tree</code>。</p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335119.jpg" alt="img"></p>
+</li>
+</ul>
+<p>根据叶子节点的内容，索引类型分为主键索引和非主键索引。</p>
+<ul>
+<li><strong>聚簇索引（clustered）</strong>：又称为主键索引，其叶子节点存的是整行数据。因为无法同时把数据行存放在两个不同的地方，所以<strong>一个表只能有一个聚簇索引</strong>。<strong>InnoDB 的聚簇索引实际是在同一个结构中保存了 B 树的索引和数据行</strong>。</li>
+<li>非主键索引的叶子节点内容是主键的值。在 InnoDB 里，非主键索引也被称为<strong>二级索引（secondary）</strong>。数据存储在一个位置，索引存储在另一个位置，索引中包含指向数据存储位置的指针。可以有多个，小于 249 个。</li>
+</ul>
+<p><strong>聚簇表示数据行和相邻的键值紧凑地存储在一起，因为数据紧凑，所以访问快</strong>。因为无法同时把数据行存放在两个不同的地方，所以<strong>一个表只能有一个聚簇索引</strong>。</p>
+<p><strong>聚簇索引和非聚簇索引的查询有什么区别</strong></p>
+<ul>
+<li>如果语句是 <code>select * from T where ID=500</code>，即聚簇索引查询方式，则只需要搜索 ID 这棵 B+ 树；</li>
+<li>如果语句是 <code>select * from T where k=5</code>，即非聚簇索引查询方式，则需要先搜索 k 索引树，得到 ID 的值为 500，再到 ID 索引树搜索一次。这个过程称为<font color=red><strong>回表</strong></font>。</li>
+</ul>
+<p>也就是说，<strong>基于非聚簇索引的查询需要多扫描一棵索引树</strong>。因此，我们在应用中应该尽量使用主键查询。</p>
+<p><strong>显然，主键长度越小，非聚簇索引的叶子节点就越小，非聚簇索引占用的空间也就越小。</strong></p>
+<p>自增主键是指自增列上定义的主键，在建表语句中一般是这么定义的： NOT NULL PRIMARY KEY AUTO_INCREMENT。从性能和存储空间方面考量，自增主键往往是更合理的选择。有没有什么场景适合用业务字段直接做主键的呢？还是有的。比如，有些业务的场景需求是这样的：</p>
+<ul>
+<li>只有一个索引；</li>
+<li>该索引必须是唯一索引。</li>
+</ul>
+<p>由于没有其他索引，所以也就不用考虑其他索引的叶子节点大小的问题。</p>
+<p>这时候我们就要优先考虑上一段提到的“尽量使用主键查询”原则，直接将这个索引设置为主键，可以避免每次查询需要搜索两棵树。</p>
+<h4 id="2-3-全文索引">2.3 全文索引</h4>
+<p>MyISAM 存储引擎支持全文索引，用于查找文本中的关键词，而不是直接比较是否相等。查找条件使用 MATCH AGAINST，而不是普通的 WHERE。</p>
+<p>全文索引一般使用倒排索引实现，它记录着关键词到其所在文档的映射。</p>
+<p>InnoDB 存储引擎在 MySQL 5.6.4 版本中也开始支持全文索引。</p>
+<h4 id="2-4-空间数据索引">2.4 空间数据索引</h4>
+<p>MyISAM 存储引擎支持空间数据索引（R-Tree），可以用于地理数据存储。空间数据索引会从所有维度来索引数据，可以有效地使用任意维度来进行组合查询。</p>
+<p>必须使用 GIS 相关的函数来维护数据。</p>
+<h3 id="3-索引的类型">3 索引的类型</h3>
+<h4 id="3-1-主键索引（PRIMAY）">3.1 主键索引（<code>PRIMAY</code>）</h4>
+<p>一种特殊的唯一索引，不允许有空值。一个表只能有一个主键（在 InnoDB 中本质上即聚簇索引），一般是在建表的时候同时创建主键索引。</p>
+<h4 id="3-2-唯一索引（UNIQUE）">3.2 唯一索引（<code>UNIQUE</code>）</h4>
+<p>唯一索引：<strong>索引列的值必须唯一，但允许有空值</strong>。如果是组合索引，则列值的组合必须唯一。</p>
+<h4 id="3-1-普通索引（INDEX）">3.1 普通索引（<code>INDEX</code>）</h4>
+<p>普通索引：最基本的索引，没有任何限制。</p>
+<h4 id="3-1-全文索引（FULLTEXT）">3.1 全文索引（<code>FULLTEXT</code>）</h4>
+<p>全文索引：主要用来查找文本中的关键字，而不是直接与索引中的值相比较。</p>
+<h4 id="3-1-联合索引">3.1 联合索引</h4>
+<p>组合索引：多个字段上创建的索引，只有在查询条件中使用了创建索引时的第一个字段，索引才会被使用。使用组合索引时遵循最左前缀集合。</p>
+<h3 id="4-索引的策略">4  索引的策略</h3>
+<h4 id="4-1-索引基本原则">4.1 索引基本原则</h4>
+<ul>
+<li><strong>索引不是越多越好，不要为所有列都创建索引</strong>。要考虑到索引的维护代价、空间占用和查询时回表的代价。索引一定是按需创建的，并且要尽可能确保足够轻量。一旦创建了多字段的联合索引，我们要考虑尽可能利用索引本身完成数据查询，减少回表的成本。</li>
+<li>要<strong>尽量避免冗余和重复索引</strong>。</li>
+<li>要<strong>考虑删除未使用的索引</strong>。</li>
+<li><strong>尽量的扩展索引，不要新建索引</strong>。</li>
+<li><strong>频繁作为 <code>WHERE</code> 过滤条件的列应该考虑添加索引</strong>。</li>
+</ul>
+<h4 id="4-2-独立的列">4.2 独立的列</h4>
+<p><strong>“独立的列” 是指索引列不能是表达式的一部分，也不能是函数的参数</strong>。</p>
+<p><strong>对索引字段做函数操作，可能会破坏索引值的有序性，因此优化器就决定放弃走树搜索功能。</strong></p>
+<p>如果查询中的列不是独立的列，则数据库不会使用索引。</p>
+<h4 id="4-3-覆盖索引">4.3 覆盖索引</h4>
+<p><strong>覆盖索引是指，索引上的信息足够满足查询请求，不需要回表查询数据。</strong></p>
+<p><strong>由于覆盖索引可以减少树的搜索次数，显著提升查询性能，所以使用覆盖索引是一个常用的性能优化手段。</strong></p>
+<h4 id="4-4-使用索引来排序">4.4 使用索引来排序</h4>
+<p>Mysql 有两种方式可以生成排序结果：通过排序操作；或者按索引顺序扫描。</p>
+<p><strong>索引最好既满足排序，又用于查找行</strong>。这样，就可以通过命中覆盖索引直接将结果查出来，也就不再需要排序了。</p>
+<h4 id="4-5-前缀索引">4.5 前缀索引</h4>
+<p>有时候需要索引很长的字符列，这会让索引变得大且慢。</p>
+<p>这时，可以使用前缀索引，即只索引开始的部分字符，这样可以<strong>大大节约索引空间</strong>，从而<strong>提高索引效率</strong>。但这样也<strong>会降低索引的选择性</strong>。对于 <code>BLOB</code>/<code>TEXT</code>/<code>VARCHAR</code> 这种文本类型的列，必须使用前缀索引，因为数据库往往不允许索引这些列的完整长度。</p>
+<p><strong>索引的选择性</strong>是指：不重复的索引值和数据表记录总数的比值。最大值为 1，此时每个记录都有唯一的索引与其对应。选择性越高，查询效率也越高。如果存在多条命中前缀索引的情况，就需要依次扫描，直到最终找到正确记录。</p>
+<p><strong>使用前缀索引，定义好长度，就可以做到既节省空间，又不用额外增加太多的查询成本。</strong></p>
+<p>此外，<strong><code>order by</code> 无法使用前缀索引，无法把前缀索引用作覆盖索引</strong>。</p>
+<h4 id="4-6-最左前缀匹配原则">4.6 最左前缀匹配原则</h4>
+<p>MySQL 会一直向右匹配直到遇到范围查询 <code>(&gt;,&lt;,BETWEEN,LIKE)</code> 就停止匹配。</p>
+<ul>
+<li>索引可以简单如一个列(a)，也可以复杂如多个列(a, b, c, d)，即<strong>联合索引</strong>。</li>
+<li>如果是联合索引，那么 key 也由多个列组成，同时，索引只能用于查找 key 是否<strong>存在（相等）</strong>，遇到范围查询(&gt;、&lt;、between、like 左匹配)等就<strong>不能进一步匹配</strong>了，后续退化为线性查找。</li>
+<li>因此，<strong>列的排列顺序决定了可命中索引的列数</strong>。</li>
+</ul>
+<p><strong>不要为每个列都创建独立索引</strong>。</p>
+<p><strong>将选择性高的列或基数大的列优先排在多列索引最前列</strong>。但有时，也需要考虑 <code>WHERE</code> 子句中的排序、分组和范围条件等因素，这些因素也会对查询性能造成较大影响。</p>
+<h4 id="4-7-和in可以乱序">4.7 <code>=</code>和<code>in</code>可以乱序</h4>
+<p><strong>不需要考虑 <code>=</code>、<code>IN</code> 等的顺序</strong>，Mysql 会自动优化这些条件的顺序，以匹配尽可能多的索引列。</p>
+<h3 id="5-索引最佳实践">5 索引最佳实践</h3>
+<ul>
+<li>创建了索引，并非一定有效。比如不满足前缀索引、最左前缀匹配原则、查询条件涉及函数计算等情况都无法使用索引。</li>
+<li>此外，即使 SQL 本身符合索引的使用条件，MySQL 也会通过评估各种查询方式的代价，来决定是否走索引，以及走哪个索引。</li>
+</ul>
+<p>因此，在尝试通过索引进行 SQL 性能优化的时候，务必通过执行计划（<code>EXPLAIN</code>）或实际的效果来确认索引是否能有效改善性能问题，否则增加了索引不但没解决性能问题，还增加了数据库增删改的负担。如果对 EXPLAIN 给出的执行计划有疑问的话，你还可以利用 <code>optimizer_trace</code> 查看详细的执行计划做进一步分析。</p>
+<h2 id="MySQL锁">MySQL锁</h2>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335120.png" alt="img"></p>
+<h3 id="1-悲观锁和乐观锁">1 悲观锁和乐观锁</h3>
+<p>确保在多个事务同时存取数据库中同一数据时不破坏事务的隔离性和统一性以及数据库的统一性，<strong>乐观锁和悲观锁是并发控制主要采用的技术手段。</strong></p>
+<ul>
+<li>
+<p><code>悲观锁</code>- 假定会发生并发冲突，屏蔽一切可能违反数据完整性的操作</p>
+<ul>
+<li>在查询完数据的时候就把事务锁起来，直到提交事务（<code>COMMIT</code>）</li>
+<li>实现方式：<strong>使用数据库中的锁机制</strong>。</li>
+</ul>
+</li>
+<li>
+<p><code>乐观锁</code>- 假设不会发生并发冲突，只在提交操作时检查是否违反数据完整性。</p>
+<ul>
+<li>
+<p>在修改数据的时候把事务锁起来，通过 version 的方式来进行锁定</p>
+</li>
+<li>
+<p>实现方式：<strong>使用 version 版本或者时间戳</strong>。</p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335121.png" alt="img"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-表级锁和行级锁">2 表级锁和行级锁</h3>
+<p>从数据库的锁粒度来看，MySQL 中提供了两种封锁粒度：行级锁和表级锁。</p>
+<ul>
+<li><strong>表级锁（table lock）</strong> - 锁定整张表。用户对表进行写操作前，需要先获得写锁，这会阻塞其他用户对该表的所有读写操作。只有没有写锁时，其他用户才能获得读锁，读锁之间不会相互阻塞。</li>
+<li><strong>行级锁（row lock）</strong> - 锁定指定的行记录。这样其它进程还是可以对同一个表中的其它记录进行操作。</li>
+</ul>
+<p>应该尽量只锁定需要修改的那部分数据，而不是所有的资源。<strong>锁定的数据量越少，锁竞争的发生频率就越小，系统的并发程度就越高</strong>。但是加锁需要消耗资源，锁的各种操作（包括获取锁、释放锁、以及检查锁状态）都会增加系统开销。因此<strong>锁粒度越小，系统开销就越大</strong>。</p>
+<p>在选择锁粒度时，需要在锁开销和并发程度之间做一个权衡。</p>
+<p>在 <code>InnoDB</code> 中，<strong>行锁是通过给索引上的索引项加锁来实现的</strong>。<strong>如果没有索引，<code>InnoDB</code> 将会通过隐藏的聚簇索引来对记录加锁</strong>。</p>
+<h3 id="3-读写锁">3 读写锁</h3>
+<ul>
+<li>独享锁（Exclusive），简写为 X 锁，又称写锁。使用方式：<code>SELECT ... FOR UPDATE;</code></li>
+<li>共享锁（Shared），简写为 S 锁，又称读锁。使用方式：<code>SELECT ... LOCK IN SHARE MODE;</code></li>
+</ul>
+<p>写锁和读锁的关系，简言之：<strong>独享锁存在，其他事务就不能做任何操作</strong>。</p>
+<p><strong><code>InnoDB</code> 下的行锁、间隙锁、next-key 锁统统属于独享锁</strong>。</p>
+<h3 id="4-意向锁">4 意向锁</h3>
+<p><strong>当存在表级锁和行级锁的情况下，必须先申请意向锁（表级锁，但不是真的加锁），再获取行级锁</strong>。使用意向锁（Intention Locks）可以更容易地支持多粒度封锁。</p>
+<p><strong>意向锁是 <code>InnoDB</code> 自动加的，不需要用户干预</strong>。</p>
+<p>在存在行级锁和表级锁的情况下，事务 T 想要对表 A 加 X 锁，就需要先检测是否有其它事务对表 A 或者表 A 中的任意一行加了锁，那么就需要对表 A 的每一行都检测一次，这是非常耗时的。</p>
+<p>意向锁规定：</p>
+<ul>
+<li>IX/IS 是表锁；</li>
+<li>X/S 是行锁。</li>
+<li>一个事务在获得某个数据行的 S 锁之前，必须先获得表的 IS 锁或者更强的锁；</li>
+<li>一个事务在获得某个数据行的 X 锁之前，必须先获得表的 IX 锁。</li>
+</ul>
+<p>通过引入意向锁，事务 T 想要对表 A 加 X 锁，只需要先检测是否有其它事务对表 A 加了 X/IX/S/IS 锁，如果加了就表示有其它事务正在使用这个表或者表中某一行的锁，因此事务 T 加 X 锁失败。</p>
+<p>各种锁的兼容关系如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">-</th>
+<th style="text-align:center">X</th>
+<th style="text-align:center">IX</th>
+<th style="text-align:center">S</th>
+<th style="text-align:center">IS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">X</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">❌</td>
+</tr>
+<tr>
+<td style="text-align:center">IX</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td style="text-align:center">S</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td style="text-align:center">IS</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+</tr>
+</tbody>
+</table>
+<p>解释如下：</p>
+<ul>
+<li>任意 IS/IX 锁之间都是兼容的，因为它们只表示想要对表加锁，而不是真正加锁；</li>
+<li>这里兼容关系针对的是表级锁，而表级的 IX 锁和行级的 X 锁兼容，两个事务可以对两个数据行加 X 锁。（事务 T1 想要对数据行 R1 加 X 锁，事务 T2 想要对同一个表的数据行 R2 加 X 锁，两个事务都需要对该表加 IX 锁，但是 IX 锁是兼容的，并且 IX 锁与行级的 X 锁也是兼容的，因此两个事务都能加锁成功，对同一个表中的两个数据行做修改。）</li>
+</ul>
+<h3 id="5-MVCC">5 MVCC</h3>
+<p><strong>多版本并发控制（Multi-Version Concurrency Control, MVCC）可以视为行级锁的一个变种。它在很多情况下都避免了加锁操作，因此开销更低</strong>。不仅是 Mysql，包括 Oracle、PostgreSQL 等其他数据库都实现了各自的 MVCC，实现机制没有统一标准。</p>
+<p>MVCC 是 <code>InnoDB</code> 存储引擎实现隔离级别的一种具体方式，<strong>用于实现提交读和可重复读这两种隔离级别</strong>。而未提交读隔离级别总是读取最新的数据行，要求很低，无需使用 MVCC。可串行化隔离级别需要对所有读取的行都加锁，单纯使用 MVCC 无法实现。</p>
+<h4 id="5-1-MVCC思想">5.1 MVCC思想</h4>
+<p>加锁能解决多个事务同时执行时出现的并发一致性问题。在实际场景中读操作往往多于写操作，因此又引入了读写锁来避免不必要的加锁操作，例如读和读没有互斥关系。读写锁中读和写操作仍然是互斥的。</p>
+<p>MVCC 的思想是：</p>
+<ul>
+<li><strong>保存数据在某个时间点的快照，写操作（DELETE、INSERT、UPDATE）更新最新的版本快照；而读操作去读旧版本快照，没有互斥关系</strong>。这一点和 <code>CopyOnWrite</code> 类似。</li>
+<li>脏读和不可重复读最根本的原因是<strong>事务读取到其它事务未提交的修改</strong>。在事务进行读取操作时，为了解决脏读和不可重复读问题，<strong>MVCC 规定只能读取已经提交的快照</strong>。当然一个事务可以读取自身未提交的快照，这不算是脏读。</li>
+</ul>
+<h4 id="5-2-版本号">5.2 版本号</h4>
+<p>InnoDB 的 MVCC 实现是：在每行记录后面保存两个隐藏列，一个列保存行的创建时间，另一个列保存行的过期时间（这里的时间是指系统版本号）。每开始一个新事务，系统版本号会自动递增，事务开始时刻的系统版本号会作为事务的版本号，用来和查询到的每行记录的版本号进行比较。</p>
+<ul>
+<li>系统版本号 <code>SYS_ID</code>：是一个递增的数字，每开始一个新的事务，系统版本号就会自动递增。</li>
+<li>事务版本号 <code>TRX_ID</code> ：事务开始时的系统版本号。</li>
+</ul>
+<h4 id="5-3-Undo日志">5.3 Undo日志</h4>
+<p>MVCC 的多版本指的是多个版本的快照，快照存储在 Undo 日志中，该日志通过回滚指针 <code>ROLL_PTR</code> 把一个数据行的所有快照连接起来。</p>
+<p>因为没有使用 <code>START TRANSACTION</code> 将上面的操作当成一个事务来执行，根据 MySQL 的 <code>AUTOCOMMIT</code> 机制，每个操作都会被当成一个事务来执行，所以上面的操作总共涉及到三个事务。快照中除了记录事务版本号 TRX_ID 和操作之外，还记录了一个 bit 的 DEL 字段，用于标记是否被删除。</p>
+<p><code>INSERT</code>、<code>UPDATE</code>、<code>DELETE</code> 操作会创建一个日志，并将事务版本号 <code>TRX_ID</code> 写入。<code>DELETE</code> 可以看成是一个特殊的 <code>UPDATE</code>，还会额外将 DEL 字段设置为 1。</p>
+<h4 id="5-4-ReadView">5.4 ReadView</h4>
+<p>MVCC 维护了一个一致性读视图 <code>consistent read view</code> ，主要包含了当前系统<strong>未提交的事务列表</strong> <code>TRX_IDs &#123;TRX_ID_1, TRX_ID_2, ...&#125;</code>，还有该列表的最小值 <code>TRX_ID_MIN</code> 和 <code>TRX_ID_MAX</code>。</p>
+<img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335122.png" alt="img" style="zoom:80%;" />
+<p>这样，对于当前事务的启动瞬间来说，一个数据版本的 row trx_id，有以下几种可能：</p>
+<ol>
+<li>如果落在绿色部分，表示这个版本是已提交的事务或者是当前事务自己生成的，这个数据是可见的；</li>
+<li>如果落在红色部分，表示这个版本是由将来启动的事务生成的，是肯定不可见的；</li>
+<li>如果落在黄色部分，那就包括两种情况 a. 若 row trx_id 在数组中，表示这个版本是由还没提交的事务生成的，不可见； b. 若 row trx_id 不在数组中，表示这个版本是已经提交了的事务生成的，可见。</li>
+</ol>
+<p>在进行 <code>SELECT</code> 操作时，根据数据行快照的 <code>TRX_ID</code> 与 <code>TRX_ID_MIN</code> 和 <code>TRX_ID_MAX</code> 之间的关系，从而判断数据行快照是否可以使用：</p>
+<ul>
+<li>
+<p><code>TRX_ID</code> &lt; <code>TRX_ID_MIN</code>，表示该数据行快照时在当前所有未提交事务之前进行更改的，因此可以使用。</p>
+</li>
+<li>
+<p><code>TRX_ID</code> &gt; <code>TRX_ID_MAX</code>，表示该数据行快照是在事务启动之后被更改的，因此不可使用。</p>
+</li>
+<li>
+<p><code>TRX_ID_MIN</code>&lt;=<code>TRX_ID</code>&lt;=<code>TRX_ID_MAX</code>，需要根据隔离级别再进行判断：</p>
+<ul>
+<li>提交读：如果 <code>TRX_ID</code> 在 <code>TRX_IDs</code> 列表中，表示该数据行快照对应的事务还未提交，则该快照不可使用。否则表示已经提交，可以使用。</li>
+<li>可重复读：都不可以使用。因为如果可以使用的话，那么其它事务也可以读到这个数据行快照并进行修改，那么当前事务再去读这个数据行得到的值就会发生改变，也就是出现了不可重复读问题。</li>
+</ul>
+</li>
+</ul>
+<p>在数据行快照不可使用的情况下，需要沿着 Undo Log 的回滚指针 ROLL_PTR 找到下一个快照，再进行上面的判断。</p>
+<h4 id="5-5-快照读与当前读">5.5 快照读与当前读</h4>
+<p>快照读</p>
+<p>MVCC 的 SELECT 操作是快照中的数据，不需要进行加锁操作。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="keyword">table</span> ...;</span><br></pre></td></tr></table></figure>
+<p>当前读</p>
+<p>MVCC 其它会对数据库进行修改的操作（INSERT、UPDATE、DELETE）需要进行加锁操作，从而读取最新的数据。<strong>可以看到 MVCC 并不是完全不用加锁，而只是避免了 SELECT 的加锁操作。</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span>;</span><br><span class="line"><span class="keyword">UPDATE</span>;</span><br><span class="line"><span class="keyword">DELETE</span>;</span><br></pre></td></tr></table></figure>
+<p>在进行 SELECT 操作时，可以强制指定进行加锁操作。以下第一个语句需要加 S 锁，第二个需要加 X 锁。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="keyword">table</span> <span class="keyword">WHERE</span> ? lock <span class="keyword">in</span> share mode;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="keyword">table</span> <span class="keyword">WHERE</span> ? <span class="keyword">for</span> <span class="keyword">update</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="6-行锁">6 行锁</h3>
+<p>行锁的具体实现算法有三种：<code>record lock</code>、<code>gap lock</code> 以及 <code>next-key lock</code>。</p>
+<ul>
+<li><code>Record Lock</code> - <strong>行锁对索引项加锁，若没有索引则使用表锁</strong>。</li>
+<li><code>Gap Lock</code> - <strong>对索引项之间的间隙加锁</strong>。锁定索引之间的间隙，但是不包含索引本身。例如当一个事务执行以下语句，其它事务就不能在 t.c 中插入 15：<code>SELECT c FROM t WHERE c BETWEEN 10 and 20 FOR UPDATE;</code>。<strong>在 MySQL 中，gap lock 默认是开启的</strong>，即 <code>innodb_locks_unsafe_for_binlog</code> 参数值是 disable 的，且 MySQL 中默认的是 RR 事务隔离级别。</li>
+<li><code>Next-key lock</code> -它是 <code>Record Lock</code> 和 <code>Gap Lock</code> 的结合，不仅锁定一个记录上的索引，也锁定索引之间的间隙。它锁定一个前开后闭区间。</li>
+</ul>
+<p>只在可重复读或以上隔离级别下的特定操作才会取得 gap lock 或 next-key lock。在 <code>Select</code>、<code>Update</code> 和 <code>Delete</code> 时，除了基于唯一索引的查询之外，其它索引查询时都会获取 gap lock 或 next-key lock，即锁住其扫描的范围。主键索引也属于唯一索引，所以主键索引是不会使用 gap lock 或 next-key lock。</p>
+<p><strong>MVCC 不能解决幻读问题，Next-Key 锁就是为了解决幻读问题。<font color=red>在可重复读（<code>REPEATABLE READ</code>）隔离级别下，使用 MVCC + Next-Key 锁可以解决幻读问题</font>。</strong></p>
+<p>索引分为主键索引和非主键索引两种，如果一条 SQL 语句操作了主键索引，MySQL 就会锁定这条主键索引；如果一条语句操作了非主键索引，MySQL 会先锁定该非主键索引，再锁定相关的主键索引。在 <code>UPDATE</code>、<code>DELETE</code> 操作时，MySQL 不仅锁定 <code>WHERE</code> 条件扫描过的所有索引记录，而且会锁定相邻的键值，即所谓的 <code>next-key lock</code>。</p>
+<p><strong>当两个事务同时执行，一个锁住了主键索引，在等待其他相关索引。另一个锁定了非主键索引，在等待主键索引。这样就会发生死锁。发生死锁后，<code>InnoDB</code> 一般都可以检测到，并使一个事务释放锁回退，另一个获取锁完成事务。</strong></p>
+<h2 id="MySQL事务">MySQL事务</h2>
+<blockquote>
+<p>不是所有的 Mysql 存储引擎都实现了事务处理。支持事务的存储引擎有：<code>InnoDB</code> 和 <code>NDB Cluster</code>。不支持事务的存储引擎，代表有：<code>MyISAM</code>。</p>
+<p>用户可以根据业务是否需要事务处理（事务处理可以保证数据安全，但会增加系统开销），选择合适的存储引擎。</p>
+</blockquote>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335123.png" alt="img"></p>
+<h3 id="1-事务简介">1 事务简介</h3>
+<blockquote>
+<p>事务简单来说：<strong>一个 Session 中所进行所有的操作，要么同时成功，要么同时失败</strong>。进一步说，事务指的是满足 ACID 特性的一组操作，可以通过 <code>Commit</code> 提交一个事务，也可以使用 <code>Rollback</code> 进行回滚。</p>
+</blockquote>
+<img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335124.png" alt="img" style="zoom:50%;" />
+<p><strong>事务就是一组原子性的 SQL 语句</strong>。<strong>事务内的 SQL 语句，要么全执行成功，要么全执行失败</strong>。</p>
+<p><strong>通过加锁的方式，可以实现不同的事务隔离机制</strong>。</p>
+<h3 id="2-事务用法">2 事务用法</h3>
+<h4 id="2-1-事务处理指令">2.1 事务处理指令</h4>
+<p>MySQL 中，使用 <code>START TRANSACTION</code> 语句开始一个事务；使用 <code>COMMIT</code> 语句提交所有的修改；使用 <code>ROLLBACK</code> 语句撤销所有的修改。不能回退 <code>SELECT</code> 语句，回退 <code>SELECT</code> 语句也没意义；也不能回退 <code>CREATE</code> 和 <code>DROP</code> 语句。</p>
+<ul>
+<li><code>START TRANSACTION</code> - 指令用于标记事务的起始点。</li>
+<li><code>SAVEPOINT</code> - 指令用于创建保留点。</li>
+<li><code>ROLLBACK TO</code> - 指令用于回滚到指定的保留点；如果没有设置保留点，则回退到 <code>START TRANSACTION</code> 语句处。</li>
+<li><code>COMMIT</code> - 提交事务。</li>
+</ul>
+<h4 id="2-2-AUTOCOMMIT">2.2 <code>AUTOCOMMIT</code></h4>
+<p><strong>MySQL 默认采用隐式提交策略（<code>autocommit</code>）</strong>。每执行一条语句就把这条语句当成一个事务然后进行提交。当出现 <code>START TRANSACTION</code> 语句时，会关闭隐式提交；当 <code>COMMIT</code> 或 <code>ROLLBACK</code> 语句执行后，事务会自动关闭，重新恢复隐式提交。</p>
+<p>通过 <code>set autocommit=0</code> 可以取消自动提交，直到 <code>set autocommit=1</code> 才会提交；<code>autocommit</code> 标记是针对每个连接而不是针对服务器的。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 查看 AUTOCOMMIT</span></span><br><span class="line"><span class="keyword">SHOW</span> VARIABLES <span class="keyword">LIKE</span> <span class="string">&#x27;AUTOCOMMIT&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 关闭 AUTOCOMMIT</span></span><br><span class="line"><span class="keyword">SET</span> autocommit <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 开启 AUTOCOMMIT</span></span><br><span class="line"><span class="keyword">SET</span> autocommit <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="3-ACID">3 ACID</h3>
+<p>ACID 是数据库事务正确执行的四个基本要素。</p>
+<ul>
+<li>原子性（Atomicity）
+<ul>
+<li>事务被视为不可分割的最小单元，事务中的所有操作要么全部提交成功，要么全部失败回滚。</li>
+<li>回滚可以用(redo log)日志来实现，日志记录着事务所执行的修改操作，在回滚时反向执行这些修改操作即可。</li>
+</ul>
+</li>
+<li>一致性（Consistency）
+<ul>
+<li>数据库在事务执行前后都保持一致性状态。</li>
+<li>在一致性状态下，所有事务对一个数据的读取结果都是相同的。</li>
+</ul>
+</li>
+<li>隔离性（Isolation）
+<ul>
+<li>一个事务所做的修改在最终提交以前，对其它事务是不可见的。</li>
+</ul>
+</li>
+<li>持久性（Durability）
+<ul>
+<li>一旦事务提交，则其所做的修改将会永远保存到数据库中。即使系统发生崩溃，事务执行的结果也不能丢失。</li>
+<li>可以通过数据库备份和恢复来实现，在系统发生奔溃时，使用备份的数据库进行数据恢复。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>只有满足一致性，事务的执行结果才是正确的。</li>
+<li>在无并发的情况下，事务串行执行，隔离性一定能够满足。此时只要能满足原子性，就一定能满足一致性。</li>
+<li>在并发的情况下，多个事务并行执行，事务不仅要满足原子性，还需要满足隔离性，才能满足一致性。</li>
+<li>事务满足持久化是为了能应对系统崩溃的情况。</li>
+</ul>
+</blockquote>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335125.png" alt="img"></p>
+<h3 id="4-事务隔离级别">4 事务隔离级别</h3>
+<h4 id="4-1-事务隔离简介">4.1 事务隔离简介</h4>
+<p>在并发环境下，事务的隔离性很难保证，因此会出现很多并发一致性问题：</p>
+<ul>
+<li><strong>丢失修改</strong></li>
+<li><strong>脏读</strong></li>
+<li><strong>不可重复读</strong></li>
+<li><strong>幻读</strong></li>
+</ul>
+<p>在 SQL 标准中，定义了四种事务隔离级别（级别由低到高）：</p>
+<ul>
+<li><strong>未提交读(Read Uncommited)</strong></li>
+<li><strong>提交读(Read Commited)</strong></li>
+<li><strong>可重复读(Repeatable Read)</strong></li>
+<li><strong>串行化(Serialiable)</strong></li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 查看事务隔离级别</span></span><br><span class="line"><span class="keyword">SHOW</span> VARIABLES <span class="keyword">LIKE</span> <span class="string">&#x27;transaction_isolation&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 设置事务隔离级别为 READ UNCOMMITTED</span></span><br><span class="line"><span class="keyword">SET</span> SESSION TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 设置事务隔离级别为 READ COMMITTED</span></span><br><span class="line"><span class="keyword">SET</span> SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 设置事务隔离级别为 REPEATABLE READ</span></span><br><span class="line"><span class="keyword">SET</span> SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 设置事务隔离级别为 SERIALIZABLE</span></span><br><span class="line"><span class="keyword">SET</span> SESSION TRANSACTION ISOLATION LEVEL SERIALIZABLE;</span><br></pre></td></tr></table></figure>
+<h4 id="4-2-未提交读">4.2 未提交读</h4>
+<p><strong><code>未提交读（READ UNCOMMITTED）</code> 是指事务中的修改，即使没有提交，对其它事务也是可见的</strong>。</p>
+<p>未提交读的问题：事务可以读取未提交的数据，也被称为 <strong>脏读（Dirty Read）</strong>。</p>
+<h4 id="4-3-提交读">4.3 提交读</h4>
+<p><strong><code>提交读（READ COMMITTED）</code> 是指：事务提交后，其他事务才能看到它的修改</strong>。换句话说，一个事务所做的修改在提交之前对其它事务是不可见的。提交读解决了脏读的问题。</p>
+<p>提交读是大多数数据库的默认事务隔离级别。</p>
+<p>提交读有时也叫不可重复读，它的问题是：执行两次相同的查询，得到的结果可能不一致。</p>
+<h4 id="4-4-可重复读">4.4 可重复读</h4>
+<p><strong><code>可重复读（REPEATABLE READ）</code> 是指：保证在同一个事务中多次读取同样数据的结果是一样的</strong>。可重复读解决了不可重复读问题。</p>
+<p><strong><font color=blue>可重复读是 MySQL 的默认事务隔离级别</font>。</strong></p>
+<p>可重复读的问题：当某个事务读取某个范围内的记录时，另外一个事务又在该范围内插入了新的记录，当之前的事务又再次读取该范围的记录时，会产生 <strong>幻读（Phantom Read）</strong>。</p>
+<h4 id="4-5-串行化">4.5 串行化</h4>
+<p><strong><code>串行化（SERIALIXABLE）</code> 是指：强制事务串行执行</strong>。</p>
+<p>强制事务串行执行，则避免了所有的并发问题。串行化策略会在读取的每一行数据上都加锁，这可能导致大量的超时和锁竞争。这对于高并发应用基本上是不可接受的，所以一般不会采用这个级别。</p>
+<p>数据库隔离级别解决的问题：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">隔离级别</th>
+<th style="text-align:center">丢失修改</th>
+<th style="text-align:center">脏读</th>
+<th style="text-align:center">不可重复读</th>
+<th style="text-align:center">幻读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">未提交读</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">❌</td>
+</tr>
+<tr>
+<td style="text-align:center">提交读</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">❌</td>
+</tr>
+<tr>
+<td style="text-align:center">可重复读</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">❌</td>
+</tr>
+<tr>
+<td style="text-align:center">可串行化</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-死锁">5 死锁</h3>
+<p><strong>死锁是指两个或多个事务竞争同一资源，并请求锁定对方占用的资源，从而导致恶性循环的现象</strong>。</p>
+<p>产生死锁的场景：</p>
+<ul>
+<li>当多个事务试图以不同的顺序锁定资源时，就可能会产生死锁。</li>
+<li>多个事务同时锁定同一个资源时，也会产生死锁。</li>
+</ul>
+<h4 id="5-1-死锁的原因">5.1 死锁的原因</h4>
+<p>行锁的具体实现算法有三种：record lock、gap lock 以及 next-key lock。record lock 是专门对索引项加锁；gap lock 是对索引项之间的间隙加锁；next-key lock 则是前面两种的组合，对索引项以其之间的间隙加锁。</p>
+<p>只在可重复读或以上隔离级别下的特定操作才会取得 gap lock 或 next-key lock，在 Select、Update 和 Delete 时，除了基于唯一索引的查询之外，其它索引查询时都会获取 gap lock 或 next-key lock，即锁住其扫描的范围。主键索引也属于唯一索引，所以主键索引是不会使用 gap lock 或 next-key lock。</p>
+<p>在 MySQL 中，gap lock 默认是开启的，即 innodb_locks_unsafe_for_binlog 参数值是 disable 的，且 MySQL 中默认的是 RR 事务隔离级别。</p>
+<p>当我们执行以下查询 SQL 时，由于 order_no 列为非唯一索引，此时又是 RR 事务隔离级别，所以 SELECT 的加锁类型为 gap lock，这里的 gap 范围是 (4,+∞）。</p>
+<blockquote>
+<p>SELECT id FROM <code>demo</code>.<code>order_record</code> where <code>order_no</code> = 4 for update;</p>
+</blockquote>
+<p>执行查询 SQL 语句获取的 gap lock 并不会导致阻塞，而当我们执行以下插入 SQL 时，会在插入间隙上再次获取插入意向锁。插入意向锁其实也是一种 gap 锁，它与 gap lock 是冲突的，所以当其它事务持有该间隙的 gap lock 时，需要等待其它事务释放 gap lock 之后，才能获取到插入意向锁。</p>
+<p>以上事务 A 和事务 B 都持有间隙 (4,+∞）的 gap 锁，而接下来的插入操作为了获取到插入意向锁，都在等待对方事务的 gap 锁释放，于是就造成了循环等待，导致死锁。</p>
+<blockquote>
+<p>INSERT INTO <code>demo</code>.<code>order_record</code>(<code>order_no</code>, <code>status</code>, <code>create_date</code>) VALUES (5, 1, ‘2019-07-13 10:57:03’);</p>
+</blockquote>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335126.png" alt="img"></p>
+<p><strong>另一个死锁场景</strong></p>
+<p>InnoDB 存储引擎的主键索引为聚簇索引，其它索引为辅助索引。如果使用辅助索引来更新数据库，就需要使用聚簇索引来更新数据库字段。如果两个更新事务使用了不同的辅助索引，或一个使用了辅助索引，一个使用了聚簇索引，就都有可能导致锁资源的循环等待。由于本身两个事务是互斥，也就构成了以上死锁的四个必要条件了。</p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335127.png" alt=""></p>
+<p>出现死锁的步骤：</p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303031335128.png" alt=""></p>
+<p>综上可知，在更新操作时，我们应该尽量使用主键来更新表字段，这样可以有效避免一些不必要的死锁发生。</p>
+<h4 id="5-2-避免死锁">5.2 避免死锁</h4>
+<ul>
+<li>在编程中尽量按照固定的顺序来处理数据库记录，假设有两个更新操作，分别更新两条相同的记录，但更新顺序不一样，有可能导致死锁；</li>
+<li>在允许幻读和不可重复读的情况下，尽量使用 RC 事务隔离级别，可以避免 gap lock 导致的死锁问题；</li>
+<li>更新表时，<strong>尽量使用主键更新</strong>；</li>
+<li>避免长事务，<strong>尽量将长事务拆解</strong>，可以降低与其它事务发生冲突的概率；</li>
+<li><strong>设置合理的锁等待超时参数</strong>，我们可以通过 <code>innodb_lock_wait_timeout</code> 设置合理的等待超时阈值，特别是在一些高并发的业务中，我们可以尽量将该值设置得小一些，避免大量事务等待，占用系统资源，造成严重的性能开销。</li>
+</ul>
+<h4 id="5-3-解决死锁">5.3 解决死锁</h4>
+<p>当出现死锁以后，有两种策略：</p>
+<ul>
+<li>一种策略是，直接进入等待，直到超时。这个超时时间可以通过参数 <code>innodb_lock_wait_timeout</code> 来设置。</li>
+<li>另一种策略是，发起死锁检测，发现死锁后，主动回滚死锁链条中的某一个事务，让其他事务得以继续执行。将参数 <code>innodb_deadlock_detect</code> 设置为 on，表示开启这个逻辑。</li>
+</ul>
+<p>在 InnoDB 中，innodb_lock_wait_timeout 的默认值是 50s，意味着如果采用第一个策略，当出现死锁以后，第一个被锁住的线程要过 50s 才会超时退出，然后其他线程才有可能继续执行。对于在线服务来说，这个等待时间往往是无法接受的。</p>
+<p>但是，我们又不可能直接把这个时间设置成一个很小的值，比如 1s。这样当出现死锁的时候，确实很快就可以解开，但如果不是死锁，而是简单的锁等待呢？所以，超时时间设置太短的话，会出现很多误伤。</p>
+<p>所以，正常情况下我们还是要采用第二种策略，即：主动死锁检测，而且 <code>innodb_deadlock_detect</code> 的默认值本身就是 on。为了解决死锁问题，不同数据库实现了各自的死锁检测和超时机制。InnoDB 的处理策略是：<strong>将持有最少行级排它锁的事务进行回滚</strong>。</p>
+<p>主动死锁检测在发生死锁的时候，是能够快速发现并进行处理的，但是它也是有额外负担的。你可以想象一下这个过程：每当一个事务被锁的时候，就要看看它所依赖的线程有没有被别人锁住，如此循环，最后判断是否出现了循环等待，也就是死锁。</p>
+<h3 id="6-分布式事务">6 分布式事务</h3>
+<p>在单一数据节点中，事务仅限于对单一数据库资源的访问控制，称之为 <strong>本地事务</strong>。</p>
+<p><strong>分布式事务指的是事务操作跨越多个节点，并且要求满足事务的 ACID 特性。</strong></p>
+<p>分布式事务的常见方案如下：</p>
+<ul>
+<li><strong>两阶段提交（2PC）</strong> - 将事务的提交过程分为两个阶段来进行处理：准备阶段和提交阶段。参与者将操作成败通知协调者，再由协调者根据所有参与者的反馈情报决定各参与者是否要提交操作还是中止操作。</li>
+<li><strong>三阶段提交（3PC）</strong> - 与二阶段提交不同的是，引入超时机制。同时在协调者和参与者中都引入超时机制。将二阶段的准备阶段拆分为 2 个阶段，插入了一个 preCommit 阶段，使得原先在二阶段提交中，参与者在准备之后，由于协调者发生崩溃或错误，而导致参与者处于无法知晓是否提交或者中止的“不确定状态”所产生的可能相当长的延时的问题得以解决。</li>
+<li>补偿事务（TCC）
+<ul>
+<li><strong>Try</strong> - 操作作为一阶段，负责资源的检查和预留。</li>
+<li><strong>Confirm</strong> - 操作作为二阶段提交操作，执行真正的业务。</li>
+<li><strong>Cancel</strong> - 是预留资源的取消。</li>
+</ul>
+</li>
+<li><strong>本地消息表</strong> - 在事务主动发起方额外新建事务消息表，事务发起方处理业务和记录事务消息在本地事务中完成，轮询事务消息表的数据发送事务消息，事务被动方基于消息中间件消费事务消息表中的事务。</li>
+<li><strong>MQ 事务</strong> - 基于 MQ 的分布式事务方案其实是对本地消息表的封装。</li>
+<li><strong>SAGA</strong> - Saga 事务核心思想是将长事务拆分为多个本地短事务，由 Saga 事务协调器协调，如果正常结束那就正常完成，如果某个步骤失败，则根据相反顺序一次调用补偿操作。</li>
+</ul>
+<p>分布式事务方案分析：</p>
+<ul>
+<li>2PC/3PC 依赖于数据库，能够很好的提供强一致性和强事务性，但相对来说延迟比较高，比较适合传统的单体应用，在同一个方法中存在跨库操作的情况，不适合高并发和高性能要求的场景。</li>
+<li>TCC 适用于执行时间确定且较短，实时性要求高，对数据一致性要求高，比如互联网金融企业最核心的三个服务：交易、支付、账务。</li>
+<li>本地消息表/MQ 事务 都适用于事务中参与方支持操作幂等，对一致性要求不高，业务上能容忍数据不一致到一个人工检查周期，事务涉及的参与方、参与环节较少，业务上有对账/校验系统兜底。</li>
+<li>Saga 事务 由于 Saga 事务不能保证隔离性，需要在业务层控制并发，适合于业务场景事务并发操作同一资源较少的情况。 Saga 相比缺少预提交动作，导致补偿动作的实现比较麻烦，例如业务是发送短信，补偿动作则得再发送一次短信说明撤销，用户体验比较差。Saga 事务较适用于补偿动作容易处理的场景。</li>
+</ul>
+<h3 id="7-事务最佳实践">7 事务最佳实践</h3>
+<p>高并发场景下的事务到底该如何调优？</p>
+<ol>
+<li>尽量使用低级别事务隔离</li>
+</ol>
+<p>结合业务场景，尽量使用低级别事务隔离</p>
+<ol start="2">
+<li>避免行锁升级表锁</li>
+</ol>
+<p>在 InnoDB 中，行锁是通过索引实现的，如果不通过索引条件检索数据，行锁将会升级到表锁。我们知道，表锁是会严重影响到整张表的操作性能的，所以应该尽力避免。</p>
+<ol start="3">
+<li>缩小事务范围</li>
+</ol>
+<p>有时候，数据库并发访问量太大，会出现以下异常：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MySQLQueryInterruptedException: Query execution was interrupted</span><br></pre></td></tr></table></figure>
+<p>高并发时对一条记录进行更新的情况下，由于更新记录所在的事务还可能存在其他操作，导致一个事务比较长，当有大量请求进入时，就可能导致一些请求同时进入到事务中。</p>
+<p>又因为锁的竞争是不公平的，当多个事务同时对一条记录进行更新时，极端情况下，一个更新操作进去排队系统后，可能会一直拿不到锁，最后因超时被系统打断踢出。</p>
+<p><strong>在 InnoDB 事务中，行锁是在需要的时候才加上的，但并不是不需要了就立刻释放，而是要等到事务结束时才释放。这个就是两阶段锁协议。</strong></p>
+<p>知道了这个设定，对我们使用事务有什么帮助呢？那就是，如果你的事务中需要锁多个行，要把最可能造成锁冲突、最可能影响并发度的锁尽量往后放。</p>
+<h2 id="MySQL性能优化">MySQL性能优化</h2>
+<h3 id="1-数据结构优化">1 数据结构优化</h3>
+<p>良好的逻辑设计和物理设计是高性能的基石。</p>
+<h4 id="1-1-数据类型优化">1.1 数据类型优化</h4>
+<p><strong>数据类型优化基本原则</strong>：</p>
+<ul>
+<li><strong>更小的通常更好</strong>- 越小的数据类型通常会更快，占用更少的磁盘、内存，处理时需要的 CPU 周期也更少。
+<ul>
+<li>例如：整型比字符类型操作代价低，因而会使用整型来存储 IP 地址，使用 <code>DATETIME</code> 来存储时间，而不是使用字符串。</li>
+</ul>
+</li>
+<li><strong>简单就好</strong>- 如整型比字符型操作代价低。
+<ul>
+<li>例如：很多软件会用整型来存储 IP 地址。</li>
+<li>例如：<strong><code>UNSIGNED</code> 表示不允许负值，大致可以使正数的上限提高一倍</strong>。</li>
+</ul>
+</li>
+<li><strong>尽量避免 NULL</strong> - 可为 NULL 的列会使得索引、索引统计和值比较都更复杂。</li>
+</ul>
+<p><strong>类型的选择</strong></p>
+<ul>
+<li>整数类型通常是标识列最好的选择，因为它们很快并且可以使用 <code>AUTO_INCREMENT</code>。</li>
+<li><code>ENUM</code> 和 <code>SET</code> 类型通常是一个糟糕的选择，应尽量避免。</li>
+<li>应该尽量避免用字符串类型作为标识列，因为它们很消耗空间，并且通常比数字类型慢。对于 <code>MD5</code>、<code>SHA</code>、<code>UUID</code> 这类随机字符串，由于比较随机，所以可能分布在很大的空间内，导致 <code>INSERT</code> 以及一些 <code>SELECT</code> 语句变得很慢。
+<ul>
+<li>如果存储 UUID ，应该移除 <code>-</code> 符号；更好的做法是，用 <code>UNHEX()</code> 函数转换 UUID 值为 16 字节的数字，并存储在一个 <code>BINARY(16)</code> 的列中，检索时，可以通过 <code>HEX()</code> 函数来格式化为 16 进制格式。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-2-表设计">1.2 表设计</h4>
+<p>应该避免的设计问题：</p>
+<ul>
+<li><strong>太多的列</strong> - 设计者为了图方便，将大量冗余列加入表中，实际查询中，表中很多列是用不到的。这种宽表模式设计，会造成不小的性能代价，尤其是 <code>ALTER TABLE</code> 非常耗时。</li>
+<li><strong>太多的关联</strong> - 所谓的实体 - 属性 - 值（EVA）设计模式是一个常见的糟糕设计模式。Mysql 限制了每个关联操作最多只能有 61 张表，但 EVA 模式需要许多自关联。</li>
+<li><strong>枚举</strong> - 尽量不要用枚举，因为添加和删除字符串（枚举选项）必须使用 <code>ALTER TABLE</code>。</li>
+<li>尽量避免 <code>NULL</code>。</li>
+</ul>
+<h4 id="1-4-范式和反范式">1.4 范式和反范式</h4>
+<p><strong>范式化目标是尽量减少冗余，而反范式化则相反</strong>。</p>
+<p>范式化的优点：</p>
+<ul>
+<li>比反范式更节省空间</li>
+<li>更新操作比反范式快</li>
+<li>更少需要 <code>DISTINCT</code> 或 <code>GROUP BY</code> 语句</li>
+</ul>
+<p>范式化的缺点：</p>
+<ul>
+<li>通常需要关联查询。而关联查询代价较高，如果是分表的关联查询，代价更是高昂。</li>
+</ul>
+<p>在真实世界中，很少会极端地使用范式化或反范式化。实际上，应该权衡范式和反范式的利弊，混合使用。</p>
+<h4 id="1-4-索引优化">1.4 索引优化</h4>
+<blockquote>
+<p>索引优化应该是查询性能优化的最有效手段。</p>
+</blockquote>
+<h5 id="1-4-1-何时使用索引">1.4.1 何时使用索引</h5>
+<ul>
+<li>对于非常小的表，大部分情况下简单的全表扫描更高效。</li>
+<li>对于中、大型表，索引非常有效。</li>
+<li>对于特大型表，建立和使用索引的代价将随之增长。可以考虑使用分区技术。</li>
+<li>如果表的数量特别多，可以建立一个元数据信息表，用来查询需要用到的某些特性。</li>
+</ul>
+<h5 id="1-4-2-索引优化策略">1.4.2 索引优化策略</h5>
+<ul>
+<li><strong>索引基本原则</strong>
+<ul>
+<li>索引不是越多越好，不要为所有列都创建索引。</li>
+<li>要尽量避免冗余和重复索引。</li>
+<li>要考虑删除未使用的索引。</li>
+<li>尽量的扩展索引，不要新建索引。</li>
+<li>频繁作为 <code>WHERE</code> 过滤条件的列应该考虑添加索引。</li>
+</ul>
+</li>
+<li><strong>独立的列</strong> - “独立的列” 是指索引列不能是表达式的一部分，也不能是函数的参数。</li>
+<li><strong>前缀索引</strong> - 索引很长的字符列，可以索引开始的部分字符，这样可以大大节约索引空间。</li>
+<li><strong>最左匹配原则</strong> - 将选择性高的列或基数大的列优先排在多列索引最前列。</li>
+<li><strong>使用索引来排序</strong> - 索引最好既满足排序，又用于查找行。这样，就可以使用索引来对结果排序。</li>
+<li><code>=</code>、<code>IN</code> 可以乱序 - 不需要考虑 <code>=</code>、<code>IN</code> 等的顺序</li>
+<li><strong>覆盖索引</strong></li>
+<li><strong>自增字段作主键</strong></li>
+</ul>
+<h3 id="2-SQL优化">2 SQL优化</h3>
+<p>使用 <code>EXPLAIN</code> 命令查看当前 SQL 是否使用了索引，优化后，再通过执行计划（<code>EXPLAIN</code>）来查看优化效果。</p>
+<p>SQL 优化基本思路：</p>
+<ul>
+<li><strong>只返回必要的列</strong> - 最好不要使用 <code>SELECT *</code> 语句。</li>
+<li><strong>只返回必要的行</strong> - 使用 <code>WHERE</code> 子查询语句进行过滤查询，有时候也需要使用 <code>LIMIT</code> 语句来限制返回的数据。</li>
+<li><strong>缓存重复查询的数据</strong> - 应该考虑在客户端使用缓存，尽量不要使用 Mysql 服务器缓存（存在较多问题和限制）。</li>
+<li><strong>使用索引来覆盖查询</strong>。</li>
+</ul>
+<h4 id="2-1-优化COUNT-语句">2.1 优化<code>COUNT()</code>语句</h4>
+<p><code>COUNT()</code> 有两种作用：</p>
+<ul>
+<li>统计某个列值的数量。统计列值时，要求列值是非 <code>NULL</code> 的，它不会统计 <code>NULL</code>。</li>
+<li>统计行数。</li>
+</ul>
+<p><strong>统计列值时，要求列值是非空的，它不会统计 NULL</strong>。如果确认括号中的表达式不可能为空时，实际上就是在统计行数。最简单的就是当使用 <code>COUNT(*)</code> 时，并不是我们所想象的那样扩展成所有的列，实际上，它会忽略所有的列而直接统计行数。</p>
+<p>我们最常见的误解也就在这儿，在括号内指定了一列却希望统计结果是行数，而且还常常误以为前者的性能会更好。但实际并非这样，如果要统计行数，直接使用 <code>COUNT(*)</code>，意义清晰，且性能更好。</p>
+<p>（1）简单优化</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> world.city <span class="keyword">WHERE</span> id <span class="operator">&gt;</span> <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> (<span class="keyword">SELECT</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> world.city) <span class="operator">-</span> <span class="built_in">count</span>(<span class="operator">*</span>)</span><br><span class="line"><span class="keyword">FROM</span> world.city <span class="keyword">WHERE</span> id <span class="operator">&lt;=</span> <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+<p>（2）使用近似值</p>
+<p>有时候某些业务场景并不需要完全精确的统计值，可以用近似值来代替，<code>EXPLAIN</code> 出来的行数就是一个不错的近似值，而且执行 <code>EXPLAIN</code> 并不需要真正地去执行查询，所以成本非常低。通常来说，执行 <code>COUNT()</code> 都需要扫描大量的行才能获取到精确的数据，因此很难优化，MySQL 层面还能做得也就只有覆盖索引了。如果不还能解决问题，只有从架构层面解决了，比如添加汇总表，或者使用 Redis 这样的外部缓存系统。</p>
+<h4 id="2-2-优化关联查询">2.2. 优化关联查询</h4>
+<p>在大数据场景下，表与表之间通过一个冗余字段来关联，要比直接使用 <code>JOIN</code> 有更好的性能。</p>
+<p>如果确实需要使用关联查询的情况下，需要特别注意的是：</p>
+<ul>
+<li><strong>确保 <code>ON</code> 和 <code>USING</code> 字句中的列上有索引</strong>。在创建索引的时候就要考虑到关联的顺序。当表 A 和表 B 用某列 column 关联的时候，如果优化器关联的顺序是 A、B，那么就不需要在 A 表的对应列上创建索引。没有用到的索引会带来额外的负担，一般来说，除非有其他理由，只需要在关联顺序中的第二张表的相应列上创建索引（具体原因下文分析）。</li>
+<li><strong>确保任何的 <code>GROUP BY</code> 和 <code>ORDER BY</code> 中的表达式只涉及到一个表中的列</strong>，这样 MySQL 才有可能使用索引来优化。</li>
+</ul>
+<p>要理解优化关联查询的第一个技巧，就需要理解 MySQL 是如何执行关联查询的。当前 MySQL 关联执行的策略非常简单，它对任何的关联都执行<strong>嵌套循环关联</strong>操作，即先在一个表中循环取出单条数据，然后在嵌套循环到下一个表中寻找匹配的行，依次下去，直到找到所有表中匹配的行为为止。然后根据各个表匹配的行，返回查询中需要的各个列。</p>
+<h4 id="2-3-优化GROUP-BY和DISTINCT">2.3 优化<code>GROUP BY</code>和<code>DISTINCT</code></h4>
+<p>MySQL 优化器会在内部处理的时候相互转化这两类查询。它们都<strong>可以使用索引来优化，这也是最有效的优化方法</strong>。</p>
+<h4 id="2-4-优化LIMIT">2.4 优化<code>LIMIT</code></h4>
+<p>当需要分页操作时，通常会使用 <code>LIMIT</code> 加上偏移量的办法实现，同时加上合适的 <code>ORDER BY</code> 字句。<strong>如果有对应的索引，通常效率会不错，否则，MySQL 需要做大量的文件排序操作</strong>。</p>
+<p>一个常见的问题是当偏移量非常大的时候，比如：<code>LIMIT 10000 20</code>这样的查询，MySQL 需要查询 10020 条记录然后只返回 20 条记录，前面的 10000 条都将被抛弃，这样的代价非常高。</p>
+<p><font color=red>优化这种查询一个最简单的办法就是尽可能的使用覆盖索引扫描，而不是查询所有的列</font>。然后根据需要做一次关联查询再返回所有的列。对于偏移量很大时，这样做的效率会提升非常大。考虑下面的查询：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> film_id,description <span class="keyword">FROM</span> film <span class="keyword">ORDER</span> <span class="keyword">BY</span> title LIMIT <span class="number">50</span>,<span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+<p>如果这张表非常大，那么这个查询最好改成下面的样子：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> film.film_id,film.description</span><br><span class="line"><span class="keyword">FROM</span> film <span class="keyword">INNER</span> <span class="keyword">JOIN</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> film_id <span class="keyword">FROM</span> film <span class="keyword">ORDER</span> <span class="keyword">BY</span> title LIMIT <span class="number">50</span>,<span class="number">5</span></span><br><span class="line">) <span class="keyword">AS</span> tmp <span class="keyword">USING</span>(film_id);</span><br></pre></td></tr></table></figure>
+<p>这里的延迟关联将大大提升查询效率，让 MySQL 扫描尽可能少的页面，获取需要访问的记录后在根据关联列回原表查询所需要的列。</p>
+<p>有时候如果可以使用书签记录上次取数据的位置，那么下次就可以直接从该书签记录的位置开始扫描，这样就可以避免使用<code>OFFSET</code>，比如下面的查询：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> id <span class="keyword">FROM</span> t LIMIT <span class="number">10000</span>, <span class="number">10</span>;</span><br><span class="line">改为：</span><br><span class="line"><span class="keyword">SELECT</span> id <span class="keyword">FROM</span> t <span class="keyword">WHERE</span> id <span class="operator">&gt;</span> <span class="number">10000</span> LIMIT <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<p>其他优化的办法还包括使用预先计算的汇总表，或者关联到一个冗余表，冗余表中只包含主键列和需要做排序的列。</p>
+<h4 id="2-5-优化UNION">2.5 优化<code>UNION</code></h4>
+<p>MySQL 总是通过创建并填充临时表的方式来执行 <code>UNION</code> 查询。因此很多优化策略在<code>UNION</code>查询中都没有办法很好的时候。经常需要手动将<code>WHERE</code>、<code>LIMIT</code>、<code>ORDER BY</code>等字句“下推”到各个子查询中，以便优化器可以充分利用这些条件先优化。</p>
+<p><strong>除非确实需要服务器去重，否则就一定要使用<code>UNION ALL</code></strong>，如果没有<code>ALL</code>关键字，MySQL 会给临时表加上<code>DISTINCT</code>选项，这会导致整个临时表的数据做唯一性检查，这样做的代价非常高。当然即使使用 ALL 关键字，MySQL 总是将结果放入临时表，然后再读出，再返回给客户端。虽然很多时候没有这个必要，比如有时候可以直接把每个子查询的结果返回给客户端。</p>
+<h4 id="2-6-优化查询方式">2.6 优化查询方式</h4>
+<h5 id="2-6-1-切分大查询">2.6.1 切分大查询</h5>
+<p>一个大查询如果一次性执行的话，可能一次锁住很多数据、占满整个事务日志、耗尽系统资源、阻塞很多小的但重要的查询。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">DELEFT <span class="keyword">FROM</span> messages <span class="keyword">WHERE</span> <span class="keyword">create</span> <span class="operator">&lt;</span> DATE_SUB(NOW(), <span class="type">INTERVAL</span> <span class="number">3</span> <span class="keyword">MONTH</span>);</span><br><span class="line">rows_affected <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">do &#123;</span><br><span class="line">    rows_affected <span class="operator">=</span> do_query(</span><br><span class="line">    &quot;DELETE FROM messages WHERE create  &lt; DATE_SUB(NOW(), INTERVAL 3 MONTH) LIMIT 10000&quot;)</span><br><span class="line">&#125; while rows_affected <span class="operator">&gt;</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h5 id="2-6-2-分解大连接查询">2.6.2 分解大连接查询</h5>
+<p>将一个大连接查询（JOIN）分解成对每一个表进行一次单表查询，然后将结果在应用程序中进行关联，这样做的好处有：</p>
+<ul>
+<li>让缓存更高效。对于连接查询，如果其中一个表发生变化，那么整个查询缓存就无法使用。而分解后的多个查询，即使其中一个表发生变化，对其它表的查询缓存依然可以使用。</li>
+<li>分解成多个单表查询，这些单表查询的缓存结果更可能被其它查询使用到，从而减少冗余记录的查询。</li>
+<li>减少锁竞争；</li>
+<li>在应用层进行连接，可以更容易对数据库进行拆分，从而更容易做到高性能和可扩展。</li>
+<li>查询本身效率也可能会有所提升。例如下面的例子中，使用 IN() 代替连接查询，可以让 MySQL 按照 ID 顺序进行查询，这可能比随机的连接要更高效。</li>
+</ul>
+<h3 id="3-执行计划（EXPLAIN）">3 执行计划（<code>EXPLAIN</code>）</h3>
+<p>如何判断当前 SQL 是否使用了索引？如何检验修改后的 SQL 确实有优化效果？</p>
+<p>在 SQL 中，可以通过执行计划（<code>EXPLAIN</code>）分析 <code>SELECT</code> 查询效率。</p>
+<h3 id="4-optimizer-trace">4 optimizer trace</h3>
+<p>在 MySQL 5.6 及之后的版本中，我们可以使用 optimizer trace 功能查看优化器生成执行计划的整个过程。有了这个功能，我们不仅可以了解优化器的选择过程，更可以了解每一个执行环节的成本，然后依靠这些信息进一步优化查询。</p>
+<h3 id="5-数据模型和业务">5 数据模型和业务</h3>
+<ul>
+<li>表字段比较复杂、易变动、结构难以统一的情况下，可以考虑使用 Nosql 来代替关系数据库表存储，如 ElasticSearch、MongoDB。</li>
+<li>在高并发情况下的查询操作，可以使用缓存（如 Redis）代替数据库操作，提高并发性能。</li>
+<li>数据量增长较快的表，需要考虑水平分表或分库，避免单表操作的性能瓶颈。</li>
+<li>除此之外，我们应该通过一些优化，尽量避免比较复杂的 JOIN 查询操作，例如冗余一些字段，减少 JOIN 查询；创建一些中间表，减少 JOIN 查询。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://guojin_lv.gitee.io/hexo-blogs">JoeGoodyLv</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://guojin_lv.gitee.io/hexo-blogs/2023/03/03/MySQL/">https://guojin_lv.gitee.io/hexo-blogs/2023/03/03/MySQL/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://guojin_lv.gitee.io/hexo-blogs" target="_blank">JoeGoodyLv</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/hexo-blogs/tags/SQL/">SQL</a><a class="post-meta__tags" href="/hexo-blogs/tags/MySQL/">MySQL</a></div><div class="post_share"><div class="social-share" data-image="https://w.wallhaven.cc/full/5g/wallhaven-5gzdr5.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/hexo-blogs/2023/03/03/Vue/"><img class="next-cover" src="https://w.wallhaven.cc/full/ex/wallhaven-ex3ozw.jpg" onerror="onerror=null;src='/hexo-blogs/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Vue3</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E5%85%B6%E4%BB%96"><span class="toc-number">1.1.</span> <span class="toc-text">SQL其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL%E5%9F%BA%E7%A1%80"><span class="toc-number">1.2.</span> <span class="toc-text">MySQL基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="toc-number">1.2.1.</span> <span class="toc-text">2 存储引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-MyISAM"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">2.1 MyISAM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-InnoDB"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">2.2 InnoDB</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text">3 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E6%95%B4%E5%9E%8B"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">3.1 整型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E6%B5%AE%E7%82%B9%E5%9E%8B"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">3.2 浮点型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">3.3 字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%A5%E6%9C%9F"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">3.4 时间和日期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-BLOB%E5%92%8CTEXT"><span class="toc-number">1.2.2.5.</span> <span class="toc-text">3.5 BLOB和TEXT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.2.6.</span> <span class="toc-text">3.6 枚举类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-%E7%B1%BB%E5%9E%8B%E7%9A%84%E9%80%89%E6%8B%A9"><span class="toc-number">1.2.2.7.</span> <span class="toc-text">3.7 类型的选择</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%A4%8D%E5%88%B6"><span class="toc-number">1.2.3.</span> <span class="toc-text">4 复制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">4.1 主从复制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">4.2 读写分离</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-number">1.3.</span> <span class="toc-text">MySQL工作流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84"><span class="toc-number">1.3.1.</span> <span class="toc-text">1 基础架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text">2 查询过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1%EF%BC%88%E4%B8%80%EF%BC%89%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">2.1（一）连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2%EF%BC%88%E4%BA%8C%EF%BC%89%E6%9F%A5%E8%AF%A2%E7%BC%93%E5%AD%98"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">2.2（二）查询缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3%EF%BC%88%E4%B8%89%EF%BC%89%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">2.3（三）语法分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4%EF%BC%88%E5%9B%9B%EF%BC%89%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.2.4.</span> <span class="toc-text">2.4（四）查询优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5%EF%BC%88%E4%BA%94%EF%BC%89%E6%9F%A5%E8%AF%A2%E6%89%A7%E8%A1%8C%E5%BC%95%E6%93%8E"><span class="toc-number">1.3.2.5.</span> <span class="toc-text">2.5（五）查询执行引擎</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6%EF%BC%88%E5%85%AD%EF%BC%89%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C"><span class="toc-number">1.3.2.6.</span> <span class="toc-text">2.6（六）返回结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%9B%B4%E6%96%B0%E8%BF%87%E7%A8%8B"><span class="toc-number">1.3.3.</span> <span class="toc-text">3 更新过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-redo-log"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">3.1 redo log</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-bin-log"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">3.2 bin log</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-redo-log-vs-bin-log"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">3.3 redo log vs. bin log</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E4%B8%A4%E9%98%B6%E6%AE%B5%E6%8F%90%E4%BA%A4"><span class="toc-number">1.3.3.4.</span> <span class="toc-text">3.4 两阶段提交</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL%E7%B4%A2%E5%BC%95"><span class="toc-number">1.4.</span> <span class="toc-text">MySQL索引</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%B4%A2%E5%BC%95%E7%AE%80%E4%BB%8B"><span class="toc-number">1.4.1.</span> <span class="toc-text">1 索引简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">1.1 索引的优缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E4%BD%95%E6%97%B6%E4%BD%BF%E7%94%A8%E7%B4%A2%E5%BC%95"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">1.2 何时使用索引</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%B4%A2%E5%BC%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.2.</span> <span class="toc-text">2 索引的数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%93%88%E5%B8%8C%E7%B4%A2%E5%BC%95"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">2.1 哈希索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-B-%E6%A0%91%E7%B4%A2%E5%BC%95"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">2.2 B 树索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E5%85%A8%E6%96%87%E7%B4%A2%E5%BC%95"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">2.3 全文索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E7%B4%A2%E5%BC%95"><span class="toc-number">1.4.2.4.</span> <span class="toc-text">2.4 空间数据索引</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%B4%A2%E5%BC%95%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.4.3.</span> <span class="toc-text">3 索引的类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E4%B8%BB%E9%94%AE%E7%B4%A2%E5%BC%95%EF%BC%88PRIMAY%EF%BC%89"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">3.1 主键索引（PRIMAY）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95%EF%BC%88UNIQUE%EF%BC%89"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">3.2 唯一索引（UNIQUE）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E6%99%AE%E9%80%9A%E7%B4%A2%E5%BC%95%EF%BC%88INDEX%EF%BC%89"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">3.1 普通索引（INDEX）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%85%A8%E6%96%87%E7%B4%A2%E5%BC%95%EF%BC%88FULLTEXT%EF%BC%89"><span class="toc-number">1.4.3.4.</span> <span class="toc-text">3.1 全文索引（FULLTEXT）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95"><span class="toc-number">1.4.3.5.</span> <span class="toc-text">3.1 联合索引</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%B4%A2%E5%BC%95%E7%9A%84%E7%AD%96%E7%95%A5"><span class="toc-number">1.4.4.</span> <span class="toc-text">4  索引的策略</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E7%B4%A2%E5%BC%95%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">4.1 索引基本原则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E7%8B%AC%E7%AB%8B%E7%9A%84%E5%88%97"><span class="toc-number">1.4.4.2.</span> <span class="toc-text">4.2 独立的列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95"><span class="toc-number">1.4.4.3.</span> <span class="toc-text">4.3 覆盖索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-%E4%BD%BF%E7%94%A8%E7%B4%A2%E5%BC%95%E6%9D%A5%E6%8E%92%E5%BA%8F"><span class="toc-number">1.4.4.4.</span> <span class="toc-text">4.4 使用索引来排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-%E5%89%8D%E7%BC%80%E7%B4%A2%E5%BC%95"><span class="toc-number">1.4.4.5.</span> <span class="toc-text">4.5 前缀索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-6-%E6%9C%80%E5%B7%A6%E5%89%8D%E7%BC%80%E5%8C%B9%E9%85%8D%E5%8E%9F%E5%88%99"><span class="toc-number">1.4.4.6.</span> <span class="toc-text">4.6 最左前缀匹配原则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-7-%E5%92%8Cin%E5%8F%AF%E4%BB%A5%E4%B9%B1%E5%BA%8F"><span class="toc-number">1.4.4.7.</span> <span class="toc-text">4.7 &#x3D;和in可以乱序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E7%B4%A2%E5%BC%95%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-number">1.4.5.</span> <span class="toc-text">5 索引最佳实践</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL%E9%94%81"><span class="toc-number">1.5.</span> <span class="toc-text">MySQL锁</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%82%B2%E8%A7%82%E9%94%81%E5%92%8C%E4%B9%90%E8%A7%82%E9%94%81"><span class="toc-number">1.5.1.</span> <span class="toc-text">1 悲观锁和乐观锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%A1%A8%E7%BA%A7%E9%94%81%E5%92%8C%E8%A1%8C%E7%BA%A7%E9%94%81"><span class="toc-number">1.5.2.</span> <span class="toc-text">2 表级锁和行级锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%AF%BB%E5%86%99%E9%94%81"><span class="toc-number">1.5.3.</span> <span class="toc-text">3 读写锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%84%8F%E5%90%91%E9%94%81"><span class="toc-number">1.5.4.</span> <span class="toc-text">4 意向锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-MVCC"><span class="toc-number">1.5.5.</span> <span class="toc-text">5 MVCC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-MVCC%E6%80%9D%E6%83%B3"><span class="toc-number">1.5.5.1.</span> <span class="toc-text">5.1 MVCC思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E7%89%88%E6%9C%AC%E5%8F%B7"><span class="toc-number">1.5.5.2.</span> <span class="toc-text">5.2 版本号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-Undo%E6%97%A5%E5%BF%97"><span class="toc-number">1.5.5.3.</span> <span class="toc-text">5.3 Undo日志</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-ReadView"><span class="toc-number">1.5.5.4.</span> <span class="toc-text">5.4 ReadView</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-%E5%BF%AB%E7%85%A7%E8%AF%BB%E4%B8%8E%E5%BD%93%E5%89%8D%E8%AF%BB"><span class="toc-number">1.5.5.5.</span> <span class="toc-text">5.5 快照读与当前读</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%A1%8C%E9%94%81"><span class="toc-number">1.5.6.</span> <span class="toc-text">6 行锁</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.6.</span> <span class="toc-text">MySQL事务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BA%8B%E5%8A%A1%E7%AE%80%E4%BB%8B"><span class="toc-number">1.6.1.</span> <span class="toc-text">1 事务简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BA%8B%E5%8A%A1%E7%94%A8%E6%B3%95"><span class="toc-number">1.6.2.</span> <span class="toc-text">2 事务用法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E6%8C%87%E4%BB%A4"><span class="toc-number">1.6.2.1.</span> <span class="toc-text">2.1 事务处理指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-AUTOCOMMIT"><span class="toc-number">1.6.2.2.</span> <span class="toc-text">2.2 AUTOCOMMIT</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-ACID"><span class="toc-number">1.6.3.</span> <span class="toc-text">3 ACID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="toc-number">1.6.4.</span> <span class="toc-text">4 事务隔离级别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%AE%80%E4%BB%8B"><span class="toc-number">1.6.4.1.</span> <span class="toc-text">4.1 事务隔离简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E6%9C%AA%E6%8F%90%E4%BA%A4%E8%AF%BB"><span class="toc-number">1.6.4.2.</span> <span class="toc-text">4.2 未提交读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E6%8F%90%E4%BA%A4%E8%AF%BB"><span class="toc-number">1.6.4.3.</span> <span class="toc-text">4.3 提交读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-%E5%8F%AF%E9%87%8D%E5%A4%8D%E8%AF%BB"><span class="toc-number">1.6.4.4.</span> <span class="toc-text">4.4 可重复读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-%E4%B8%B2%E8%A1%8C%E5%8C%96"><span class="toc-number">1.6.4.5.</span> <span class="toc-text">4.5 串行化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%AD%BB%E9%94%81"><span class="toc-number">1.6.5.</span> <span class="toc-text">5 死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E6%AD%BB%E9%94%81%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.6.5.1.</span> <span class="toc-text">5.1 死锁的原因</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E9%81%BF%E5%85%8D%E6%AD%BB%E9%94%81"><span class="toc-number">1.6.5.2.</span> <span class="toc-text">5.2 避免死锁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-%E8%A7%A3%E5%86%B3%E6%AD%BB%E9%94%81"><span class="toc-number">1.6.5.3.</span> <span class="toc-text">5.3 解决死锁</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.6.6.</span> <span class="toc-text">6 分布式事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E4%BA%8B%E5%8A%A1%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-number">1.6.7.</span> <span class="toc-text">7 事务最佳实践</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">1.7.</span> <span class="toc-text">MySQL性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BC%98%E5%8C%96"><span class="toc-number">1.7.1.</span> <span class="toc-text">1 数据结构优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%BC%98%E5%8C%96"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">1.1 数据类型优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E8%A1%A8%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.7.1.2.</span> <span class="toc-text">1.2 表设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E8%8C%83%E5%BC%8F%E5%92%8C%E5%8F%8D%E8%8C%83%E5%BC%8F"><span class="toc-number">1.7.1.3.</span> <span class="toc-text">1.4 范式和反范式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96"><span class="toc-number">1.7.1.4.</span> <span class="toc-text">1.4 索引优化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-1-%E4%BD%95%E6%97%B6%E4%BD%BF%E7%94%A8%E7%B4%A2%E5%BC%95"><span class="toc-number">1.7.1.4.1.</span> <span class="toc-text">1.4.1 何时使用索引</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-2-%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5"><span class="toc-number">1.7.1.4.2.</span> <span class="toc-text">1.4.2 索引优化策略</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-SQL%E4%BC%98%E5%8C%96"><span class="toc-number">1.7.2.</span> <span class="toc-text">2 SQL优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E4%BC%98%E5%8C%96COUNT-%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.7.2.1.</span> <span class="toc-text">2.1 优化COUNT()语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E4%BC%98%E5%8C%96%E5%85%B3%E8%81%94%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.7.2.2.</span> <span class="toc-text">2.2. 优化关联查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E4%BC%98%E5%8C%96GROUP-BY%E5%92%8CDISTINCT"><span class="toc-number">1.7.2.3.</span> <span class="toc-text">2.3 优化GROUP BY和DISTINCT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E4%BC%98%E5%8C%96LIMIT"><span class="toc-number">1.7.2.4.</span> <span class="toc-text">2.4 优化LIMIT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-%E4%BC%98%E5%8C%96UNION"><span class="toc-number">1.7.2.5.</span> <span class="toc-text">2.5 优化UNION</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-%E4%BC%98%E5%8C%96%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F"><span class="toc-number">1.7.2.6.</span> <span class="toc-text">2.6 优化查询方式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-6-1-%E5%88%87%E5%88%86%E5%A4%A7%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.7.2.6.1.</span> <span class="toc-text">2.6.1 切分大查询</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-6-2-%E5%88%86%E8%A7%A3%E5%A4%A7%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.7.2.6.2.</span> <span class="toc-text">2.6.2 分解大连接查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%89%A7%E8%A1%8C%E8%AE%A1%E5%88%92%EF%BC%88EXPLAIN%EF%BC%89"><span class="toc-number">1.7.3.</span> <span class="toc-text">3 执行计划（EXPLAIN）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-optimizer-trace"><span class="toc-number">1.7.4.</span> <span class="toc-text">4 optimizer trace</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E5%92%8C%E4%B8%9A%E5%8A%A1"><span class="toc-number">1.7.5.</span> <span class="toc-text">5 数据模型和业务</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By JoeGoodyLv</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/hexo-blogs/js/utils.js"></script><script src="/hexo-blogs/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/hexo-blogs/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
