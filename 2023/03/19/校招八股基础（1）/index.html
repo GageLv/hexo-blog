@@ -1,0 +1,954 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>校招八股基础（1） | JoeGoodyLv</title><meta name="author" content="JoeGoodyLv"><meta name="copyright" content="JoeGoodyLv"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="MySQL、Redis、MongoDB、Spring、计网等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="校招八股基础（1）">
+<meta property="og:url" content="https://gagelv.github.io/hexo-blog/2023/03/19/%E6%A0%A1%E6%8B%9B%E5%85%AB%E8%82%A1%E5%9F%BA%E7%A1%80%EF%BC%881%EF%BC%89/index.html">
+<meta property="og:site_name" content="JoeGoodyLv">
+<meta property="og:description" content="MySQL、Redis、MongoDB、Spring、计网等。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://w.wallhaven.cc/full/yx/wallhaven-yxqlzg.png">
+<meta property="article:published_time" content="2023-03-19T12:00:28.173Z">
+<meta property="article:modified_time" content="2023-03-19T12:00:03.799Z">
+<meta property="article:author" content="JoeGoodyLv">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://w.wallhaven.cc/full/yx/wallhaven-yxqlzg.png"><link rel="shortcut icon" href="/hexo-blog/img/favicon1.png"><link rel="canonical" href="https://gagelv.github.io/hexo-blog/2023/03/19/%E6%A0%A1%E6%8B%9B%E5%85%AB%E8%82%A1%E5%9F%BA%E7%A1%80%EF%BC%881%EF%BC%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/hexo-blog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/hexo-blog/',
+  algolia: undefined,
+  localSearch: {"path":"/hexo-blog/search.json","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '校招八股基础（1）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-19 20:00:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/hexo-blog/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/hexo-blog/archives/"><div class="headline">文章</div><div class="length-num">22</div></a><a href="/hexo-blog/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/hexo-blog/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexo-blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://w.wallhaven.cc/full/yx/wallhaven-yxqlzg.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/hexo-blog/">JoeGoodyLv</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexo-blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">校招八股基础（1）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-19T12:00:28.173Z" title="发表于 2023-03-19 20:00:28">2023-03-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-19T12:00:03.799Z" title="更新于 2023-03-19 20:00:03">2023-03-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/hexo-blog/categories/%E6%89%BE%E5%B7%A5%E4%BD%9C/">找工作</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">11.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>36分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="校招八股基础（1）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>校招八股基础（1）</h1>
+<blockquote>
+<div class="timeline  blue"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>更新时间线</p>
+</div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2023-03-19</p>
+</div></div><div class='timeline-item-content'><blockquote>
+<p>第一次提交</p>
+</blockquote>
+</div></div></div>
+</blockquote>
+<h2 id="MySQL">MySQL</h2>
+<h3 id="数据库基础">数据库基础</h3>
+<h4 id="1-数据库范式是什么？">1. 数据库范式是什么？</h4>
+<ul>
+<li>1NF(第一范式)：属性不可再分。字段不可再分。</li>
+<li>2NF(第二范式)：1NF 的基础之上，消除了非主属性对于主键的部分函数依赖。有主键，非主键字段依赖于主键。</li>
+<li>3NF(第三范式)：3NF 在 2NF 的基础之上，消除了非主属性对于主键的传递函数依赖 。非主键字段不能相互依赖。</li>
+</ul>
+<h4 id="2-drop、delete-与-truncate-区别？">2. drop、delete 与 truncate 区别？</h4>
+<ul>
+<li><code>drop</code>用于删除表；<code>delete</code>用于删除某一行或者全部数据；<code>truncate</code>用于清空数据，再插入数据的时候自增长 id 又从 1 开始。</li>
+<li><code>drop</code>和<code>truncate</code>属于数据定义语言（DDL）语句，操作立即生效，不支持事务，不会回滚，操作不会触发trigger；<code>delete</code>属于数据操作语言（DML）语句，支持事务，事务提交后才生效。</li>
+</ul>
+<h4 id="3-关系型数据库-非关系型数据库的区别？">3. 关系型数据库&amp;非关系型数据库的区别？</h4>
+<p>关系型数据库（RDBMS，Relational Database Management System）就是一种建立在关系模型的基础上的数据库。关系模型表明了数据库中所存储的数据之间的联系（一对一、一对多、多对多）。</p>
+<p>NoSQL（Not Only SQL 的缩写）泛指非关系型的数据库，主要针对的是键值、文档以及图形类型数据存储。</p>
+<ul>
+<li>关系型数据库的优点
+<ul>
+<li>容易理解。因为它采用了关系模型来组织数据。</li>
+<li>可以保持数据的一致性。</li>
+<li>数据更新的开销比较小。</li>
+<li>支持复杂查询（带where子句的查询）</li>
+</ul>
+</li>
+<li>非关系型数据库的优点
+<ul>
+<li>不需要经过SQL层的解析，读写效率高。</li>
+<li>基于键值对，数据的扩展性很好。</li>
+<li>可以支持多种类型数据的存储，如图片，文档等等。</li>
+</ul>
+</li>
+</ul>
+<h3 id="MySQL基础-2">MySQL基础</h3>
+<h4 id="1-MySQL是如何执行一条SQL的？">1. MySQL是如何执行一条SQL的？</h4>
+<ol>
+<li>客户端和 MySQL 服务器通过连接器建立连接；客户端向 MySQL 服务器发送一条查询请求。</li>
+<li>MySQL 服务器首先检查查询缓存，如果命中缓存，则立刻返回结果。否则进入下一阶段。MySQL 8.0 版本已经把查询缓存模块删掉了。</li>
+<li>MySQL 服务器 通过分析器进行 SQL 分析：语法分析、词法分析。</li>
+<li>MySQL 服务器用优化器生成对应的执行计划。</li>
+<li>MySQL 服务器使用执行器根据执行计划，调用存储引擎的 API 来执行查询。</li>
+<li>从存储引擎将结果返回给客户端，同时缓存查询结果。</li>
+</ol>
+<h4 id="2-MySQL的内部架构？">2. MySQL的内部架构？</h4>
+<p>大体来说，MySQL 可以分为 <strong>服务层</strong>和<strong>存储引擎层</strong>两部分。</p>
+<p><strong>服务层包括连接器、查询缓存、分析器、优化器、执行器等</strong>，涵盖MySQL的大多数核心服务功能。</p>
+<p><strong>存储引擎层负责数据的存储和提取</strong>。其架构模式是插件式的。MySQL5.5版本前的默认存储引擎是MyISAM，之后的默认存储引擎是InnoDB。</p>
+<h4 id="3-视图的作用是什么？可以更改吗？">3.  视图的作用是什么？可以更改吗？</h4>
+<p>视图是虚拟的表，使用视图可以简化复杂的 sql 操作，隐藏具体的细节，保护数据；视图创建后，可以使用与表相同的方式利用它们。视图不能被索引，也不能有关联的触发器或默认值，如果视图本身内有order by 则对视图再次order by将被覆盖。</p>
+<h4 id="4-MySQL中的char和varchar的区别有哪些？">4. MySQL中的char和varchar的区别有哪些？</h4>
+<ul>
+<li>char的长度不可变，用空格填充到指定长度大小，varchar长度是可变的。</li>
+<li>char存取速度更快。</li>
+<li>char的存储方式是：英文字符占一个字节，一个汉字占两个字节；varchar的存储方式是：英文字符占2个字节，汉字也占两个字节。</li>
+</ul>
+<h3 id="MySQL存储引擎">MySQL存储引擎</h3>
+<h4 id="1-MySQL-支持哪些存储引擎？默认使用哪个？">1. MySQL 支持哪些存储引擎？默认使用哪个？</h4>
+<p>MySQL支持MyISAM，InnoDB，Memory等存储引擎。</p>
+<p>MySQL5.5版本之前，默认存储引擎是MyISAM，5.5版本之后，默认存储引擎是InnoDB。</p>
+<p>MySQL 存储引擎采用的是 <strong>插件式架构</strong>，支持多种存储引擎，<strong>存储引擎是基于表的，而不是数据库。</strong></p>
+<h4 id="2-MyISAM-和-InnoDB-有什么区别？">2. MyISAM 和 InnoDB 有什么区别？</h4>
+<ol>
+<li>MyISAM只支持到表级锁，而InnoDB支持行级锁和表级锁。</li>
+<li>MyISAM不支持事务，InnoDB支持事务。</li>
+<li>MyISAM不支持外键，InnoDB支持外键。</li>
+<li>MyISAM不支持数据库异常崩溃后的安全恢复，而InnoDB支持。</li>
+<li>MyISAM和InnoDB都使用B+树作为索引结构，但是实现方式不同。InnoDB中，数据文件本身就是索引文件，而MyISAM索引文件和数据文件是分离的。</li>
+<li>InnoDB 的性能比 MyISAM 更强大。</li>
+</ol>
+<h4 id="3-InnoDB为什么建议使用自增id作为主键？">3. InnoDB为什么建议使用自增id作为主键？</h4>
+<p>如果表使用自增主键，那每次插入新的记录，记录都会顺序添加到当前索引节点的后续位置，当一页写满，就会自动开辟新的页。如果使用非自增主键，由于每次插入主键的值近乎随机，因此每次新纪录都要被插到现有索引页的中间某个位置，频繁的移动、分页操作造成了大量的碎片，得到不够紧凑的索引结构，后续还得通过optimize table来重建表并优化填充页面。</p>
+<h3 id="MySQL索引-2">MySQL索引</h3>
+<h4 id="1-MyISAM和InnoDB实现B-树索引的区别是什么？">1. MyISAM和InnoDB实现B+树索引的区别是什么？</h4>
+<ul>
+<li>MyISAM，其索引文件和数据文件是分开的，B+树的叶子节点的data域存放的是数据记录的地址，在索引检索的时候，先获取到data域上的地址，再根据地址去读取相应的数据记录；</li>
+<li>InnoDB，其数据文件本身就是索引文件，如果主键作为索引，树的叶子节点保存了完整的数据数据记录，被称为“聚簇索引”；而其他非主键做索引的叫做辅助索引，叶子节点的数据域上记录主键的值。</li>
+</ul>
+<h4 id="2-索引采用B-树而不用B树，主要原因是什么？">2. 索引采用B+树而不用B树，主要原因是什么？</h4>
+<p>B+树只需要遍历叶子节点就可以实现整棵树的遍历，而且在数据库中基于范围的查询是非常频繁的，而B树只能中序遍历所有节点，效率太低。</p>
+<h4 id="3-MySQL中的索引类型？">3. MySQL中的索引类型？</h4>
+<ul>
+<li>全文索引，MyISAM支持，MySQL5.6后才支持的。</li>
+<li>哈希索引。单值查询很高效，但是无法进行范围查询和排序。</li>
+<li>B+树索引。默认的。</li>
+</ul>
+<h4 id="4-覆盖索引是什么？">4. 覆盖索引是什么？</h4>
+<p>如果一个索引包含所有要查询的字段的值，就称之为“覆盖索引”。</p>
+<h4 id="5-聚簇索引和非聚簇索引？">5.聚簇索引和非聚簇索引？</h4>
+<ul>
+<li>聚簇索引的叶子节点就是数据节点，InnoDB中的主键索引就属于聚簇索引。</li>
+<li>非聚簇索引的叶子节点并不存储数据而是存储数据的指针或者key，在InnoDB中，辅助索引就属于非聚簇索引，叶子节点存储的就是主键，根据主键再回表查询数据。</li>
+</ul>
+<h4 id="6-使用索引的注意事项？">6. 使用索引的注意事项？</h4>
+<p>导致索引失效而进行全表扫描：</p>
+<ul>
+<li>不要在列上使用函数或进行运算，会导致索引失效而进行全表扫描。</li>
+<li>避免使用<code>!=</code>，<code>not in</code>等否定操作符。</li>
+<li>隐式转换。</li>
+<li><code>%like</code>的查询导致索引失效。</li>
+</ul>
+<p>其他：</p>
+<ul>
+<li>不要创建多个单列索引，而可以使用联合索引。事实上，MySQL 只能使用一个单列索引。</li>
+<li>复合索引的最左前缀原则。</li>
+<li>使用覆盖索引进行优化。</li>
+<li>索引不会包含有NULL值的列。</li>
+</ul>
+<h4 id="7-MySQL的索引类型">7. MySQL的索引类型</h4>
+<ul>
+<li>主键索引。</li>
+<li>唯一索引。</li>
+<li>组合索引。</li>
+<li>普通索引。</li>
+<li>全文索引。</li>
+<li>覆盖索引。</li>
+<li>聚簇索引。</li>
+</ul>
+<h3 id="MySQL事务-2">MySQL事务</h3>
+<h4 id="1-何谓事务？">1. 何谓事务？</h4>
+<p><strong>事务是逻辑上的一组操作，要么都执行，要么都不执行。</strong></p>
+<h4 id="2-事务的ACID特性？">2. 事务的ACID特性？</h4>
+<ul>
+<li><strong>原子性</strong>（<code>Atomicity</code>） ： 事务是最小的执行单位，不允许分割。事务的原子性确保动作要么全部都完成，要么都不做；</li>
+<li><strong>一致性</strong>（<code>Consistency</code>）： 执行事务前后，数据保持一致，例如转账业务中，无论事务是否成功，转账者和收款人的总额应该是不变的；</li>
+<li><strong>隔离性</strong>（<code>Isolation</code>）： 并发访问数据库时，一个用户的事务不被其他事务所干扰，各并发事务之间数据库是独立的；</li>
+<li><strong>持久性</strong>（<code>Durability</code>）： 一个事务被提交之后。它对数据库中数据的改变是持久的，即使数据库发生故障也不应该对其有任何影响。</li>
+</ul>
+<p><strong>只有保证了事务的持久性、原子性、隔离性之后，一致性才能得到保障。也就是说 A、I、D 是手段，C 是目的！</strong></p>
+<h4 id="3-MySQL并发事务带来了哪些问题？">3. MySQL并发事务带来了哪些问题？</h4>
+<ul>
+<li><strong>丢失修改</strong>：两个事务先后修改了数据，前一个事务的修改被覆盖。</li>
+<li><strong>脏读</strong>：一个事务读取到了另一个事务未被提交的数据。</li>
+<li><strong>不可重复读</strong>：一个事务多次读取同一数据结果不同。</li>
+<li><strong>幻读</strong>：一个事务多次读取某个数据范围结果不同。</li>
+</ul>
+<h4 id="4-SQL标准的事务隔离级别有哪些？MySQL-InnoDB的默认隔离级别？">4. SQL标准的事务隔离级别有哪些？MySQL InnoDB的默认隔离级别？</h4>
+<p>共有四个隔离级别。</p>
+<ul>
+<li><strong>读未提交（Read-Uncommitted）</strong>：允许读取未提交的数据，可能导致脏读、不可重复读和幻读问题。</li>
+<li><strong>读已提交（Read-Committed）</strong>：允许读取已提交的数据，可以避免脏读，但可能导致不可重复读和幻读问题。</li>
+<li><strong>可重复读（Repeatable-read）</strong>：对同一数据的多次读取结果都是一样的，解决了不可重复读的问题，但是可能产生幻读。</li>
+<li><strong>可序列化（Serializable）</strong>：最高的隔离级别，所有事务串行执行。完全防止幻读。</li>
+</ul>
+<p>MySQL InnoDB的默认隔离级别是可重复读。</p>
+<h4 id="5-MySQL的事务隔离级别是如何实现的？">5. MySQL的事务隔离级别是如何实现的？</h4>
+<p>MySQL的隔离级别通过锁和MVCC（多版本并发控制）机制来共同实现的。</p>
+<h3 id="MySQL锁-2">MySQL锁</h3>
+<h4 id="1-表级锁和行级锁了解吗？有什么区别？">1. 表级锁和行级锁了解吗？有什么区别？</h4>
+<ul>
+<li><strong>表级锁</strong>是针对非索引字段加的锁，对当前操作的整张表加锁，实现简单，加锁快，不会出现死锁。但是锁冲突概率最高，高并发下效率极低。表级锁和存储引擎无关，MyISAM和InnoDB都支持表级锁。</li>
+<li><strong>行级锁</strong>是针对索引字段加的锁，只针对当前操作的行记录加锁。行级锁能大大减少数据库操作的冲突。加锁粒度最小，并发度高，但加锁的开销也大，加锁慢，会出现死锁。行级锁和存储引擎有关。</li>
+</ul>
+<p>InnoDB 的行锁是针对索引字段加的锁，表级锁是针对非索引字段加的锁。当我们执行 <code>UPDATE</code>、<code>DELETE</code> 语句时，如果 <code>WHERE</code>条件中字段没有命中唯一索引或者索引失效的话，就会导致扫描全表对表中的所有行记录进行加锁。</p>
+<h4 id="2-InnoDB有哪几类行锁？">2. InnoDB有哪几类行锁？</h4>
+<p><strong>InnoDB支持三种行锁定方式：记录锁，间隙锁和临键锁。</strong></p>
+<ul>
+<li>记录锁（Record Lock）：属于单个行记录上的锁。</li>
+<li>间隙锁（Gap Lock）：锁定一个范围，不包括记录本身。</li>
+<li>临键锁（Next-Key Lock）：Record Lock+Gap Lock的组合，锁定一个范围，包括记录本身，主要目的是为了解决幻读问题。</li>
+</ul>
+<p>在InnoDB的可重复读默认隔离级别下，行锁默认使用临键锁。</p>
+<h4 id="3-共享锁和排他锁了解吗？">3. 共享锁和排他锁了解吗？</h4>
+<p>不论是表级锁还是行级锁，都存在共享锁（Share Lock, S锁）和排他锁（Exclusive Lock, X锁）这两类：</p>
+<ul>
+<li>共享锁：也叫读锁，事务在读取记录的时候获取共享锁，允许多个事务同时获取。</li>
+<li>排他锁：也叫写锁，事务在修改记录的时候获取排他锁，不允许多个事务同时获取。</li>
+</ul>
+<p>读读兼容，读写、写写不兼容。</p>
+<h4 id="4-意向锁是什么？有什么作用？">4. 意向锁是什么？有什么作用？</h4>
+<p><strong>意向锁是为了帮助我们快速判断表中是否有记录被加锁</strong>。如果没有意向锁，就需要一行一行的遍历，性能太差。</p>
+<p>意向锁是表级锁，也分为意向共享锁和意向排他锁。</p>
+<p>当事务对表中的某些记录加共享锁之前，必须先取得该表的意向共享锁；当事务对表中的某些记录加排他锁之前，必须首先获得该表的意向排他锁。</p>
+<p>意向锁由InnoDB自己维护，无需用户手动操作。</p>
+<h4 id="5-MySQL有哪些锁？">5. MySQL有哪些锁？</h4>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303111626712.png" alt="img"></p>
+<h3 id="MySQL性能优化-2">MySQL性能优化</h3>
+<h4 id="1-能用MySQL直接存储文件或图片吗？">1. 能用MySQL直接存储文件或图片吗？</h4>
+<p>可以，MySQL提供了Blob存储二进制数据。但是在数据库中存储大文件会严重影响数据库的性能，因此一般使用第三方的文件存储服务，如阿里云OSS，而数据库存储文件的地址。</p>
+<h4 id="2-MySQL如何存储IP地址？">2. MySQL如何存储IP地址？</h4>
+<p>可以将IP地址转换成整型数据来存储，MySQL提供了将IP地址和无符号整型相互转化的方法。</p>
+<h4 id="3-一道场景题：假如你所在的公司选择MySQL数据库作数据存储，一天五万条以上的增量，预计运维三年，你有哪些优化手段？">3. 一道场景题：假如你所在的公司选择MySQL数据库作数据存储，一天五万条以上的增量，预计运维三年，你有哪些优化手段？</h4>
+<ul>
+<li>设计良好的数据库结构，允许部分数据冗余，尽量避免join查询，提高效率。</li>
+<li>选择合适的表字段数据类型和存储引擎，适当的添加索引。</li>
+<li>MySQL库主从读写分离。</li>
+<li>找规律分表，减少单表中的数据量提高查询速度。</li>
+<li>添加缓存机制，比如Memcached，Apc等。</li>
+<li>不经常改动的页面，生成静态页面。</li>
+<li>书写高效率的SQL。比如 SELECT * FROM TABEL 改为 SELECT field_1, field_2, field_3 FROM TABLE。</li>
+</ul>
+<h2 id="Redis">Redis</h2>
+<h3 id="1-Redis是什么？">1. Redis是什么？</h3>
+<p>Redis(<strong>Re</strong>mote <strong>Di</strong>ctionary <strong>S</strong>erver)，远程字典服务，是C语言开发的一个开源的高性能的键值对数据库，属于NoSQL数据库，与传统数据库不同的是 Redis 的数据是存在内存中的，读写速度非常快，被广泛应用于缓存方向。</p>
+<p>为了满足不同的业务场景，Redis 内置了多种数据类型实现（比如 String、Hash、Sorted Set、Bitmap）。并且，Redis 还支持事务 、持久化、Lua 脚本、多种开箱即用的集群方案。</p>
+<h3 id="2-Redis的常用数据结构和使用场景？">2. Redis的常用数据结构和使用场景？</h3>
+<ul>
+<li><strong>5 种基础数据结构</strong> ：String（字符串）、List（列表）、Set（集合）、Hash（散列）、Zset（有序集合）。</li>
+<li><strong>3 种特殊数据结构</strong> ：HyperLogLogs（基数统计）、Bitmap （位存储）、Geospatial (地理位置)。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>简介</th>
+<th>特性</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String（字符串）</td>
+<td>基于C语言字符串构建的简单动态字符串（Simple Dynamic String, SDS）</td>
+<td>O(1)复杂度的长度获取；二进制安全；避免缓冲区溢出；减少内存分配次数</td>
+<td>常规数据（比如 session、token、序列化后的对象）的缓存；计数比如用户单位时间的请求数（简单限流可以用到）、页面单位时间的访问数。</td>
+</tr>
+<tr>
+<td>List（链表）</td>
+<td>双端链表</td>
+<td>双端链表：每个节点都有一个指向前置节点和后置节点的指针；无环链表：链表表头的前置节点和表尾节点的后置节点都指向NULL</td>
+<td></td>
+</tr>
+<tr>
+<td>Hash（字典）</td>
+<td>键值对</td>
+<td>Redis使用MurmurHash2算法来计算键的哈希值；哈希表使用链地址法来解决哈希冲突</td>
+<td></td>
+</tr>
+<tr>
+<td>Set（集合）</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Sort Set（有序集合）</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-有MySQL不就够用了吗？为什么要用Redis这种新的数据库？">3. 有MySQL不就够用了吗？为什么要用Redis这种新的数据库？</h3>
+<ul>
+<li>Redis具有高性能。对于频繁访问且不会经常改变的数据，用户第一次访问数据库后将其存在Redis中，下一次再访问这些数据就可以直接从缓存中获取，速度相当快。</li>
+<li>Redis具有高并发。直接操作缓存能够承受的数据库请求数量是远远大于直接访问数据库的。所以我们可以考虑把数据库中的部分数据转移到缓存中去，这样用户的一部分请求会直接到缓存这里而不用经过数据库。进而，我们也就提高了系统整体的并发。</li>
+</ul>
+<h3 id="4-使用Redis的好处有哪些？">4. 使用Redis的好处有哪些？</h3>
+<ol>
+<li>访问速度快。因为数据存在内存中，查找和操作的时间复杂度都是O(1)。</li>
+<li>支持多种数据结构，如String，List，Set，Sorted Set，Hash等。</li>
+<li>支持事务。<strong>Redis 事务提供了一种将多个命令请求打包的功能。然后，再按顺序执行打包的所有命令，并且不会被中途打断。</strong></li>
+<li>特性丰富。Redis可用于缓存，消息，按Key设置过期时间，过期后自动删除。</li>
+</ol>
+<h3 id="5-Redis设置过期时间的方案？">5. Redis设置过期时间的方案？</h3>
+<ol>
+<li>定期删除：Redis默认每隔 100ms就<strong>随机抽取</strong>（key数量太多的话，一一遍历CPU负载扛不住）一些设置了过期时间的key，检查其是否过期，过期了就删除。</li>
+<li>惰性删除：某个key过期后不会被马上删除，而是等到下次被使用的时候，才会被检查是否过期，再删除。缺点是浪费内存。</li>
+</ol>
+<p>上述两种方案，如果定期删除没删除key，也没有即时去请求key，这样过期key一直保留导致内存越来越高。于是Redis采用一个内存淘汰机制来确保数据一定会被删除。主要有以下几种方案：</p>
+<ul>
+<li><strong>volatile-lru</strong>：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰 。</li>
+<li><strong>volatile-ttl</strong>：从已设置过期时间的数据集（server.db[i].expires）中挑选将要过期的数据淘汰 。</li>
+<li><strong>volatile-random</strong>：从已设置过期时间的数据集（server.db[i].expires）中任意选择数据淘汰。</li>
+</ul>
+<h3 id="6-缓存雪崩，缓存穿透，缓存预热，缓存击穿？">6. 缓存雪崩，缓存穿透，缓存预热，缓存击穿？</h3>
+<ul>
+<li>缓存雪崩：缓存同一时间大面积失效，导致原本访问缓存的请求都落到了数据库上，造成数据库短时间内大量请求而崩掉。</li>
+<li>缓存穿透：请求缓存中不存在的数据，导致所有请求都落到数据库上，造成数据库短时间内大量请求而崩掉。</li>
+<li>缓存预热：系统上线后，将相关的缓存数据直接加载到缓存系统。这样就可以避免在用户请求的时候，先查询数据库，然后再将数据缓存的问题。</li>
+<li>缓存击穿：指一个key非常热点，在不停的扛着大并发，大并发集中对这一个点进行访问，当这个key在失效的瞬间，持续的大并发就穿破缓存，直接请求数据库，就像在一个屏障上凿开了一个洞。</li>
+</ul>
+<h3 id="7-Redis持久化机制？">7. Redis持久化机制？</h3>
+<p>Redis是一个支持持久化的内存数据库，通过持久化机制把内存中的数据同步到硬盘文件来保证数据持久化，当Redis重启后通过把硬盘文件重新加载到内存，就能达到恢复数据的目的。</p>
+<p>有两种持久化机制：RDB（快照）持久化和AOF（只追加文件）持久化。快照持久化是Redis默认采用的持久化方式。Redis可以通过创建快照来获得存储在内存里面的数据在某个时间点上的副本。与快照持久化相比，AOF<strong>持久化的实时性更好</strong>，因此已成为主流的持久化方案。Redis 4.0 开始支持 RDB 和 AOF 的混合持久化。</p>
+<h3 id="8-Redis为什么这么快？">8. Redis为什么这么快？</h3>
+<ol>
+<li>Redis基于内存，内存的访问速度是磁盘的上千倍。</li>
+<li>Redis的单线程事件循环和I/O多路复用，十分高效。</li>
+<li>Redis内置了多种优化过后的数据结构实现，性能非常高。</li>
+</ol>
+<h3 id="9-Redis除了做缓存，还可以做什么？">9. Redis除了做缓存，还可以做什么？</h3>
+<ul>
+<li>分布式锁：通过 Redis 来做分布式锁是一种比较常见的方式。通常情况下，我们都是基于 Redisson 来实现分布式锁。</li>
+<li>消息队列：Redis 自带的 list 数据结构可以作为一个简单的队列使用。Redis 5.0 中增加的 Stream 类型的数据结构更加适合用来做消息队列。</li>
+</ul>
+<h3 id="10-Redis线程模型">10. Redis线程模型</h3>
+<blockquote>
+<p>对于读写命令来说，Redis 一直是单线程模型。不过，在 Redis 4.0 版本之后引入了多线程来执行一些大键值对的异步删除操作， Redis 6.0 版本之后引入了多线程来处理网络请求（提高网络 IO 读写性能）</p>
+</blockquote>
+<p>Redis 通过 <strong>IO 多路复用程序</strong> 来监听来自客户端的大量连接，它会将感兴趣的事件及类型（读、写）注册到内核中并监听每个事件是否发生。</p>
+<p><strong>那 Redis6.0 之前为什么不使用多线程？</strong> 我觉得主要原因有 3 点：</p>
+<ul>
+<li>单线程编程容易并且更容易维护；</li>
+<li>Redis 的性能瓶颈不在 CPU ，主要在内存和网络；</li>
+<li>多线程就会存在死锁、线程上下文切换等问题，甚至会影响性能。</li>
+</ul>
+<p><strong>Redis6.0 引入多线程主要是为了提高网络 IO 读写性能</strong>，因为这个算是 Redis 中的一个性能瓶颈（Redis 的瓶颈主要受限于内存和网络）。</p>
+<p>虽然，Redis6.0 引入了多线程，但是 Redis 的多线程只是在网络数据的读写这类耗时操作上使用了，执行命令仍然是单线程顺序执行。因此，你也不需要担心线程安全问题。</p>
+<p>Redis6.0 的多线程默认是禁用的，只使用主线程。</p>
+<h2 id="MongoDB">MongoDB</h2>
+<h3 id="1-MongoDB是什么？">1. MongoDB是什么？</h3>
+<p>MongoDB是一个基于<strong>分布式文件存储</strong>的开源NoSQL 数据库系统，由<strong>C++<strong>编写。MongoDB提供了</strong>面向文档</strong>的存储方式，操作起来比较简单和容易。</p>
+<h3 id="2-MongoDB的存储结构？">2. MongoDB的存储结构？</h3>
+<ul>
+<li>文档：MongoDB中最基本的单元，由BSON键值对组成，类似于关系型数据库中的行。</li>
+<li>集合：一个集合可以包含多个文档，类似于关系型数据库中的表。</li>
+<li>数据库：一个数据库可以包含多个集合，可以在MongoDB中创建多个数据库，类似于关系型数据库中的数据库。</li>
+</ul>
+<p><strong>SQL 与 MongoDB 常见术语对比</strong> ：</p>
+<table>
+<thead>
+<tr>
+<th>SQL</th>
+<th>MongoDB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表（Table）</td>
+<td>集合（Collection）</td>
+</tr>
+<tr>
+<td>行（Row）</td>
+<td>文档（Document）</td>
+</tr>
+<tr>
+<td>列（Col）</td>
+<td>字段（Field）</td>
+</tr>
+<tr>
+<td>主键（Primary Key）</td>
+<td>对象 ID（Objectid）</td>
+</tr>
+<tr>
+<td>索引（Index）</td>
+<td>索引（Index）</td>
+</tr>
+<tr>
+<td>嵌套表（Embeded Table）</td>
+<td>嵌入式文档（Embeded Document）</td>
+</tr>
+<tr>
+<td>数组（Array）</td>
+<td>数组（Array）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-MongoDB的特点？">3. MongoDB的特点？</h3>
+<ul>
+<li><strong>数据记录被存储为文档</strong>。MongoDB 中的记录就是一个 BSON 文档，它是由键值对组成的数据结构，类似于 JSON 对象，是 MongoDB 中的基本数据单元。</li>
+<li>**模式自由。**集合的概念类似 MySQL 里的表，但它不需要定义任何模式，能够用更少的数据对象表现复杂的领域模型对象。</li>
+<li>**支持多种查询方式。**MongoDB 查询 API 支持读写操作 (CRUD)以及数据聚合、文本搜索和地理空间查询。</li>
+<li>**支持ACID事务。**NoSQL 数据库通常不支持事务，为了可扩展和高性能进行了权衡。然而MongoDB 就支持事务。</li>
+<li>**高效的二进制存储。**存储在集合中的文档，是以键值对的形式存在的。键用于唯一标识一个文档，一般是 ObjectId 类型，值是以 BSON 形式存在的。BSON = Binary JSON， 是在 JSON 基础上加了一些类型及元数据描述的格式。</li>
+<li><strong>自带数据压缩功能。</strong></li>
+<li><strong>支持多种类型的索引。</strong></li>
+<li><strong>支持存储大文件。</strong></li>
+</ul>
+<h3 id="4-MongoDB的存储引擎">4.MongoDB的存储引擎</h3>
+<p>与 MySQL 一样，MongoDB 采用的也是 <strong>插件式的存储引擎架构</strong>。</p>
+<p>现在主要有下面这两种存储引擎：</p>
+<ul>
+<li><strong>WiredTiger 存储引擎</strong> ：自 MongoDB 3.2 以后，默认的存储引擎为 WiredTiger 存储引擎 。非常适合大多数工作负载，建议用于新部署。WiredTiger 提供文档级并发模型、检查点和数据压缩等功能。</li>
+<li><strong>In-Memory 存储引擎</strong> ：In-Memory 存储引擎在 MongoDB Enterprise 中可用。它不是将文档存储在磁盘上，而是将它们保留在内存中以获得更可预测的数据延迟。</li>
+</ul>
+<p>MongoDB 在使用WiredTiger 作为存储引擎时，默认使用的是 B+ 树。</p>
+<h2 id="Spring-Spring-Boot">Spring&amp;Spring Boot</h2>
+<h3 id="Spring基础">Spring基础</h3>
+<h4 id="1-Spring-Spring-MVC-Spring-Boot三者之间的关系？">1. Spring&amp;Spring MVC&amp;Spring Boot三者之间的关系？</h4>
+<ul>
+<li>Spring是一款开源的Java轻量级开发框架，提供了基于IoC和AOP的支持，用于构建企业级应用。Spring包含很多种模块，包括Spring Core，Spring Context，Spring Web等，不同模块提供不同的功能</li>
+<li>Spring MVC 是Spring 框架的一个重要模块，是基于MVC设计模式的Web框架，用于构架Web应用程序。它提供了控制器、视图解析器、数据绑定等功能，使得开发Web应用变得更加简单。</li>
+<li>Spring Boot是基于Spring框架的一个开发框架，用于快速构建独立的生产级别的Spring应用程序。它通过自动配置和约定优于配置的方式，简化了Spring应用程序的配置和开发过程。它还集成了很多常用的第三方库和工具，例如Spring Data，Spring Security等，可以极大地提高开发效率。</li>
+</ul>
+<h4 id="2-Spring包含的模块">2. Spring包含的模块</h4>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303111622735.png" alt="Spring5.x主要模块"></p>
+<ul>
+<li>Core Container：Spring 框架的核心模块，主要提供 IoC 依赖注入功能的支持。
+<ul>
+<li>Spring-core：Spring框架基本的核心工具类</li>
+<li>Spring-bean：提供对bean的创建、配置和管理等功能的支持。</li>
+</ul>
+</li>
+<li>AOP
+<ul>
+<li>Spring-aop：提供了面向切面的编程实现。</li>
+</ul>
+</li>
+<li>Data Access/Integration
+<ul>
+<li>Spring-jdbc：提供了对数据库访问的抽象JDBC。</li>
+<li>Spring-orm：提供对Hibernate，JPA，MyBatis等ORM框架的支持。</li>
+</ul>
+</li>
+<li>Spring Web
+<ul>
+<li>spring-web：对Web功能的实现提供一些最基础的支持。</li>
+<li>spring-webmvc：提供对Spring MVC的实现。</li>
+<li>spring-websocket：提供了对WebSocket的支持。</li>
+</ul>
+</li>
+<li>Sprint Test</li>
+</ul>
+<p>Spring 团队提倡测试驱动开发（TDD）。有了控制反转 (IoC)的帮助，单元测试和集成测试变得更简单。</p>
+<h4 id="3-Spring框架中用到了那些设计模式？">3. Spring框架中用到了那些设计模式？</h4>
+<ul>
+<li><strong>控制反转(IoC)和依赖注入(DI)</strong>：Spring 框架最为核心的设计模式，通过依赖注入实现对象的解耦和松耦合，使得对象之间的关系更加灵活。</li>
+<li><strong>单例模式</strong>：Spring 中的Bean默认都是单例的。</li>
+<li><strong>代理模式</strong>：Spring AOP基于动态代理实现。</li>
+<li><strong>工厂模式</strong>：Spring使用工厂模式通过BeanFactory和ApplicationContext创建并管理Bean对象。</li>
+<li><strong>模板方法模式</strong>：Spring中的<code>jdbcTemplate</code>等以Template结尾的类使用了模板方法模式。</li>
+<li><strong>责任链模式</strong>：Spring中的过滤器和拦截器使用了责任链模式，多个过滤器和拦截器按照一定顺序执行，每个过滤器和拦截器可以拦截请求或者响应并做出相应的处理。</li>
+<li><strong>适配器模式</strong> ：Spring MVC 框架中的 HandlerAdapter 就是一个适配器模式的实现。</li>
+</ul>
+<h4 id="4-Spring-Spring-Boot常用注解有哪些？">4. Spring@Spring Boot常用注解有哪些？</h4>
+<ol>
+<li>
+<p><code>SpringBootApplication</code>：标识主类</p>
+<blockquote>
+<p><code>@Configuration</code>、<code>@EnableAutoConfiguration</code>、<code>@ComponentScan</code> 注解的集合。</p>
+</blockquote>
+</li>
+<li>
+<p>Spring Bean相关</p>
+<ul>
+<li><code>@Autowired</code>、<code>@Resource</code>：bean注入</li>
+<li><code>@Component</code>,<code>@Repository</code>,<code>@Service</code>, <code>@Controller</code>：将类声明为Bean的注解</li>
+<li><code>RestController</code>：<code>@Controller</code>和<code>@ResponseBody</code>的合集，是 REST 风格的控制器</li>
+<li><code>Scope</code>：声明Spring Bean 的作用域</li>
+<li><code>@Configuration</code>：声明配置类</li>
+</ul>
+</li>
+<li>
+<p>处理常见的HTTP请求类型</p>
+<ul>
+<li><code>GetMapping</code>、<code>@PostMapping</code>、<code>@PutMapping</code>、<code>@DeleteMapping</code>：4种请求类型（Patch用的少）</li>
+</ul>
+</li>
+<li>
+<p>前后端传值</p>
+<ul>
+<li>
+<p><code>PathVariable</code>、<code>RequestParam</code>、<code>RequestBody</code>：获取路径参数、获取查询参数、获取请求body。</p>
+<blockquote>
+<p><strong>一个请求方法只可以有一个<code>@RequestBody</code>，但是可以有多个<code>@RequestParam</code>和<code>@PathVariable</code></strong>。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>读取配置信息</p>
+<ul>
+<li><code>@Value</code>：使用 <code>@Value(&quot;$&#123;property&#125;&quot;)</code> 读取比较简单的配置信息</li>
+<li><code>@ConfigurationProperties</code>：通过<code>@ConfigurationProperties</code>读取配置信息并与 bean 绑定。</li>
+</ul>
+</li>
+<li>
+<p>参数校验</p>
+<ul>
+<li><code>@NotEmpty</code> 被注释的字符串的不能为 null 也不能为空</li>
+<li><code>@NotBlank</code> 被注释的字符串非 null，并且必须包含一个非空白字符</li>
+<li><code>@Null</code> 被注释的元素必须为 null</li>
+<li><code>@NotNull</code> 被注释的元素必须不为 null</li>
+</ul>
+</li>
+<li>
+<p>全局处理Controll层异常</p>
+<ul>
+<li><code>@ControllerAdvice</code> :注解定义全局异常处理类</li>
+<li><code>@ExceptionHandler</code> :注解声明异常处理方法</li>
+</ul>
+</li>
+<li>
+<p>事务</p>
+<ul>
+<li><code>Transactional</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="Spring-IoC">Spring IoC</h3>
+<h4 id="1-谈谈对Spring-IoC的了解">1. 谈谈对Spring IoC的了解</h4>
+<p><strong>IoC（Inversion of Control：控制反转）</strong>，是一种设计思想而非具体的技术实现。IoC的思想就是将原本在程序中手动创建对象的控制权，交给Spring框架来管理。</p>
+<p><strong>控制反转</strong>：</p>
+<ul>
+<li><strong>控制</strong>：指的是对象创建的权利。</li>
+<li><strong>反转</strong>：控制权交给外部环境（Spring 框架、IoC容器）。</li>
+</ul>
+<p>将对象之间的相互依赖关系交给 IoC 容器来管理，并由 IoC 容器完成对象的注入。这样可以很大程度上简化应用的开发，把应用从复杂的依赖关系中解放出来。 IoC 容器就像是一个工厂一样，当我们需要创建一个对象的时候，只需要配置好配置文件/注解即可，完全不用考虑对象是如何被创建出来的。</p>
+<p>在 Spring 中， IoC 容器是 Spring 用来实现 IoC 的载体， IoC 容器实际上就是个 Map（key，value），Map 中存放的是各种对象。</p>
+<h4 id="2-Spring-Bean是什么？">2. Spring Bean是什么？</h4>
+<p>简单来说，Bean代指的是那些被IoC容器所管理的对象。</p>
+<p>我们告诉IoC容器帮助我们管理哪些对象，这个是通过配置元数据来定义的。配置元数据可以是XML文件、注解或者Java配置类。</p>
+<h4 id="3-将一个类声明为Bean的注解有哪些？">3. 将一个类声明为Bean的注解有哪些？</h4>
+<ul>
+<li><code>@component</code>：通用的注解，可标注任意类为Spring组件。</li>
+<li><code>Repository</code>：对应持久层即Dao层，用于数据库相关操作。</li>
+<li><code>Service</code>：对应服务层，主要涉及一些复杂逻辑，需要用到Dao层。</li>
+<li><code>Controller</code>：对应Spring MVC控制层，接收用户请求并调用Service层返回数据给前端界面。</li>
+</ul>
+<h4 id="4-Component和-Bean的区别是什么？">4. @Component和@Bean的区别是什么？</h4>
+<ul>
+<li><code>@Component</code>注解作用于类，而<code>@Bean</code>注解作用于方法。</li>
+<li><code>@Component</code>通常是通过类路径扫描来自动侦测以及自动装配到Spring容器中；<code>@Bean</code>注解通常是我们在标有该注解的方法中定义产生这个bean，<code>@Bean</code>告诉Spring这是某个类的实例，</li>
+<li><code>@Bean</code>注解比<code>@Component</code>注解的自定义性更强。而且很多地方我们只能通过 <code>@Bean</code> 注解来注册 bean。比如当我们引用第三方库中的类需要装配到 <code>Spring</code>容器时，则只能通过 <code>@Bean</code>来实现。</li>
+</ul>
+<h4 id="5-注入Bean的注解有哪些？">5.注入Bean的注解有哪些？</h4>
+<ul>
+<li><code>@Autowired</code>：Spring内置，使用得更多。</li>
+<li><code>@Resource</code>：JDK内置</li>
+<li><code>@Inject</code>：JDK内置</li>
+</ul>
+<h4 id="6-Autowired和-Resource的区别是什么？">6. @Autowired和@Resource的区别是什么？</h4>
+<ul>
+<li><code>@Autowired</code>是Spring 内置的注解，默认根据类型进行匹配（<code>byType</code>），</li>
+</ul>
+<blockquote>
+<p>当一个接口存在多个实现类的话，<code>byType</code>这种方式就无法正确注入对象了，因为这个时候 Spring 会同时找到多个满足条件的选择，默认情况下它自己不知道选择哪一个。</p>
+<p>这种情况下，注入方式会变为 <code>byName</code>（根据名称进行匹配），这个名称通常就是类名（首字母小写）。</p>
+<p>建议通过 <code>@Qualifier</code> 注解来显式指定名称而不是依赖变量的名称。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 报错，byName 和 byType 都无法匹配到 bean</span></span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> SmsService smsService;</span><br><span class="line"><span class="comment">// 正确注入 SmsServiceImpl1 对象对应的 bean</span></span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> SmsService smsServiceImpl1;</span><br><span class="line"><span class="comment">// 正确注入  SmsServiceImpl1 对象对应的 bean</span></span><br><span class="line"><span class="comment">// smsServiceImpl1 就是我们上面所说的名称</span></span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="meta">@Qualifier(value = &quot;smsServiceImpl1&quot;)</span></span><br><span class="line"><span class="keyword">private</span> SmsService smsService;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>@Resource</code>属于JDK提供的注解，默认注入方式是<code>byName</code>。如果无法通过名称匹配到对应的 Bean 的话，注入方式会变为<code>byType</code>。</li>
+</ul>
+<blockquote>
+<p><code>@Resource</code> 有两个比较重要且日常开发常用的属性：<code>name</code>（名称）、<code>type</code>（类型）。</p>
+<p>如果仅指定 <code>name</code> 属性则注入方式为<code>byName</code>，如果仅指定<code>type</code>属性则注入方式为<code>byType</code>，如果同时指定<code>name</code> 和<code>type</code>属性（不建议这么做）则注入方式为<code>byType</code>+<code>byName</code>。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 报错，byName 和 byType 都无法匹配到 bean</span></span><br><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> SmsService smsService;</span><br><span class="line"><span class="comment">// 正确注入 SmsServiceImpl1 对象对应的 bean</span></span><br><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> SmsService smsServiceImpl1;</span><br><span class="line"><span class="comment">// 正确注入 SmsServiceImpl1 对象对应的 bean（比较推荐这种方式）</span></span><br><span class="line"><span class="meta">@Resource(name = &quot;smsServiceImpl1&quot;)</span></span><br><span class="line"><span class="keyword">private</span> SmsService smsService;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>当一个接口存在多个实现类的情况下，<code>@Autowired</code> 和<code>@Resource</code>都需要通过名称才能正确匹配到对应的 Bean。<code>Autowired</code> 可以通过 <code>@Qualifier</code> 注解来显式指定名称，<code>@Resource</code>可以通过 <code>name</code> 属性来显式指定名称。</li>
+</ul>
+<h4 id="7-既生-Resource，何生-Autowired？">7. 既生@Resource，何生@Autowired？</h4>
+<ul>
+<li>
+<p>Spring官方为什么会支持这两个功能如此相似的注解？</p>
+<blockquote>
+<ul>
+<li>它们的概念不同，@Resource更倾向于找已知资源，而@Autowired倾向于尝试按类型搜索资源。</li>
+<li>方便其他框架迁移，@Resource是一种规范，只要符合JSR-250规范的其他框架，Spring就可以兼容。</li>
+</ul>
+<p>@Resource倾向于<strong>确定性的单一资源</strong>，@Autowired<strong>为类型去匹配符合此类型所有资源</strong>。</p>
+</blockquote>
+</li>
+<li>
+<p>为什么@Autowired属性注入的时候Idea会曝出黄色的警告？并推荐使用构造器注入？</p>
+<blockquote>
+<ul>
+<li>声明不了常量的属性
+<ul>
+<li>基于属性的依赖注入不适用于声明为final的字段，因为此字段必须在类实例化时去实例化。声明不可变依赖项的唯一方法是使用基于构造函数的依赖项注入。</li>
+</ul>
+</li>
+<li>容易忽视类的单一原则
+<ul>
+<li>如果使用属性的依赖注入，在你的类中很容易有很多依赖，一切看起来都很正常。但是如果改用基于构造函数的依赖注入，随着更多的依赖被添加到你的类中，构造函数会变得越来越大，代码开始就开始出现“异味”，发出明确的信号表明有问题。</li>
+</ul>
+</li>
+<li>循环依赖问题
+<ul>
+<li>A类通过构造函数注入需要B类的实例，B类通过构造函数注入需要A类的实例。如果你为类 A 和 B 配置 bean 以相互注入，使用构造方法就能很快发现。</li>
+</ul>
+</li>
+<li>依赖注入强依赖Spring容器
+<ul>
+<li>如果您想在容器之外使用这的类，例如用于单元测试，不得不使用 Spring 容器来实例化它，因为没有其他可能的方法（除了反射）来设置自动装配的字段。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>@Autowired推荐用法</p>
+<blockquote>
+<ul>
+<li>
+<p>基于构造器注入</p>
+<ul>
+<li>
+<p>原生版</p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303191953805.png" alt="image-20230314152220097"></p>
+</li>
+<li>
+<p>使用lombok的@RequiredArgsConstructor+private final</p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303191953807.png" alt="image-20230314152302226"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>基于setter注入</p>
+<ul>
+<li>
+<p>原生版</p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303191953809.png" alt="image-20230314152329139"></p>
+</li>
+<li>
+<p>使用lombok的@Setter</p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303191953810.png" alt="image-20230314152356073"></p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="8-Bean的生命周期了解吗？">8. Bean的生命周期了解吗？</h4>
+<h3 id="Spring-AOP">Spring AOP</h3>
+<h4 id="1-谈谈对AOP的了解？">1. 谈谈对AOP的了解？</h4>
+<p><strong>AOP(Aspect-Oriented Programming：面向切面编程)</strong>，能够将那些与业务无关，却为业务模块所共同调用的逻辑和责任（例如事务处理，日志管理、权限控制等）封装起来，便于减少系统的重复代码，降低模块间的耦合度，并有利于未来的可拓展性和可维护性。</p>
+<p>AOP是一种编程思想，是通过预编译方式和运行期动态代理的方式实现不修改源代码的情况下给程序动态统一添加功能的技术。找出多个类中有一定规律的代码，开发时拆开，运行时再合并。</p>
+<p>应用场景：</p>
+<ul>
+<li>日志打印</li>
+<li>全局异常处理。</li>
+<li>结果封装。</li>
+<li>事务。</li>
+</ul>
+<p>AOP代理主要分为静态代理和动态代理。静态代理的代表为AspectJ；而动态代理则以Spring AOP为代表。</p>
+<p>Spring AOP有两种实现，默认使用JDK动态代理，如果没有实现接口，就使用CGLib代理。</p>
+<p><strong>Spring AOP 属于运行时增强，而 AspectJ 是编译时增强。</strong> Spring AOP 基于代理(Proxying)，而 AspectJ 基于字节码操作(Bytecode Manipulation)。Spring AOP 已经集成了 AspectJ。</p>
+<h3 id="Spring-MVC">Spring MVC</h3>
+<h4 id="1-谈谈对Spring-MVC的了解？">1. 谈谈对Spring MVC的了解？</h4>
+<p>MVC 是模型(Model)、视图(View)、控制器(Controller)的简写，其核心思想是通过将业务逻辑、数据和显示分离来组织代码。</p>
+<p>MVC 是一种设计模式，Spring MVC 是一款优秀的 MVC 框架。它可以帮助我们进行更简洁的 Web 层的开发，并且它天生与 Spring 框架集成。Spring MVC 下我们一般把后端项目分为 Service 层（处理业务）、Dao 层（数据库操作）、Entity 层（实体类）、Controller 层(控制层，返回数据给前台页面)。</p>
+<h4 id="2-Spring-MVC的核心组件有哪些及工作原理？">2. Spring MVC的核心组件有哪些及工作原理？</h4>
+<ul>
+<li><code>DispatcherServlet</code>：核心的中央处理器，负责接受请求、分发，并给予客户端响应。</li>
+<li><code>HandlerMapping</code>：处理器映射器，根据url去匹配能处理的<code>Handler</code>，并会将请求涉及到的拦截器和<code>Handler</code>一起封装。</li>
+<li><code>HandlerAdapter</code>：处理器适配器，根据<code>HandlerMapping</code>找到的<code>Handler</code>，适配执行对应的<code>Handler</code>。</li>
+<li><code>Handler</code>：请求处理器，处理实际请求的处理器。</li>
+<li><code>ViewResolver</code>：视图解析器，根据<code>Handler</code>返回的逻辑视图，解析并渲染真正的视图，并传递给<code>DispatcherServlet</code>响应客户端。</li>
+</ul>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303111622737.png" alt="img"></p>
+<p><strong>流程说明（重要）：</strong></p>
+<ol>
+<li>客户端（浏览器）发送请求， <code>DispatcherServlet</code>拦截请求。</li>
+<li><code>DispatcherServlet</code> 根据请求信息调用 <code>HandlerMapping</code> 。<code>HandlerMapping</code> 根据 uri 去匹配查找能处理的 <code>Handler</code>（也就是我们平常说的 <code>Controller</code> 控制器） ，并会将请求涉及到的拦截器和 <code>Handler</code> 一起封装。</li>
+<li><code>DispatcherServlet</code> 调用 <code>HandlerAdapter</code>适配执行 <code>Handler</code> 。</li>
+<li><code>Handler</code> 完成对用户请求的处理后，会返回一个 <code>ModelAndView</code> 对象给<code>DispatcherServlet</code>，<code>ModelAndView</code> 顾名思义，包含了数据模型以及相应的视图的信息。<code>Model</code> 是返回的数据对象，<code>View</code> 是个逻辑上的 <code>View</code>。</li>
+<li><code>ViewResolver</code> 会根据逻辑 <code>View</code> 查找实际的 <code>View</code>。</li>
+<li><code>DispaterServlet</code> 把返回的 <code>Model</code> 传给 <code>View</code>（视图渲染）。</li>
+<li>把 <code>View</code> 返回给请求者（浏览器）。</li>
+</ol>
+<h4 id="3-统一异常处理如何实现？">3. 统一异常处理如何实现？</h4>
+<p>使用注解的方式，具体会使用到 <code>@ControllerAdvice</code> + <code>@ExceptionHandler</code> 这两个注解。</p>
+<h3 id="Spring-事务">Spring 事务</h3>
+<h4 id="1-Spring管理事务的方式有几种？">1. Spring管理事务的方式有几种？</h4>
+<p>**两种。编程式事务和声明式事务。**编程式事务是在代码中硬编码进行手动管理事务，一般很少使用；声明式事务通过在XML配置文件中配置或者使用注解。常用注解为<code>@Transactional</code>。</p>
+<h4 id="2-Spring事务中的事务传播行为有几种？">2. Spring事务中的事务传播行为有几种？</h4>
+<p><strong>事务传播行为是为了解决业务层方法之间互相调用的事务问题</strong>。</p>
+<p>当事务方法被另一个事务方法调用时，必须指定事务应该如何传播。例如：方法可能继续在现有事务中运行，也可能开启一个新事务，并在自己的事务中运行。</p>
+<ol>
+<li>
+<p><code>TransactionDefinition.PROPAGATION_REQUIRED</code>：propagation_required</p>
+<blockquote>
+<p><code>@Transactional</code>注解默认使用的事务传播行为，使用最多。如果当前存在事务，则加入该事务；如果当前没有事务，则创建一个新的事务。</p>
+</blockquote>
+</li>
+<li>
+<p><code>TransactionDefinition.PROPAGATION_REQUIRES_NEW</code></p>
+<blockquote>
+<p>创建一个新的事务，如果当前存在事务，则把当前事务挂起。开启的事务相互独立，互不干扰</p>
+</blockquote>
+</li>
+<li>
+<p><code>TransactionDefinition.PROPAGATION_NESTED</code></p>
+<blockquote>
+<p>如果当前存在事务，则创建一个事务作为当前事务的嵌套事务来运行；如果当前没有事务，则创建一个新的事务。</p>
+</blockquote>
+</li>
+<li>
+<p><code>TransactionDefinition.PROPAGATION_MANDATORY</code>：（mandatory：强制性）</p>
+<blockquote>
+<p>如果当前存在事务，则加入该事务；如果当前没有事务，则抛出异常。使用很少</p>
+</blockquote>
+</li>
+</ol>
+<p>若是错误的配置以下 3 种事务传播行为，事务将不会发生回滚：</p>
+<ul>
+<li><strong><code>TransactionDefinition.PROPAGATION_SUPPORTS</code></strong>: 如果当前存在事务，则加入该事务；如果当前没有事务，则以非事务的方式继续运行。</li>
+<li><strong><code>TransactionDefinition.PROPAGATION_NOT_SUPPORTED</code></strong>: 以非事务方式运行，如果当前存在事务，则把当前事务挂起。</li>
+<li><strong><code>TransactionDefinition.PROPAGATION_NEVER</code></strong>: 以非事务方式运行，如果当前存在事务，则抛出异常。</li>
+</ul>
+<h4 id="3-Spring事务的隔离级别？">3. Spring事务的隔离级别？</h4>
+<p>和MySQL数据库的隔离级别一样。</p>
+<h4 id="4-Transactional-rollbackFor-Exception-class-注解了解吗？">4. @Transactional(rollbackFor = Exception.class)注解了解吗？</h4>
+<p><code>Exception</code>分为运行时异常和非运行时异常。</p>
+<p>当<code>@Transactional</code>注解作用于类上时，该类的所有public方法都具有这个类型的事物属性。同时，在方法级别上的加上这个注解会覆盖类级别的定义。如果类或者方法加了这个注解，那么这个类里面的方法抛出异常，就会回滚，数据库里面的数据也会回滚。</p>
+<p>在 <code>@Transactional</code> 注解中如果不配置<code>rollbackFor</code>属性，那么事务只会在遇到<code>RuntimeException</code>的时候才会回滚，加上 <code>rollbackFor=Exception.class</code>，可以让事务在遇到非运行时异常时也回滚。</p>
+<h2 id="计算机网络">计算机网络</h2>
+<h3 id="网络基础">网络基础</h3>
+<h4 id="1-OSI七层模型是什么？TCP-IP四层模型是什么？">1. OSI七层模型是什么？TCP/IP四层模型是什么？</h4>
+<p>OSI七层模型分别是：应用层、表示层、会话层、传输层、网络层、数据链路层、物理层。</p>
+<p>TCP/IP四层模型是：应用层、传输层、网络层、网际接口层。</p>
+<h3 id="HTTP-HTTPs">HTTP/HTTPs</h3>
+<h4 id="1-HTTP是什么？">1. HTTP是什么？</h4>
+<p>HTTP是超文本传输协议。是计算机世界里在两点之间传输文本、图像、音频等超文本信息的一种协议和规范。</p>
+<h4 id="2-HTTP常见的状态码有哪些？">2. HTTP常见的状态码有哪些？</h4>
+<p>HTTP状态码一般有5类。1类状态码属于提示信息，一般很少使用；2类状态码为成功状态吗，如最常见的200 OK，还有204 No Content；3类状态码是重定向状态码，如301表示永久重定向，302表示临时重定向；4类状态码表示客户端错误，如最常见的404错误请求，表示资源不存在或未找到，403服务器禁止访问；5类状态码是服务端错误，如502错误网关和503服务不可达。</p>
+<h4 id="3-HTTP常见字段有哪些？">3. HTTP常见字段有哪些？</h4>
+<ul>
+<li><code>host</code>域名字段</li>
+<li><code>Content-Length</code>数据长度字段，<code>Content-Type</code>数据类型字段，<code>Content-Encoding</code>数据压缩格式字段</li>
+<li><code>Connection</code>长连接字段</li>
+</ul>
+<h4 id="4-Get和Post请求的区别？">4. Get和Post请求的区别？</h4>
+<ul>
+<li>Get请求用于从服务器获取资源；Post请求用于向服务器提交数据进行处理。</li>
+<li>Get请求的查询参数一般写在URL中，而Post请求的数据一般写在报文body中。</li>
+</ul>
+<h4 id="5-HTTP-1-1的优点和缺点有哪些？">5. HTTP/1.1的优点和缺点有哪些？</h4>
+<p>优点：简单、灵活、易扩展，应用广泛、跨平台。</p>
+<p>缺点：无状态、明文传输（双刃剑）。</p>
+<h4 id="6-HTTP和HTTPS的区别？">6. HTTP和HTTPS的区别？</h4>
+<ol>
+<li>HTTP是超文本传输协议，信息明文传输，存在安全风险。而HTTP在TCP层和HTTP层之间加入了SSL/TLS安全协议，实现了报文的加密传输，解决了安全隐患。</li>
+<li>HTTP在TCP三次握手之后即可进行报文传输，而HTTPS在TCP三次握手之后，还需要进行TLS的四次握手，才能进行加密传输。</li>
+<li>HTTP的默认端口是80，HTTPS的默认端口是443。</li>
+<li>HTTPS协议需要向CA申请数字证书，以保证服务器身份可信。</li>
+</ol>
+<h4 id="7-HTTPS解决了HTTP的哪些问题？">7. HTTPS解决了HTTP的哪些问题？</h4>
+<p>HTTP由于明文传输，因此数据容易被窃听，容易被篡改，身份容易被伪造。</p>
+<p>HTTPS在HTTP和TCP层之间加入了SSL/TLS协议，解决了上述风险：</p>
+<ul>
+<li>使用混合加密的方式实现信息的机密新，解决了窃听风险；</li>
+<li>使用摘要算法来实现完整性，解决了篡改风险；</li>
+<li>使用数字证书，解决了冒充风险。</li>
+</ul>
+<h4 id="8-HTTP-1-1、HTTP-2，HTTP-3的演变？">8. HTTP/1.1、HTTP/2，HTTP/3的演变？</h4>
+<p>HTTP/1.1的改进：</p>
+<ul>
+<li>长连接</li>
+<li>管道网络传输（没有被使用）</li>
+</ul>
+<p>HTTP/1.1的缺陷：</p>
+<ul>
+<li>头部Header未压缩，头部信息越多延迟越大。</li>
+<li>服务端响应的队头阻塞。</li>
+<li>请求只能由客户端发起，服务器被动响应。</li>
+</ul>
+<p>HTTP/2的改进：</p>
+<ul>
+<li>头部压缩</li>
+<li>二进制传输</li>
+<li>使用Stream进行并发传输</li>
+<li>服务器主动推送静态资源。</li>
+</ul>
+<p>HTTP/2的缺陷：</p>
+<ul>
+<li>TCP层队头阻塞。TCP是基于字节流的，如果发生丢包问题，就需要等到这个包重传回来，后续的请求才能继续。</li>
+</ul>
+<p>HTTP/3的改进：</p>
+<ul>
+<li>替换TCP，采用基于UDP的QUIC协议。</li>
+<li>实现了无队头阻塞，当某个流发生丢包时，只会阻塞这个流，其他流不会受到影响，因此不存在队头阻塞问题。</li>
+<li>能更快建立连接。之前的协议TCP和TLS是分层的，需要按顺序进行TCP三次握手和TLS四次握手，需要至少3个往返延迟，而HTTPS的QUIC协议内部包含了TLS，并且使用TLS/1.3版本，能够做到只需要1个或0个往返延迟就能建立连接。</li>
+<li>连接迁移。TCP协议通过四元组（源 IP、源端口、目的 IP、目的端口）确定一条TCP连接，当移动设备的网络从 4G 切换到 WIFI 时，意味着 IP 地址变化了，那么就必须要断开连接，然后重新建立连接。这个连接迁移的成本是很高的。而QUIC不通过四元组的方式来绑定连接，而是通过“连接ID”来标识通信的两个端点，不需要重新建立连接就可以复用原来的连接。</li>
+</ul>
+<h3 id="TCP-IP">TCP/IP</h3>
+<h4 id="1-TCP和UDP的区别？">1. TCP和UDP的区别？</h4>
+<ul>
+<li>TCP面向连接、可靠传输、有状态；UDP无连接，不可靠，无状态。</li>
+<li>TCP传输效率比UDP低很多。</li>
+<li>TCP是基于字节流的，UDP是基于报文的。</li>
+<li>TCP只支持点对点通信，UDP支持广播或多播服务。</li>
+</ul>
+<h4 id="2-TCP的三次握手和四次挥手？">2. TCP的三次握手和四次挥手？</h4>
+<h2 id="编程规范">编程规范</h2>
+<h3 id="MySQL规范">MySQL规范</h3>
+<ol>
+<li>命名
+<ul>
+<li>数据库对象名称采用小写字母并用下划线分割，不要使用MySQL保留关键字；</li>
+<li>见名知意</li>
+</ul>
+</li>
+<li>表使用InnoDB引擎，字符集使用UTF8。</li>
+<li>要写注释。</li>
+<li>不要存储大文件数据。</li>
+<li>在概念设计时满足数据库三范式，但是在逻辑结构设计时可以考虑添加冗余字段，以提高查询效率。</li>
+<li>优先选择符合存储需要的最小的数据类型。</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://GageLv.github.io/hexo-blog">JoeGoodyLv</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://gagelv.github.io/hexo-blog/2023/03/19/%E6%A0%A1%E6%8B%9B%E5%85%AB%E8%82%A1%E5%9F%BA%E7%A1%80%EF%BC%881%EF%BC%89/">https://gagelv.github.io/hexo-blog/2023/03/19/校招八股基础（1）/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://GageLv.github.io/hexo-blog" target="_blank">JoeGoodyLv</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://w.wallhaven.cc/full/yx/wallhaven-yxqlzg.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/hexo-blog/2023/03/19/%E6%A0%A1%E6%8B%9B%E5%85%AB%E8%82%A1%E5%9F%BA%E7%A1%80%EF%BC%882%EF%BC%89/"><img class="prev-cover" src="https://w.wallhaven.cc/full/jx/wallhaven-jxep8y.jpg" onerror="onerror=null;src='/hexo-blog/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">校招八股基础（2）</div></div></a></div><div class="next-post pull-right"><a href="/hexo-blog/2023/03/19/%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E6%8A%95%E9%80%92%E8%AE%B0%E5%BD%95/"><img class="next-cover" src="https://w.wallhaven.cc/full/1p/wallhaven-1ppld1.jpg" onerror="onerror=null;src='/hexo-blog/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">暑期实习投递记录</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">校招八股基础（1）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL"><span class="toc-number">1.1.</span> <span class="toc-text">MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80"><span class="toc-number">1.1.1.</span> <span class="toc-text">数据库基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%8C%83%E5%BC%8F%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">1. 数据库范式是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-drop%E3%80%81delete-%E4%B8%8E-truncate-%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">2. drop、delete 与 truncate 区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93-%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">3. 关系型数据库&amp;非关系型数据库的区别？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL%E5%9F%BA%E7%A1%80-2"><span class="toc-number">1.1.2.</span> <span class="toc-text">MySQL基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-MySQL%E6%98%AF%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C%E4%B8%80%E6%9D%A1SQL%E7%9A%84%EF%BC%9F"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">1. MySQL是如何执行一条SQL的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-MySQL%E7%9A%84%E5%86%85%E9%83%A8%E6%9E%B6%E6%9E%84%EF%BC%9F"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">2. MySQL的内部架构？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%A7%86%E5%9B%BE%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%8F%AF%E4%BB%A5%E6%9B%B4%E6%94%B9%E5%90%97%EF%BC%9F"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">3.  视图的作用是什么？可以更改吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-MySQL%E4%B8%AD%E7%9A%84char%E5%92%8Cvarchar%E7%9A%84%E5%8C%BA%E5%88%AB%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.1.2.4.</span> <span class="toc-text">4. MySQL中的char和varchar的区别有哪些？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="toc-number">1.1.3.</span> <span class="toc-text">MySQL存储引擎</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-MySQL-%E6%94%AF%E6%8C%81%E5%93%AA%E4%BA%9B%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%EF%BC%9F%E9%BB%98%E8%AE%A4%E4%BD%BF%E7%94%A8%E5%93%AA%E4%B8%AA%EF%BC%9F"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">1. MySQL 支持哪些存储引擎？默认使用哪个？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-MyISAM-%E5%92%8C-InnoDB-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">2. MyISAM 和 InnoDB 有什么区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-InnoDB%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8%E8%87%AA%E5%A2%9Eid%E4%BD%9C%E4%B8%BA%E4%B8%BB%E9%94%AE%EF%BC%9F"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">3. InnoDB为什么建议使用自增id作为主键？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL%E7%B4%A2%E5%BC%95-2"><span class="toc-number">1.1.4.</span> <span class="toc-text">MySQL索引</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-MyISAM%E5%92%8CInnoDB%E5%AE%9E%E7%8E%B0B-%E6%A0%91%E7%B4%A2%E5%BC%95%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">1. MyISAM和InnoDB实现B+树索引的区别是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%B4%A2%E5%BC%95%E9%87%87%E7%94%A8B-%E6%A0%91%E8%80%8C%E4%B8%8D%E7%94%A8B%E6%A0%91%EF%BC%8C%E4%B8%BB%E8%A6%81%E5%8E%9F%E5%9B%A0%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">2. 索引采用B+树而不用B树，主要原因是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-MySQL%E4%B8%AD%E7%9A%84%E7%B4%A2%E5%BC%95%E7%B1%BB%E5%9E%8B%EF%BC%9F"><span class="toc-number">1.1.4.3.</span> <span class="toc-text">3. MySQL中的索引类型？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.4.4.</span> <span class="toc-text">4. 覆盖索引是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95%E5%92%8C%E9%9D%9E%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95%EF%BC%9F"><span class="toc-number">1.1.4.5.</span> <span class="toc-text">5.聚簇索引和非聚簇索引？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E4%BD%BF%E7%94%A8%E7%B4%A2%E5%BC%95%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9F"><span class="toc-number">1.1.4.6.</span> <span class="toc-text">6. 使用索引的注意事项？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-MySQL%E7%9A%84%E7%B4%A2%E5%BC%95%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.4.7.</span> <span class="toc-text">7. MySQL的索引类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL%E4%BA%8B%E5%8A%A1-2"><span class="toc-number">1.1.5.</span> <span class="toc-text">MySQL事务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BD%95%E8%B0%93%E4%BA%8B%E5%8A%A1%EF%BC%9F"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">1. 何谓事务？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BA%8B%E5%8A%A1%E7%9A%84ACID%E7%89%B9%E6%80%A7%EF%BC%9F"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">2. 事务的ACID特性？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-MySQL%E5%B9%B6%E5%8F%91%E4%BA%8B%E5%8A%A1%E5%B8%A6%E6%9D%A5%E4%BA%86%E5%93%AA%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-number">1.1.5.3.</span> <span class="toc-text">3. MySQL并发事务带来了哪些问题？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-SQL%E6%A0%87%E5%87%86%E7%9A%84%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9FMySQL-InnoDB%E7%9A%84%E9%BB%98%E8%AE%A4%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%EF%BC%9F"><span class="toc-number">1.1.5.4.</span> <span class="toc-text">4. SQL标准的事务隔离级别有哪些？MySQL InnoDB的默认隔离级别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-MySQL%E7%9A%84%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%9A%84%EF%BC%9F"><span class="toc-number">1.1.5.5.</span> <span class="toc-text">5. MySQL的事务隔离级别是如何实现的？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL%E9%94%81-2"><span class="toc-number">1.1.6.</span> <span class="toc-text">MySQL锁</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%A1%A8%E7%BA%A7%E9%94%81%E5%92%8C%E8%A1%8C%E7%BA%A7%E9%94%81%E4%BA%86%E8%A7%A3%E5%90%97%EF%BC%9F%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.1.6.1.</span> <span class="toc-text">1. 表级锁和行级锁了解吗？有什么区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-InnoDB%E6%9C%89%E5%93%AA%E5%87%A0%E7%B1%BB%E8%A1%8C%E9%94%81%EF%BC%9F"><span class="toc-number">1.1.6.2.</span> <span class="toc-text">2. InnoDB有哪几类行锁？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%85%B1%E4%BA%AB%E9%94%81%E5%92%8C%E6%8E%92%E4%BB%96%E9%94%81%E4%BA%86%E8%A7%A3%E5%90%97%EF%BC%9F"><span class="toc-number">1.1.6.3.</span> <span class="toc-text">3. 共享锁和排他锁了解吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%84%8F%E5%90%91%E9%94%81%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-number">1.1.6.4.</span> <span class="toc-text">4. 意向锁是什么？有什么作用？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-MySQL%E6%9C%89%E5%93%AA%E4%BA%9B%E9%94%81%EF%BC%9F"><span class="toc-number">1.1.6.5.</span> <span class="toc-text">5. MySQL有哪些锁？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-2"><span class="toc-number">1.1.7.</span> <span class="toc-text">MySQL性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%83%BD%E7%94%A8MySQL%E7%9B%B4%E6%8E%A5%E5%AD%98%E5%82%A8%E6%96%87%E4%BB%B6%E6%88%96%E5%9B%BE%E7%89%87%E5%90%97%EF%BC%9F"><span class="toc-number">1.1.7.1.</span> <span class="toc-text">1. 能用MySQL直接存储文件或图片吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-MySQL%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8IP%E5%9C%B0%E5%9D%80%EF%BC%9F"><span class="toc-number">1.1.7.2.</span> <span class="toc-text">2. MySQL如何存储IP地址？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%B8%80%E9%81%93%E5%9C%BA%E6%99%AF%E9%A2%98%EF%BC%9A%E5%81%87%E5%A6%82%E4%BD%A0%E6%89%80%E5%9C%A8%E7%9A%84%E5%85%AC%E5%8F%B8%E9%80%89%E6%8B%A9MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%EF%BC%8C%E4%B8%80%E5%A4%A9%E4%BA%94%E4%B8%87%E6%9D%A1%E4%BB%A5%E4%B8%8A%E7%9A%84%E5%A2%9E%E9%87%8F%EF%BC%8C%E9%A2%84%E8%AE%A1%E8%BF%90%E7%BB%B4%E4%B8%89%E5%B9%B4%EF%BC%8C%E4%BD%A0%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%98%E5%8C%96%E6%89%8B%E6%AE%B5%EF%BC%9F"><span class="toc-number">1.1.7.3.</span> <span class="toc-text">3. 一道场景题：假如你所在的公司选择MySQL数据库作数据存储，一天五万条以上的增量，预计运维三年，你有哪些优化手段？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis"><span class="toc-number">1.2.</span> <span class="toc-text">Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Redis%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. Redis是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Redis%E7%9A%84%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9F"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. Redis的常用数据结构和使用场景？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%9C%89MySQL%E4%B8%8D%E5%B0%B1%E5%A4%9F%E7%94%A8%E4%BA%86%E5%90%97%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8Redis%E8%BF%99%E7%A7%8D%E6%96%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9F"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 有MySQL不就够用了吗？为什么要用Redis这种新的数据库？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%BD%BF%E7%94%A8Redis%E7%9A%84%E5%A5%BD%E5%A4%84%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.2.4.</span> <span class="toc-text">4. 使用Redis的好处有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Redis%E8%AE%BE%E7%BD%AE%E8%BF%87%E6%9C%9F%E6%97%B6%E9%97%B4%E7%9A%84%E6%96%B9%E6%A1%88%EF%BC%9F"><span class="toc-number">1.2.5.</span> <span class="toc-text">5. Redis设置过期时间的方案？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%EF%BC%8C%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%EF%BC%8C%E7%BC%93%E5%AD%98%E9%A2%84%E7%83%AD%EF%BC%8C%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%EF%BC%9F"><span class="toc-number">1.2.6.</span> <span class="toc-text">6. 缓存雪崩，缓存穿透，缓存预热，缓存击穿？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-Redis%E6%8C%81%E4%B9%85%E5%8C%96%E6%9C%BA%E5%88%B6%EF%BC%9F"><span class="toc-number">1.2.7.</span> <span class="toc-text">7. Redis持久化机制？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-Redis%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E4%B9%88%E5%BF%AB%EF%BC%9F"><span class="toc-number">1.2.8.</span> <span class="toc-text">8. Redis为什么这么快？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-Redis%E9%99%A4%E4%BA%86%E5%81%9A%E7%BC%93%E5%AD%98%EF%BC%8C%E8%BF%98%E5%8F%AF%E4%BB%A5%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.2.9.</span> <span class="toc-text">9. Redis除了做缓存，还可以做什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-Redis%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.10.</span> <span class="toc-text">10. Redis线程模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MongoDB"><span class="toc-number">1.3.</span> <span class="toc-text">MongoDB</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-MongoDB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. MongoDB是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-MongoDB%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%EF%BC%9F"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. MongoDB的存储结构？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-MongoDB%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%9F"><span class="toc-number">1.3.3.</span> <span class="toc-text">3. MongoDB的特点？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-MongoDB%E7%9A%84%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="toc-number">1.3.4.</span> <span class="toc-text">4.MongoDB的存储引擎</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-Spring-Boot"><span class="toc-number">1.4.</span> <span class="toc-text">Spring&amp;Spring Boot</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring%E5%9F%BA%E7%A1%80"><span class="toc-number">1.4.1.</span> <span class="toc-text">Spring基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Spring-Spring-MVC-Spring-Boot%E4%B8%89%E8%80%85%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9F"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">1. Spring&amp;Spring MVC&amp;Spring Boot三者之间的关系？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Spring%E5%8C%85%E5%90%AB%E7%9A%84%E6%A8%A1%E5%9D%97"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">2. Spring包含的模块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Spring%E6%A1%86%E6%9E%B6%E4%B8%AD%E7%94%A8%E5%88%B0%E4%BA%86%E9%82%A3%E4%BA%9B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9F"><span class="toc-number">1.4.1.3.</span> <span class="toc-text">3. Spring框架中用到了那些设计模式？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Spring-Spring-Boot%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.4.1.4.</span> <span class="toc-text">4. Spring@Spring Boot常用注解有哪些？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-IoC"><span class="toc-number">1.4.2.</span> <span class="toc-text">Spring IoC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%B0%88%E8%B0%88%E5%AF%B9Spring-IoC%E7%9A%84%E4%BA%86%E8%A7%A3"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">1. 谈谈对Spring IoC的了解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Spring-Bean%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">2. Spring Bean是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%B0%86%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%A3%B0%E6%98%8E%E4%B8%BABean%E7%9A%84%E6%B3%A8%E8%A7%A3%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">3. 将一个类声明为Bean的注解有哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Component%E5%92%8C-Bean%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.4.2.4.</span> <span class="toc-text">4. @Component和@Bean的区别是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%B3%A8%E5%85%A5Bean%E7%9A%84%E6%B3%A8%E8%A7%A3%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.4.2.5.</span> <span class="toc-text">5.注入Bean的注解有哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Autowired%E5%92%8C-Resource%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.4.2.6.</span> <span class="toc-text">6. @Autowired和@Resource的区别是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E6%97%A2%E7%94%9F-Resource%EF%BC%8C%E4%BD%95%E7%94%9F-Autowired%EF%BC%9F"><span class="toc-number">1.4.2.7.</span> <span class="toc-text">7. 既生@Resource，何生@Autowired？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-Bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E4%BA%86%E8%A7%A3%E5%90%97%EF%BC%9F"><span class="toc-number">1.4.2.8.</span> <span class="toc-text">8. Bean的生命周期了解吗？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-AOP"><span class="toc-number">1.4.3.</span> <span class="toc-text">Spring AOP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%B0%88%E8%B0%88%E5%AF%B9AOP%E7%9A%84%E4%BA%86%E8%A7%A3%EF%BC%9F"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">1. 谈谈对AOP的了解？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-MVC"><span class="toc-number">1.4.4.</span> <span class="toc-text">Spring MVC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%B0%88%E8%B0%88%E5%AF%B9Spring-MVC%E7%9A%84%E4%BA%86%E8%A7%A3%EF%BC%9F"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">1. 谈谈对Spring MVC的了解？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Spring-MVC%E7%9A%84%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8F%8A%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%9F"><span class="toc-number">1.4.4.2.</span> <span class="toc-text">2. Spring MVC的核心组件有哪些及工作原理？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%EF%BC%9F"><span class="toc-number">1.4.4.3.</span> <span class="toc-text">3. 统一异常处理如何实现？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.4.5.</span> <span class="toc-text">Spring 事务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Spring%E7%AE%A1%E7%90%86%E4%BA%8B%E5%8A%A1%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%87%A0%E7%A7%8D%EF%BC%9F"><span class="toc-number">1.4.5.1.</span> <span class="toc-text">1. Spring管理事务的方式有几种？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Spring%E4%BA%8B%E5%8A%A1%E4%B8%AD%E7%9A%84%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA%E6%9C%89%E5%87%A0%E7%A7%8D%EF%BC%9F"><span class="toc-number">1.4.5.2.</span> <span class="toc-text">2. Spring事务中的事务传播行为有几种？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Spring%E4%BA%8B%E5%8A%A1%E7%9A%84%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%EF%BC%9F"><span class="toc-number">1.4.5.3.</span> <span class="toc-text">3. Spring事务的隔离级别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Transactional-rollbackFor-Exception-class-%E6%B3%A8%E8%A7%A3%E4%BA%86%E8%A7%A3%E5%90%97%EF%BC%9F"><span class="toc-number">1.4.5.4.</span> <span class="toc-text">4. @Transactional(rollbackFor &#x3D; Exception.class)注解了解吗？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">1.5.</span> <span class="toc-text">计算机网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80"><span class="toc-number">1.5.1.</span> <span class="toc-text">网络基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9FTCP-IP%E5%9B%9B%E5%B1%82%E6%A8%A1%E5%9E%8B%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">1. OSI七层模型是什么？TCP&#x2F;IP四层模型是什么？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-HTTPs"><span class="toc-number">1.5.2.</span> <span class="toc-text">HTTP&#x2F;HTTPs</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-HTTP%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">1. HTTP是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-HTTP%E5%B8%B8%E8%A7%81%E7%9A%84%E7%8A%B6%E6%80%81%E7%A0%81%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">2. HTTP常见的状态码有哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-HTTP%E5%B8%B8%E8%A7%81%E5%AD%97%E6%AE%B5%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.5.2.3.</span> <span class="toc-text">3. HTTP常见字段有哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Get%E5%92%8CPost%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.5.2.4.</span> <span class="toc-text">4. Get和Post请求的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-HTTP-1-1%E7%9A%84%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.5.2.5.</span> <span class="toc-text">5. HTTP&#x2F;1.1的优点和缺点有哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-HTTP%E5%92%8CHTTPS%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.5.2.6.</span> <span class="toc-text">6. HTTP和HTTPS的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-HTTPS%E8%A7%A3%E5%86%B3%E4%BA%86HTTP%E7%9A%84%E5%93%AA%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-number">1.5.2.7.</span> <span class="toc-text">7. HTTPS解决了HTTP的哪些问题？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-HTTP-1-1%E3%80%81HTTP-2%EF%BC%8CHTTP-3%E7%9A%84%E6%BC%94%E5%8F%98%EF%BC%9F"><span class="toc-number">1.5.2.8.</span> <span class="toc-text">8. HTTP&#x2F;1.1、HTTP&#x2F;2，HTTP&#x2F;3的演变？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP"><span class="toc-number">1.5.3.</span> <span class="toc-text">TCP&#x2F;IP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">1. TCP和UDP的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-TCP%E7%9A%84%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%9F"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">2. TCP的三次握手和四次挥手？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83"><span class="toc-number">1.6.</span> <span class="toc-text">编程规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL%E8%A7%84%E8%8C%83"><span class="toc-number">1.6.1.</span> <span class="toc-text">MySQL规范</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By JoeGoodyLv</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/hexo-blog/js/utils.js"></script><script src="/hexo-blog/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/hexo-blog/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

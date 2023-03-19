@@ -1,0 +1,1438 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>校招八股基础（2） | JoeGoodyLv</title><meta name="keywords" content="Java"><meta name="author" content="JoeGoodyLv"><meta name="copyright" content="JoeGoodyLv"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Java。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="校招八股基础（2）">
+<meta property="og:url" content="https://gagelv.github.io/hexo-blog/2023/03/19/%E6%A0%A1%E6%8B%9B%E5%85%AB%E8%82%A1%E5%9F%BA%E7%A1%80%EF%BC%882%EF%BC%89/index.html">
+<meta property="og:site_name" content="JoeGoodyLv">
+<meta property="og:description" content="Java。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://w.wallhaven.cc/full/jx/wallhaven-jxep8y.jpg">
+<meta property="article:published_time" content="2023-03-19T12:00:28.175Z">
+<meta property="article:modified_time" content="2023-03-19T11:59:32.526Z">
+<meta property="article:author" content="JoeGoodyLv">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://w.wallhaven.cc/full/jx/wallhaven-jxep8y.jpg"><link rel="shortcut icon" href="/hexo-blog/img/favicon1.png"><link rel="canonical" href="https://gagelv.github.io/hexo-blog/2023/03/19/%E6%A0%A1%E6%8B%9B%E5%85%AB%E8%82%A1%E5%9F%BA%E7%A1%80%EF%BC%882%EF%BC%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/hexo-blog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/hexo-blog/',
+  algolia: undefined,
+  localSearch: {"path":"/hexo-blog/search.json","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '校招八股基础（2）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-19 19:59:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/hexo-blog/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/hexo-blog/archives/"><div class="headline">文章</div><div class="length-num">22</div></a><a href="/hexo-blog/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/hexo-blog/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexo-blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://w.wallhaven.cc/full/jx/wallhaven-jxep8y.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/hexo-blog/">JoeGoodyLv</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexo-blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">校招八股基础（2）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-19T12:00:28.175Z" title="发表于 2023-03-19 20:00:28">2023-03-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-19T11:59:32.526Z" title="更新于 2023-03-19 19:59:32">2023-03-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/hexo-blog/categories/%E6%89%BE%E5%B7%A5%E4%BD%9C/">找工作</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">19.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>63分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="校招八股基础（2）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>校招八股基础（2）</h1>
+<blockquote>
+<div class="timeline  blue"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>更新时间线</p>
+</div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2023-03-19</p>
+</div></div><div class='timeline-item-content'><blockquote>
+<p>第一次提交</p>
+</blockquote>
+</div></div></div>
+</blockquote>
+<h2 id="Java基础">Java基础</h2>
+<h3 id="1-Java-vs-C">1. Java vs C++</h3>
+<ul>
+<li>
+<p>Java是一种编译和解释共存的语言，通过javac编译生成字节码，再通过JVM解释成机器码，通过JVM实现了平台无关性。</p>
+</li>
+<li>
+<p>C++是一种编译型语言，直接编译形成机器码执行，因此效率更高。</p>
+</li>
+<li>
+<p>Java是完全面向对象的语言，所有代码必须在类中定义。而C++兼容了C语言，因此还有面向过程的全局变量，全局函数等语法。</p>
+</li>
+<li>
+<p>指针：Java不提供指针来访问内存，程序内存更加安全。</p>
+</li>
+<li>
+<p>多重继承：Java不支持多重继承，虽然Java的类不可以多继承，但是接口可以多继承。</p>
+</li>
+<li>
+<p>自动内存管理：Java有自动内存管理垃圾回收机制，不需要程序员手动释放内存。</p>
+</li>
+<li>
+<p>操作符重载：Java不支持操作符重载，只支持方法重载。</p>
+</li>
+</ul>
+<h3 id="2-JVM-vs-JDK-vs-JRE">2. JVM vs JDK vs JRE</h3>
+<ul>
+<li>JDK是指Java开发工具（Java Development Kit），包括了编译器（javac），JRE和其他工具（javadoc和jdb等），它能够创建和编译程序。</li>
+<li>JRE是指Java运行时环境（Java Runtime Environment），它是运行已编译Java程序的所有内容的集合，包括Java虚拟机，Java类库、java命令等，它不能用于创建新程序。</li>
+<li>Java虚拟机（Java Vitual Machine, JVM）是运行字节码的虚拟机，针对不同的操作系统有特定的实现，目的是使用相同的字节码，都给出同样的结果。JVM是Java语言实现“一次编译，到处运行”的关键所在。</li>
+</ul>
+<h3 id="3-什么是字节码？采用字节码的好处是什么？">3. 什么是字节码？采用字节码的好处是什么？</h3>
+<p>在Java中，JVM可以理解的代码就是字节码，它是扩展名为<code>.class</code>的文件。它不面向任何特定的处理器，只面向虚拟机。Java通过字节码的方式，在一定程度上解决了传统解释性语言执行效率低的问题，同时又保留了解释型语言可移植的特点。</p>
+<h3 id="4-JIT是什么？">4. JIT是什么？</h3>
+<p>在将字节码文件转为机器码时，JVM类加载器首先加载字节码文件，然后通过解释器逐行解释执行，这种方式执行速度相对较慢。而且，根据二八定律，消耗大部分系统资源的只有那一小部分代码（热点代码），通过引入JIT（just-in-time compliation，即时编译）编译器，当JIT编译器完成第一次编译后，会将这部分热点代码对应的机器码保存下来，下次可以直接使用。</p>
+<p>JDK9引入了一种新的编译模式AOT（Ahead of time Compliation），它直接将字节码编译成机器码，避免了JIT 预热等方面的开销。</p>
+<h3 id="5-Java的数据类型有哪些？">5. Java的数据类型有哪些？</h3>
+<p>Java数据类型分为基本数据类型和引用数据类型</p>
+<p>Java有8种基本数据类型。分别为</p>
+<p>整型4种：<code>byte</code>、<code>short</code>、<code>int</code>、<code>long</code></p>
+<p>浮点型两种：<code>float</code>、<code>double</code></p>
+<p>字符类型1种：<code>char</code></p>
+<p>布尔类型1种：<code>boolean</code>。</p>
+<p>引用数据类型有类、接口和数组。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">基本类型</th>
+<th style="text-align:left">位数</th>
+<th style="text-align:left">字节</th>
+<th style="text-align:left">默认值</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>byte</code></td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+<td>-128 ~ 127</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>short</code></td>
+<td style="text-align:left">16</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">0</td>
+<td>-32768 ~ 32767</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>int</code></td>
+<td style="text-align:left">32</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0</td>
+<td>-2147483648 ~ 2147483647</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>long</code></td>
+<td style="text-align:left">64</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">0L</td>
+<td>-9223372036854775808 ~ 9223372036854775807</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>char</code></td>
+<td style="text-align:left">16</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">‘u0000’</td>
+<td>0 ~ 65535</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>float</code></td>
+<td style="text-align:left">32</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0f</td>
+<td>1.4E-45 ~ 3.4028235E38</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>double</code></td>
+<td style="text-align:left">64</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">0d</td>
+<td>4.9E-324 ~ 1.7976931348623157E308</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>boolean</code></td>
+<td style="text-align:left">1</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">false</td>
+<td>true、false</td>
+</tr>
+</tbody>
+</table>
+<p>对于 <code>boolean</code>，官方文档未明确定义，它依赖于 JVM 厂商的具体实现。逻辑上理解是占用 1 位，但是实际中会考虑计算机高效存储因素。</p>
+<p><strong>注意：</strong></p>
+<ol>
+<li>Java 里使用 <code>long</code> 类型的数据一定要在数值后面加上 <strong>L</strong>，否则将作为整型解析。</li>
+<li><code>char a = 'h'</code>char :单引号，<code>String a = &quot;hello&quot;</code> :双引号。</li>
+</ol>
+<p>这八种基本类型都有对应的包装类分别为：<code>Byte</code>、<code>Short</code>、<code>Integer</code>、<code>Long</code>、<code>Float</code>、<code>Double</code>、<code>Character</code>、<code>Boolean</code> 。</p>
+<h3 id="6-基本类型和包装类型的区别？">6. 基本类型和包装类型的区别？</h3>
+<ul>
+<li>对于成员变量，包装类型不赋值就是<code>null</code>，而基本类型有默认值且不是<code>null</code>。</li>
+<li>包装类型可用于泛型，而基本类型不行。</li>
+<li>包装类型属于对象类型，而几乎所有的对象实例都存储在堆中。<strong>基本数据类型的局部变量存储在java虚拟机栈的局部变量表种，基本数据类型的成员变量（未被static修饰）存放在java虚拟机的堆中。</strong></li>
+<li>相比于对象类型，基本数据类型占用空间更小。</li>
+</ul>
+<p><strong>为什么说是几乎所有对象实例呢？</strong> 这是因为 HotSpot 虚拟机引入了 JIT 优化之后，会对对象进行逃逸分析，如果发现某一个对象并没有逃逸到方法外部，那么就可能通过标量替换来实现栈上分配，而避免堆上分配内存。</p>
+<p>一般推荐局部变量使用基本数据类型定义，而其他的地方使用其对应的包装类型。</p>
+<h3 id="7-包装类型的缓存机制了解吗？">7. 包装类型的缓存机制了解吗？</h3>
+<p>Java 基本数据类型的包装类型的大部分都用到了缓存机制来提升性能。</p>
+<p><code>Byte</code>,<code>Short</code>,<code>Integer</code>,<code>Long</code> 这 4 种包装类默认创建了数值 <strong>[-128，127]</strong> 的相应类型的缓存数据，<code>Character</code> 创建了数值在 <strong>[0,127]</strong> 范围的缓存数据，<code>Boolean</code> 直接返回 <code>True</code> or <code>False</code>。</p>
+<p>两种浮点数类型的包装类 <code>Float</code>,<code>Double</code> 并没有实现缓存机制。</p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303141819278.png" alt="img"></p>
+<h3 id="8-自动装箱和拆箱的原理是什么">8. 自动装箱和拆箱的原理是什么?</h3>
+<ul>
+<li>装箱：将基本类型转为包装类型。</li>
+<li>拆箱：将包装类型转为基本数据类型。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;  <span class="comment">//装箱</span></span><br><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> i;   <span class="comment">//拆箱</span></span><br><span class="line"><span class="comment">// Integer i = 10 等价于 Integer i = Integer.valueOf(10)</span></span><br><span class="line"><span class="comment">// int n = i 等价于 int n = i.intValue();</span></span><br></pre></td></tr></table></figure>
+<p>注意：<strong>如果频繁拆装箱的话，也会严重影响系统的性能。我们应该尽量避免不必要的拆装箱操作。</strong></p>
+<h3 id="9-浮点数运算的精度丢失问题？">9. 浮点数运算的精度丢失问题？</h3>
+<p>计算机是二进制的，在表示一个无限循环的二进制小数时，只能进行截断，导致小数精度丢失。</p>
+<p>通常情况下，需要浮点数精确运算结果的业务场景，可以使用<code>BigDecimal</code>来实现。</p>
+<h3 id="10-对象相关问题">10. 对象相关问题</h3>
+<ul>
+<li>使用<code>new</code>运算符创建对象实例。</li>
+<li>对象引用指向对象实例。一个对象引用可以指向0个或1个对象；一个对象可以有多个引用指向它。</li>
+<li>对象实例在堆中，对象引用在栈中。</li>
+<li>对象的相等一般比较的是存储的值是否相等；引用相等比较的是它们指向的内存地址是否相等。</li>
+</ul>
+<h3 id="11-构造方法相关问题">11. 构造方法相关问题</h3>
+<ul>
+<li>类的构造方法主要完成对象实例的初始化工作。</li>
+<li>如果一个类没有声明构造方法，那么Java会添加默认的无参构造方法。</li>
+<li>构造方法名称与类相同；没有返回值且无需使用<code>void</code>声明；生成对象时会自动执行，无需调用。</li>
+<li>构造方法不能被重写，但可以重载。</li>
+</ul>
+<h3 id="12-接口和抽象类的共同点和区别？">12. 接口和抽象类的共同点和区别？</h3>
+<p>共同点：</p>
+<ul>
+<li>都不能被实例化。</li>
+<li>都可以包含抽象方法。</li>
+<li>都可以有默认实现的方法。（Java 8可以用<code>default</code>关键字在接口中定义默认方法。）</li>
+</ul>
+<p>区别：</p>
+<ul>
+<li>接口主要用于对类的行为进行约束；抽象类主要用于代码复用。</li>
+<li>类只能单继承，但是可以实现多个接口。</li>
+<li>接口中的成员变量只能是<code>public static final</code>类型的，不能被修改且必须有初始值，而抽象类的成员变量默认<code>default</code>，无限制，可以在子类被重新定义，也可以重新赋值。</li>
+</ul>
+<h3 id="13-深拷贝和浅拷贝了解吗？什么是引用拷贝">13. 深拷贝和浅拷贝了解吗？什么是引用拷贝?</h3>
+<ul>
+<li><strong>深拷贝</strong>：深拷贝会完全复制整个对象，包括这个对象所包含的内部对象。</li>
+<li><strong>浅拷贝</strong>：浅拷贝会在堆上创建一个新的对象，不过，如果原对象内部的属性是引用类型的话，浅拷贝会直接复制内部对象的引用地址，也就是拷贝对象和原对象共用一个内部对象。</li>
+<li><strong>引用拷贝</strong>：两个不同的引用指向同一个对象。</li>
+</ul>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303141819280.png" alt="浅拷贝、深拷贝、引用拷贝示意图"></p>
+<h3 id="14-什么是泛型？有什么作用？">14. 什么是泛型？有什么作用？</h3>
+<p>Java泛型是JDK5引入的一个新特性。使用泛型，可以增强代码的可读性和稳定性。</p>
+<p>编译器可以对泛型参数进行检测，并且通过泛型参数可以指定传入的对象类型。比如 <code>ArrayList&lt;Person&gt; persons = new ArrayList&lt;Person&gt;()</code> 这行代码就指明了该 <code>ArrayList</code> 对象只能传入 <code>Person</code> 对象，如果传入其他类型的对象就会报错。</p>
+<p>泛型一般有三种使用方式：泛型类、泛型接口、泛型方法。</p>
+<h3 id="15-什么是反射-反射的优缺点？反射的应用场景？">15. 什么是反射?反射的优缺点？反射的应用场景？</h3>
+<p>通过反射可以获取任意一个类的所有属性和方法，还可以调用这些方法和属性。</p>
+<p>反射的优点：可以让代码更加灵活，为各种框架提供开箱即用的功能提供了便利。</p>
+<p>反射的缺点：增加了安全问题，比如可以无视泛型参数的安全检查；反射的性能会差点。</p>
+<p>Spring/Spring Boot、MyBatis 等等框架中都大量使用了反射机制。这些框架中也大量使用了动态代理，而动态代理、注解的实现也依赖反射。</p>
+<h3 id="16-什么是注解？注解的解析方式有哪几种？">16. 什么是注解？注解的解析方式有哪几种？</h3>
+<p><code>Annotation</code>（注解）是Java5开始引入的新特性，可以看作是一种特殊的注释，主要用于修饰类、方法或者变量，提供某些信息供程序在编译或运行时使用。</p>
+<p>注解只有被解析之后才会生效，常见的解析方法有两种：</p>
+<ul>
+<li>**编译期直接扫描：**编译器在编译 Java 代码的时候扫描对应的注解并处理，比如某个方法使用<code>@Override</code> 注解，编译器在编译的时候就会检测当前的方法是否重写了父类对应的方法。</li>
+<li>**运行期通过反射处理：**像框架中自带的注解(比如 Spring 框架的 <code>@Value</code> 、<code>@Component</code>)都是通过反射来进行处理的。</li>
+</ul>
+<h3 id="17-什么是SPI？">17. 什么是SPI？</h3>
+<p>SPI即(Service Provider Interface, 服务提供者的接口)，专门提供给服务提供者或者扩展框架功能的开发者去使用的一个接口。</p>
+<p>SPI 将服务接口和具体的服务实现分离开来，将服务调用方和服务实现者解耦，能够提升程序的扩展性、可维护性。</p>
+<h3 id="18-序列化和反序列化">18. 序列化和反序列化</h3>
+<p><strong>序列化的主要目的是通过网络传输对象或者说是将对象存储到文件系统、数据库、内存中。</strong></p>
+<ul>
+<li><strong>序列化</strong>： 将数据结构或对象转换成二进制字节流的过程</li>
+<li><strong>反序列化</strong>：将在序列化过程中所生成的二进制字节流转换成数据结构或者对象的过程。</li>
+</ul>
+<p>应用场景：</p>
+<ul>
+<li>对象在进行网络传输（比如远程方法调用 RPC 的时候）之前需要先被序列化，接收到序列化的对象之后需要再进行反序列化；</li>
+<li>将对象存储到文件之前需要进行序列化，将对象从文件中读取出来需要进行反序列化；</li>
+<li>将对象存储到数据库（如 Redis）之前需要用到序列化，将对象从缓存数据库中读取出来需要反序列化；</li>
+<li>将对象存储到内存之前需要进行序列化，从内存中读取出来之后需要进行反序列化。</li>
+</ul>
+<p>对于不想进行序列化的变量，使用 <code>transient</code> 关键字修饰。</p>
+<ul>
+<li>
+<p><code>transient</code> 只能修饰变量，不能修饰类和方法。</p>
+</li>
+<li>
+<p><code>transient</code> 修饰的变量，在反序列化后变量值将会被置成类型的默认值。例如，如果是修饰 <code>int</code> 类型，那么反序列后结果就是 <code>0</code>。</p>
+</li>
+<li>
+<p><code>static</code> 变量因为不属于任何对象(Object)，所以无论有没有 <code>transient</code> 关键字修饰，均不会被序列化。</p>
+</li>
+</ul>
+<p>比较常用的序列化协议有 Hessian、Kryo、Protobuf、ProtoStuff，这些都是基于二进制的序列化协议。</p>
+<p>一般不推荐使用JDK自带的序列化方式，主要原因有：</p>
+<ul>
+<li>不支持跨语言调用。</li>
+<li>性能差。</li>
+<li>存在安全问题。</li>
+</ul>
+<h2 id="Java常见类">Java常见类</h2>
+<h3 id="1-Object类">1.Object类</h3>
+<blockquote>
+<p>Object 类是一个特殊的类，是所有类的父类。</p>
+</blockquote>
+<h4 id="1-1-Object类的常见方法有哪些？">1.1 Object类的常见方法有哪些？</h4>
+<p>常见方法包括：<code>getClass()</code>、<code>euqals()</code>、<code>clone()</code>、<code>toString()</code>、<code>notify()</code>、<code>wait()</code>等。</p>
+<h4 id="1-2-和euqals-的区别？">1.2 <code>==</code>和<code>euqals()</code>的区别？</h4>
+<ul>
+<li>由于Java只有值传递，对于<code>==</code>来说，不管是基本数据类型还是引用数据类型，本质比较的都是值，只是引用类型变量存的值是对象的地址。</li>
+<li><code>euqals()</code>不能用于判断基本数据类型的变量，只能用来判断两个对象是否相等。<code>equals()</code>方法存在于<code>Object</code>类中，而<code>Object</code>类是所有类的直接或间接父类，因此所有的类都有<code>equals()</code>方法。</li>
+</ul>
+<p><code>equals()</code> 方法存在两种使用情况：</p>
+<ul>
+<li>
+<p><strong>类没有重写 <code>equals()</code>方法</strong> ：通过<code>equals()</code>比较该类的两个对象时，等价于通过“==”比较这两个对象，使用的默认是 <code>Object</code>类<code>equals()</code>方法。</p>
+</li>
+<li>
+<p><strong>类重写了 <code>equals()</code>方法</strong> ：一般我们都重写 <code>equals()</code>方法来比较两个对象中的属性是否相等；若它们的属性相等，则返回 true(即，认为这两个对象相等)。</p>
+</li>
+</ul>
+<h4 id="1-3-hashCode-有什么用？">1.3 <code>hashCode()</code>有什么用？</h4>
+<p><code>hashCode()</code> 的作用是获取哈希码（<code>int</code> 整数），也称为散列码。这个哈希码的作用是确定该对象在哈希表中的索引位置。</p>
+<p><code>Object</code> 的 <code>hashCode()</code> 方法是本地方法，也就是用 C 语言或 C++ 实现的，该方法通常用来将对象的内存地址转换为整数之后返回。</p>
+<p>如果两个对象的<code>hashCode</code> 值相等，那这两个对象不一定相等（哈希碰撞）。</p>
+<p>如果两个对象的<code>hashCode</code> 值相等并且<code>equals()</code>方法也返回 <code>true</code>，我们才认为这两个对象相等。</p>
+<p>如果两个对象的<code>hashCode</code> 值不相等，我们就可以直接认为这两个对象不相等。</p>
+<h4 id="1-4-为什么重写equals-时必须重写hashCode-方法？">1.4 为什么重写<code>equals()</code>时必须重写<code>hashCode()</code>方法？</h4>
+<p>因为两个相等的对象的<code>hashCode</code>值必须相等。如果重写 <code>equals()</code> 时没有重写 <code>hashCode()</code> 方法的话就可能会导致 <code>equals</code> 方法判断是相等的两个对象，<code>hashCode</code> 值却不相等。</p>
+<h3 id="2-String类">2. String类</h3>
+<h4 id="2-1-String、StringBuffer、StringBuilder的区别？">2.1 String、StringBuffer、StringBuilder的区别？</h4>
+<ul>
+<li><strong>可变性</strong>。<code>String</code>是不可变的。<code>StringBuffer</code>和<code>StringBuilder</code>可变。<code>StringBuilder</code> 与 <code>StringBuffer</code> 都继承自 <code>AbstractStringBuilder</code> 类。</li>
+<li><strong>线程安全性</strong>。<code>String</code> 中的对象是不可变的，也就可以理解为常量，线程安全。<code>StringBuffer</code> 对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。<code>StringBuilder</code> 并没有对方法进行加同步锁，所以是非线程安全的。</li>
+<li><strong>性能</strong>。每次对 <code>String</code> 类型进行改变的时候，都会生成一个新的 <code>String</code> 对象，然后将指针指向新的 <code>String</code> 对象。</li>
+<li><code>StringBuffer</code> 每次都会对 <code>StringBuffer</code> 对象本身进行操作，而不是生成新的对象并改变对象引用。相同情况下使用 <code>StringBuilder</code> 相比使用 <code>StringBuffer</code> 仅能获得 10%~15% 左右的性能提升，但却要冒多线程不安全的风险。</li>
+</ul>
+<p><strong>对于三者使用的总结：</strong></p>
+<ol>
+<li>操作少量的数据: 适用 <code>String</code></li>
+<li>单线程操作字符串缓冲区下操作大量数据: 适用 <code>StringBuilder</code></li>
+<li>多线程操作字符串缓冲区下操作大量数据: 适用 <code>StringBuffer</code></li>
+</ol>
+<h4 id="2-2-String为什么是不可变的？">2.2 String为什么是不可变的？</h4>
+<ul>
+<li>保存字符串的数组被<code>final</code>修饰且为私有的，并且<code>String</code>类没有提供/暴露修改这个字符串的方法。</li>
+<li><code>String</code>类被<code>final</code>修饰导致其不能被继承，进而避免了子类破坏<code>String</code>不可变。</li>
+</ul>
+<p>在 Java 9 之后，<code>String</code> 、<code>StringBuilder</code> 与 <code>StringBuffer</code> 的实现改用 <code>byte</code> 数组存储字符串。</p>
+<h4 id="2-3-字符串拼接用“-”还是StringBuilder？">2.3 字符串拼接用“+”还是StringBuilder？</h4>
+<p>Java 语言本身并不支持运算符重载，“+”和“+=”是专门为 String 类重载过的运算符，也是 Java 中仅有的两个重载过的运算符。</p>
+<p>字符串对象通过“+”的字符串拼接方式，实际上是通过 <code>StringBuilder</code> 调用 <code>append()</code> 方法实现的，拼接完成之后调用 <code>toString()</code> 得到一个 <code>String</code> 对象 。</p>
+<p>不过，在循环内使用“+”进行字符串的拼接的话，存在比较明显的缺陷：<strong>编译器不会创建单个 <code>StringBuilder</code> 以复用，会导致创建过多的 <code>StringBuilder</code> 对象</strong>。</p>
+<h4 id="2-4-String中的equals-方法和Object中的equals-方法有何区别？">2.4 String中的equals()方法和Object中的equals()方法有何区别？</h4>
+<p><code>String</code> 中的 <code>equals</code> 方法是被重写过的，比较的是 String 字符串的值是否相等。 <code>Object</code> 的 <code>equals</code> 方法是比较的对象的内存地址。</p>
+<h4 id="2-5-字符串常量池的作用了解吗">2.5 字符串常量池的作用了解吗?</h4>
+<p>字符串常量池是JVM为了提升性能和减少内存损耗，针对String类专门开辟的一块区域，主要是为了避免字符串的重复创建。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在堆中创建字符串对象”ab“</span></span><br><span class="line"><span class="comment">// 将字符串对象”ab“的引用保存在字符串常量池中</span></span><br><span class="line"><span class="type">String</span> <span class="variable">aa</span> <span class="operator">=</span> <span class="string">&quot;ab&quot;</span>;</span><br><span class="line"><span class="comment">// 直接返回字符串常量池中字符串对象”ab“的引用</span></span><br><span class="line"><span class="type">String</span> <span class="variable">bb</span> <span class="operator">=</span> <span class="string">&quot;ab&quot;</span>;</span><br><span class="line">System.out.println(aa==bb);<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-6-String-s1-new-String-“abc”-这句话创建了几个字符串对象？">2.6 String s1 = new String(“abc”);这句话创建了几个字符串对象？</h4>
+<p>会创建1个或2个字符串对象。</p>
+<ul>
+<li>如果字符串常量池中不存在该字符串对象的引用，那么会在堆中创建2个字符串对象。</li>
+<li>如果字符串常量池中已存在字符串对象的引用，则只会在堆中创建1个字符串对象。</li>
+</ul>
+<h4 id="2-7-intern方法有什么作用？">2.7 intern方法有什么作用？</h4>
+<p><code>String.intern()</code>是一个native(本地)方法，其作用是将指定的字符串对象的引用保存在字符串常量池中。</p>
+<ul>
+<li>如果字符串常量池中保存了对应的字符串对象的引用，就直接返回该引用。</li>
+<li>如果字符串常量池中没有保存了对应的字符串对象的引用，那就在常量池中创建一个指向该字符串对象的引用并返回。</li>
+</ul>
+<h2 id="Java异常">Java异常</h2>
+<h3 id="1-Exception和Error有什么区别？">1. Exception和Error有什么区别？</h3>
+<p>在Java中，所有的异常都有共同的祖先<code>java.lang</code>包中的<code>Throwable</code>类，他有两个重要的子类：</p>
+<ul>
+<li><code>Exception</code>：程序本身可以处理的异常，可以通过<code>catch</code>来捕获。异常可以分为Checked Exception (受检查异常，必须处理) 和 Unchecked Exception (不受检查异常，可以不处理)。</li>
+<li><code>Error</code>：属于程序无法处理的错误，不建议通过<code>catch</code>来捕获。</li>
+</ul>
+<h3 id="2-Checked-Exception-和-Unchecked-Exception-有什么区别？">2. Checked Exception 和 Unchecked Exception 有什么区别？</h3>
+<ul>
+<li><strong>Checked Exception</strong> 即 受检查异常 ，Java 代码在编译过程中，如果受检查异常没有被 <code>catch</code>或者<code>throws</code> 关键字处理的话，就没办法通过编译。</li>
+<li><strong>Unchecked Exception</strong> 即不受检查异常，Java 代码在编译过程中 ，我们即使不处理不受检查异常也可以正常通过编译。</li>
+</ul>
+<p><code>RuntimeException</code> 及其子类都统称为非受检查异常，常见的有：</p>
+<ul>
+<li><code>NullPointerException</code>(空指针错误)</li>
+<li><code>IllegalArgumentException</code>(参数错误比如方法入参类型错误)</li>
+<li><code>NumberFormatException</code>（字符串转换为数字格式错误，<code>IllegalArgumentException</code>的子类）</li>
+<li><code>ArrayIndexOutOfBoundsException</code>（数组越界错误）</li>
+<li><code>ClassCastException</code>（类型转换错误）</li>
+<li><code>ArithmeticException</code>（算术错误）</li>
+<li><code>SecurityException</code> （安全错误比如权限不够）</li>
+<li><code>UnsupportedOperationException</code>(不支持的操作错误比如重复创建同一用户)</li>
+</ul>
+<p>其他的<code>Exception</code>类及其子类都属于受检查异常 。</p>
+<h3 id="3-Throwable类常用方法有哪些？">3. Throwable类常用方法有哪些？</h3>
+<ul>
+<li><code>String getMessage()</code>：返回异常发生时的简要描述。</li>
+<li><code>String toString()</code>：返回异常发生时的详细信息。</li>
+<li><code>String getLocalizedMessage()</code>：返回异常对象的本地化信息。</li>
+<li><code>void printStackTrace</code>：在控制台打印<code>Throwable</code>对象封装的异常信息。</li>
+</ul>
+<h3 id="4-try-catch-finally如何使用？">4. try-catch-finally如何使用？</h3>
+<ul>
+<li><code>try</code>块：用于捕获异常。其后可以接零个或多个<code>catch</code>块。如果没有<code>catch</code>块，则必须跟一个<code>finally</code>块。</li>
+<li><code>catch</code>块：用于处理<code>try</code>块捕获到的异常。</li>
+<li><code>finally</code>块：无论是否捕获异常，<code>finally</code>块里的语句都会执行。当在<code>try</code>块或者<code>catch</code>块中遇到<code>return</code>语句时，<code>finally</code>语句将在方法返回之前执行。</li>
+</ul>
+<p><strong>注意：不要在 finally 语句块中使用 return!</strong> 当 try 语句和 finally 语句中都有 return 语句时，try 语句块中的 return 语句会被忽略。</p>
+<p>在某些情况下，<code>finally</code>语句不会被执行：</p>
+<ul>
+<li><code>finally</code>之前虚拟机被终止运行。</li>
+<li>程序所在线程死亡。</li>
+<li>关闭CPU。</li>
+</ul>
+<h3 id="5-try-with-resources如何使用？">5. try-with-resources如何使用？</h3>
+<ol>
+<li>适用范围：任何实现 <code>java.lang.AutoCloseable</code>或者 <code>java.io.Closeable</code> 的对象。</li>
+<li><strong>关闭资源和 finally 块的执行顺序：</strong> 在 <code>try-with-resources</code> 语句中，任何 catch 或 finally 块在声明的资源关闭后运行。</li>
+</ol>
+<blockquote>
+<p>面对必须要关闭的资源，我们总是应该优先使用 <code>try-with-resources</code> 而不是<code>try-finally</code>。随之产生的代码更简短，更清晰，产生的异常对我们也更有用。<code>try-with-resources</code>语句让我们更容易编写必须要关闭的资源的代码，若采用<code>try-finally</code>则几乎做不到这点。</p>
+<hr>
+<p>《Effective Java》</p>
+</blockquote>
+<h3 id="6-异常使用注意事项？">6. 异常使用注意事项？</h3>
+<ul>
+<li>不要把异常定义为静态变量，因为这样会导致异常栈信息错乱。每次手动抛出异常，我们都需要手动new一个异常对象抛出。</li>
+<li>抛出的异常信息应该具有意义。</li>
+<li>应该抛出更加具体的异常而不是其父类。</li>
+<li>使用日志打印异常之后就不要再抛出异常了。</li>
+</ul>
+<h2 id="Java-IO">Java IO</h2>
+<h3 id="1-Java-IO流简介">1. Java IO流简介</h3>
+<p>Java IO 流的 40 多个类都是从如下 4 个抽象类基类中派生出来的。</p>
+<ul>
+<li><code>InputStream</code>/<code>Reader</code>: 所有的输入流的基类，前者是字节输入流，后者是字符输入流。</li>
+<li><code>OutputStream</code>/<code>Writer</code>: 所有输出流的基类，前者是字节输出流，后者是字符输出流。</li>
+</ul>
+<h3 id="2-Java-IO中的设计模式">2. Java IO中的设计模式</h3>
+<ul>
+<li>
+<p>装饰器模式</p>
+<blockquote>
+<p>对于字节流来说， <code>FilterInputStream</code> （对应输入流）和<code>FilterOutputStream</code>（对应输出流）是装饰器模式的核心，分别用于增强 <code>InputStream</code> 和<code>OutputStream</code>子类对象的功能。</p>
+</blockquote>
+</li>
+<li>
+<p>适配器模式</p>
+<blockquote>
+<p><code>InputStreamReader</code> 和 <code>OutputStreamWriter</code> 就是两个适配器(Adapter)， 同时，它们两个也是字节流和字符流之间的桥梁。<code>InputStreamReader</code> 使用 <code>StreamDecoder</code> （流解码器）对字节进行解码，<strong>实现字节流到字符流的转换，</strong><code>OutputStreamWriter</code> 使用<code>StreamEncoder</code>（流编码器）对字符进行编码，实现字符流到字节流的转换。</p>
+</blockquote>
+</li>
+<li>
+<p>工厂模式</p>
+<blockquote>
+<p>工厂模式用于创建对象，NIO 中大量用到了工厂模式，比如 <code>Files</code> 类的 <code>newInputStream</code> 方法用于创建 <code>InputStream</code> 对象（静态工厂）、 <code>Paths</code> 类的 <code>get</code> 方法创建 <code>Path</code> 对象（静态工厂）。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="3-常见的IO模型？">3. 常见的IO模型？</h3>
+<p>UNIX 系统下， IO 模型一共有 5 种： <strong>同步阻塞 I/O</strong>、<strong>同步非阻塞 I/O</strong>、<strong>I/O 多路复用</strong>、<strong>信号驱动 I/O</strong> 和<strong>异步 I/O</strong>。</p>
+<p>Java中有3种IO模型：<strong>BIO、NIO 和 AIO</strong>。</p>
+<h3 id="4-BIO、NIO-和-AIO-的区别？">4. BIO、NIO 和 AIO 的区别？</h3>
+<ul>
+<li><strong>BIO</strong>：Blocking I/O，同步阻塞IO。</li>
+<li><strong>NIO</strong>：Non-Blocking I/O，同并非阻塞IO，Java1.4引入。</li>
+<li><strong>AIO</strong>：Asynchronous I/O，异步非阻塞IO，Java1.7引入。</li>
+</ul>
+<h2 id="Java集合">Java集合</h2>
+<blockquote>
+<p>Java集合，也叫做容器，主要有两大接口派生而来。</p>
+<ul>
+<li><code>Collection</code>：存放单一元素。
+<ul>
+<li><code>List</code></li>
+<li><code>Set</code></li>
+<li><code>Queue</code></li>
+</ul>
+</li>
+<li><code>Map</code>接口：存放键值对。</li>
+</ul>
+</blockquote>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303141819282.png" alt="img"></p>
+<h3 id="1-List、Set、Queue、Map的区别？">1. List、Set、Queue、Map的区别？</h3>
+<ul>
+<li><code>List</code>：存储的元素是有序的、可重复的。</li>
+<li><code>Set</code>：存储的元素是无序的，不可重复的。</li>
+<li><code>Queue</code>：按特定的排队规则来确认先后顺序，存储的元素是有序的、可重复的。</li>
+<li><code>Map</code>：键值对存储，key是无序的、不可重复的。</li>
+</ul>
+<h3 id="2-集合底层数据结构总结">2. 集合底层数据结构总结</h3>
+<ul>
+<li>
+<p><code>List</code></p>
+<ul>
+<li><code>ArrayList</code>：<code>Object[]</code>数组</li>
+<li><code>Vector</code>：<code>Object[]</code>数组</li>
+<li><code>LinkedList</code>：双向链表（JDK6之前为循环链表，JDK7取消了循环）</li>
+</ul>
+</li>
+<li>
+<p><code>Set</code></p>
+<ul>
+<li><code>HashSet</code>：基于<code>HashMap</code>实现，无序、唯一</li>
+<li><code>LinkedHashSet</code>：<code>HashSet</code>的子类，基于<code>LinkedHashMap</code> 来实现</li>
+<li><code>TreeSet</code>：红黑树（自平衡的排序二叉树），有序、唯一</li>
+</ul>
+</li>
+<li>
+<p><code>Queue</code></p>
+<ul>
+<li><code>PriorityQueue</code>：<code>Object[]</code>数组来实现二叉堆</li>
+<li><code>ArrayQueue</code>：<code>Object[]</code>数组+双指针</li>
+</ul>
+</li>
+<li>
+<p><code>Map</code></p>
+<ul>
+<li><code>HashMap</code>：<strong>JDK1.8之前由数组+链表组成</strong>，数组是主体，链表则主要为了解决哈希冲突（拉链法）。**JDK1.8开始（数组+链表/红黑树）**在解决哈希冲突时有了较大变化：当链表长度大于阈值（默认为8）（将链表转化为红黑树之前会判断：如果当前数组的长度小于64，那么会选择先进行数组扩容，而不是转为红黑树）时，将链表转化为红黑树，以减少搜索时间。</li>
+<li><code>LinkedHashMap</code>：继承自<code>HashMap</code>，在此基础上，增加了一条双向链表。</li>
+<li><code>Hashtable</code>：数组+链表组成，数组是 <code>Hashtable</code> 的主体，链表则是主要为了解决哈希冲突而存在的。</li>
+<li><code>TreeMap</code>：红黑树。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-List">3. List</h3>
+<h4 id="3-1-ArrayList简要介绍">3.1 <code>ArrayList</code>简要介绍</h4>
+<ul>
+<li><code>ArrayList</code>底层是数组队列，相当于动态数组。</li>
+<li>继承于<code>AbstractList</code>，实现了<code>List</code>、<code>RandomAccess</code>（标志接口，能够快速随机访问）、<code>Cloneable</code>（能被克隆）、<code>java.io.Serializable</code>（支持序列化）等接口。</li>
+</ul>
+<h4 id="3-1-ArrayList和Vector的区别？">3.1 <code>ArrayList</code>和<code>Vector</code>的区别？</h4>
+<ul>
+<li><code>ArrayList</code>是<code>List</code>的主要实现类，底层使用数组存储，适用于频繁的查找工作，线程不安全；</li>
+<li><code>Vector</code>是<code>List</code>的古老实现类，底层使用数组存储，线程安全。</li>
+</ul>
+<h4 id="3-2-ArrayList和LinkedList的区别？">3.2 <code>ArrayList</code>和<code>LinkedList</code>的区别？</h4>
+<ul>
+<li><code>ArrayList</code>和<code>LinkedList</code>都是线程不安全的。</li>
+<li><code>ArrayList</code>底层使用的是Object数组；<code>LinkedList</code>底层使用的是双向链表（JDK1.6之前未循环链表，JDK1.7取消了循环）。</li>
+<li><code>ArrayList</code>支持高效的随机访问，<code>LinkedList</code>不支持。</li>
+</ul>
+<p>我们在项目中一般是不会使用到 <code>LinkedList</code> 的，需要用到 <code>LinkedList</code> 的场景几乎都可以使用 <code>ArrayList</code> 来代替，并且，性能通常会更好！就连 <code>LinkedList</code> 的作者约书亚 · 布洛克（Josh Bloch）自己都说从来不会使用 <code>LinkedList</code> 。</p>
+<h3 id="4-Set">4. Set</h3>
+<h4 id="4-1-Comparable和Comparator的区别">4.1 <code>Comparable</code>和<code>Comparator</code>的区别</h4>
+<ul>
+<li><code>Comparable</code>接口来自<code>java.lang</code>包，它有一个<code>compareTo(Object obj)</code>方法用来排序；</li>
+<li><code>Comparator</code>接口来自<code>java.util</code>包，它有一个<code>compare(Object obj1, Object obj2)</code>方法用来排序。</li>
+</ul>
+<h4 id="4-2-比较-HashSet、LinkedHashSet-和-TreeSet-三者的异同？">4.2 比较 HashSet、LinkedHashSet 和 TreeSet 三者的异同？</h4>
+<ul>
+<li><code>HashSet</code>，<code>LinkedHashSet</code>，<code>TreeSet</code>都是<code>Set</code>接口的实现类，元素唯一，且都线程不安全。</li>
+<li><code>HashSet</code>底层是哈希表（基于<code>HashMap</code>实现）；<code>LinkedHashSet</code>底层是链表和哈希表，元素插入和取出顺序为FIFO；<code>TreeSet</code>底层是红黑树，元素有序，排序方式有自然排序和定制排序。</li>
+<li>底层数据结构的不同导致这三者的应用场景不同。<code>HashSet</code>用于不需要保证元素插入和取出顺序的场景，<code>LinkedHashSet</code>用于保证元素插入和取出顺序满足FIFO的场景，<code>TreeSet</code>用于支持对元素自定义排序规则的场景。</li>
+</ul>
+<h3 id="4-Queue">4. Queue</h3>
+<h4 id="4-1-Queue和Deque的区别？">4.1 <code>Queue</code>和<code>Deque</code>的区别？</h4>
+<ul>
+<li>
+<p><code>Queue</code>是单端队列，遵循先进先出原则。<code>Deque</code>是双端队列，在队列两端都可以插入或删除元素。</p>
+</li>
+<li>
+<p><code>Queue</code>接口扩展了<code>Collection</code>的接口。根据 <strong>因为容量问题而导致操作失败后处理方式的不同</strong> 可以分为两类方法：</p>
+<table>
+<thead>
+<tr>
+<th><code>Queue</code> 接口</th>
+<th>抛出异常</th>
+<th>返回特殊值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>插入队尾</td>
+<td>add(E e)</td>
+<td>offer(E e)</td>
+</tr>
+<tr>
+<td>删除队首</td>
+<td>remove()</td>
+<td>poll()</td>
+</tr>
+<tr>
+<td>查询队首元素</td>
+<td>element()</td>
+<td>peek()</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>Deque</code>扩展了<code>Queue</code>的接口。同样根据失败后处理方式的不同分为两类：</p>
+<table>
+<thead>
+<tr>
+<th><code>Deque</code> 接口</th>
+<th>抛出异常</th>
+<th>返回特殊值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>插入队首</td>
+<td>addFirst(E e)</td>
+<td>offerFirst(E e)</td>
+</tr>
+<tr>
+<td>插入队尾</td>
+<td>addLast(E e)</td>
+<td>offerLast(E e)</td>
+</tr>
+<tr>
+<td>删除队首</td>
+<td>removeFirst()</td>
+<td>pollFirst()</td>
+</tr>
+<tr>
+<td>删除队尾</td>
+<td>removeLast()</td>
+<td>pollLast()</td>
+</tr>
+<tr>
+<td>查询队首元素</td>
+<td>getFirst()</td>
+<td>peekFirst()</td>
+</tr>
+<tr>
+<td>查询队尾元素</td>
+<td>getLast()</td>
+<td>peekLast()</td>
+</tr>
+</tbody>
+</table>
+<p>事实上，<code>Deque</code> 还提供有 <code>push()</code> 和 <code>pop()</code> 等其他方法，可用于模拟栈。</p>
+</li>
+</ul>
+<h4 id="4-2-ArrayDeque与LinkedList的区别？">4.2 <code>ArrayDeque</code>与<code>LinkedList</code>的区别？</h4>
+<p><code>ArrayDeque</code>与<code>LinkedList</code>都实现了<code>Deque</code>接口，两者都有队列的功能。</p>
+<ul>
+<li><code>ArrayDeque</code>基于可变长的数组和双指针来实现，而<code>LinkedList</code>则通过链表来实现。</li>
+<li><code>ArrayDeque</code>不支持存储<code>null</code>数据，而<code>LinkedList</code>支持。</li>
+<li><code>ArrayDeque</code> 是在 JDK1.6 才被引入的，而<code>LinkedList</code> 早在 JDK1.2 时就已经存在。</li>
+<li><code>ArrayDeque</code> 插入时可能存在扩容过程, 不过均摊后的插入操作依然为 O(1)。虽然 <code>LinkedList</code> 不需要扩容，但是每次插入数据时均需要申请新的堆空间，均摊性能相比更慢。</li>
+</ul>
+<p>从性能的角度上，选用 <code>ArrayDeque</code> 来实现队列要比 <code>LinkedList</code> 更好。此外，<code>ArrayDeque</code> 也可以用于实现栈。</p>
+<h4 id="4-3-说一说PriorityQueue">4.3 说一说<code>PriorityQueue</code>?</h4>
+<p>优先级队列<code>PriorityQueue</code>在JDK1.5引入，元素出队顺序与优先级相关，优先级最高的先出队。</p>
+<ul>
+<li><code>PriorityQueue</code>利用了二叉堆的数据结构来实现，底层使用可变长的数组存储数据。</li>
+<li><code>PriorityQueue</code>通过堆元素的上浮和下沉，实现了O(logn)的时间复杂度内插入元素和删除堆顶元素。</li>
+<li><code>PriorityQueue</code>是非线程安全的，且不支持存储<code>null</code>和<code>non-comparable</code>的对象。</li>
+<li><code>PriorityQueue</code>默认是最小堆，但可以接收一个<code>Comparator</code>作为构造参数，从而自定义元素优先级的先后。</li>
+</ul>
+<h3 id="5-Map">5. Map</h3>
+<h4 id="5-1-HashMap和HashTable的区别？">5.1 <code>HashMap</code>和<code>HashTable</code>的区别？</h4>
+<ul>
+<li><strong>线程安全性</strong>：<code>HashMap</code>是非线程安全的，<code>HashTable</code>是线程安全的。因为 <code>Hashtable</code> 内部的方法基本都经过<code>synchronized</code> 修饰。（如果你要保证线程安全的话就使用 <code>ConcurrentHashMap</code> 吧！）。</li>
+<li><strong>效率</strong>：因为线程安全的问题，<code>HashMap</code>的效率更高。另外，<code>HashTable</code>基本被淘汰，不推荐使用。</li>
+<li><strong>初始容量大小和每次扩容大小的不同</strong>：
+<ul>
+<li>创建时如果不指定初始值，<code>HashTable</code>默认的初始大小为11，之后每次扩充，容量变为原来的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2n+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>。<code>HashMap</code>默认的初始化大小为16，之后每次扩充，容量变为原来的2倍。</li>
+<li>创建时如果给定了初始值，那么<code>HashTable</code>使用给定值，而<code>HashMap</code>会将其扩充成2的幂次方大小</li>
+</ul>
+</li>
+<li><strong>底层数据结构</strong>：JDK1.8 以后的 <code>HashMap</code> 在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为 8）时，将链表转化为红黑树（将链表转换成红黑树前会判断，如果当前数组的长度小于 64，那么会选择先进行数组扩容，而不是转换为红黑树），以减少搜索时间。<code>Hashtable</code> 没有这样的机制。</li>
+</ul>
+<h4 id="5-2-HashMap和HashSet的区别？">5.2 <code>HashMap</code>和<code>HashSet</code>的区别？</h4>
+<p><code>HashSet</code> 底层就是基于 <code>HashMap</code> 实现的。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><code>HashMap</code></th>
+<th style="text-align:center"><code>HashSet</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">实现了 <code>Map</code> 接口</td>
+<td style="text-align:center">实现 <code>Set</code> 接口</td>
+</tr>
+<tr>
+<td style="text-align:center">存储键值对</td>
+<td style="text-align:center">仅存储对象</td>
+</tr>
+<tr>
+<td style="text-align:center">调用 <code>put()</code>向 map 中添加元素</td>
+<td style="text-align:center">调用 <code>add()</code>方法向 <code>Set</code> 中添加元素</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>HashMap</code> 使用键（Key）计算 <code>hashcode</code></td>
+<td style="text-align:center"><code>HashSet</code> 使用成员对象来计算 <code>hashcode</code> 值，对于两个对象来说 <code>hashcode</code> 可能相同，所以<code>equals()</code>方法用来判断对象的相等性</td>
+</tr>
+</tbody>
+</table>
+<h4 id="5-3-HashMap和TreeMap的区别？">5.3 <code>HashMap</code>和<code>TreeMap</code>的区别？</h4>
+<p><code>HashMap</code>和<code>TreeMap</code>都继承自<code>AbstractMap</code>。但是<code>TreeMap</code>还实现了<code>NavigableMap</code>接口和<code>SortedMap</code>接口。</p>
+<ul>
+<li>实现<code>NavigableMap</code>接口让<code>TreeMap</code>有了对集合内元素的搜索的能力。</li>
+<li>实现<code>SortedMap</code>接口让<code>TreeMap</code>有了对集合中的元素根据键排序的能力。默认是按key的升序排序，也可以自定义排序。</li>
+</ul>
+<p><strong>综上，相比于<code>HashMap</code>来说 <code>TreeMap</code> 主要多了对集合中的元素根据键排序的能力以及对集合内元素的搜索的能力。</strong></p>
+<h4 id="5-4-HashSet如何检查重复？">5.4 <code>HashSet</code>如何检查重复？</h4>
+<p>在 JDK1.8 中，实际上无论<code>HashSet</code>中是否已经存在了某元素，<code>HashSet</code>都会直接插入，只是会在<code>add()</code>方法的返回值处告诉我们插入前是否存在相同元素。</p>
+<h4 id="5-5-HashMap简介-底层实现">5.5 HashMap简介&amp;底层实现</h4>
+<p>简介：</p>
+<ul>
+<li><code>HashMap</code> 主要用来存放键值对，它基于哈希表的 Map 接口实现，是常用的 Java 集合之一，是非线程安全的。</li>
+<li><code>HashMap</code> 可以存储 null 的 key 和 value，但 null 作为键只能有一个，null 作为值可以有多个。</li>
+<li>JDK1.8 之前 HashMap 由 数组+链表 组成的，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突而存在的（“拉链法”解决冲突）。 JDK1.8 以后的 <code>HashMap</code> 在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为 8）（将链表转换成红黑树前会判断，如果当前数组的长度小于 64，那么会选择先进行数组扩容，而不是转换为红黑树）时，将链表转化为红黑树，以减少搜索时间。</li>
+<li><code>HashMap</code> 默认的初始化大小为 16。之后每次扩充，容量变为原来的 2 倍。并且， <code>HashMap</code> 总是使用 2 的幂作为哈希表的大小。</li>
+</ul>
+<p>底层实现：</p>
+<ol>
+<li>
+<p>JDK1.8之前</p>
+<blockquote>
+<p>JDK1.8之前<code>HashMap</code>底层是数组+链表。<code>HashMap</code>通过key的<code>hashcode</code>经过扰动函数（hash方法）处理过后得到哈希值，然后通过<code>(n-1)&amp;hash</code>判断当前元素存放的位置，如果当前位置存在元素，就判断该元素与要存入的元素的hash值以及key是否相同，如果相同直接覆盖，否则通过拉链法解决冲突。</p>
+</blockquote>
+</li>
+<li>
+<p>JDK1.8之后</p>
+<blockquote>
+<p>当链表长度大于阈值（默认为 8）（将链表转换成红黑树前会判断，如果当前数组的长度小于 64，那么会选择先进行数组扩容，而不是转换为红黑树）时，将链表转化为红黑树，以减少搜索时间。</p>
+</blockquote>
+<ul>
+<li>
+<p><code>loadFactor</code> 加载因子</p>
+<ul>
+<li><code>loadFactor</code>加载因子控制数组存放数据的疏密程度，loadFactor越趋近于1，那么数组中存放的数据（entry）也就越多，也就越密，也就是会让链表的长度增加；loadFactor越趋近于0，数组中存放的数据(entry)也就越少，也就越稀疏。</li>
+<li>loadFactor太大导致查找元素效率低，太小导致数组的利用率低，存放的数据会很分散。默认值为0.75f，是官方给出的一个比较好的临界值。</li>
+<li>给定的默认容量为16，负载因子为0.75。当数据量达到<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>16</mn><mo>∗</mo><mn>0.75</mn><mo>=</mo><mn>12</mn></mrow><annotation encoding="application/x-tex">16*0.75=12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">16</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.75</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">12</span></span></span></span>就需要进行扩容，而扩容操作涉及到rehash、复制数据等操作，非常消耗性能。</li>
+</ul>
+</li>
+<li>
+<p>几个值</p>
+<blockquote>
+<ul>
+<li>默认初始容量：16。<code>static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4;</code></li>
+<li>默认负载因子：0.75f。</li>
+<li>链表转红黑树的节点阈值：8。<code>static final int TREEIFY_THRESHOLD = 8;</code></li>
+<li>链表转红黑树的容量阈值：64。<code>static final int MIN_TREEIFY_CAPACITY = 64;</code></li>
+<li>红黑树转链表的阈值：6。<code>static final int UNTREEIFY_THRESHOLD = 6;</code></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<p>TreeMap、TreeSet 以及 JDK1.8 之后的 HashMap 底层都用到了红黑树。红黑树就是为了解决二叉查找树的缺陷，因为二叉查找树在某些情况下会退化成一个线性结构。</p>
+<h4 id="5-6-HashMap的长度为什么是2的幂次方？">5.6 <code>HashMap</code>的长度为什么是2的幂次方？</h4>
+<p>为了能让<code>HashMap</code>存取高效，尽量减少碰撞，也就是尽量把数据分配均匀。</p>
+<p><strong>“取余(%)操作中如果除数是 2 的幂次则等价于与其除数减一的与(&amp;)操作（也就是说 hash%length==hash&amp;(length-1)的前提是 length 是 2 的 n 次方）。”</strong> 并且采用二进制位操作 &amp;，相对于%能够提高运算效率，这就解释了 HashMap 的长度为什么是 2 的幂次方。</p>
+<h4 id="5-7-HashMap-多线程操作导致死循环问题">5.7 <code>HashMap</code> 多线程操作导致死循环问题</h4>
+<p>主要原因在于并发下的 Rehash 会造成元素之间会形成一个循环链表。不过，jdk 1.8 后解决了这个问题，但是还是不建议在多线程下使用 HashMap,因为多线程下使用 HashMap 还是会存在其他问题比如数据丢失。并发环境下推荐使用 ConcurrentHashMap 。</p>
+<h4 id="5-8-HashMap常见的遍历方式？">5.8 <code>HashMap</code>常见的遍历方式？</h4>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/zQBN3UvJDhRTKP6SzcZFKw">HashMap 的 7 种遍历方式与性能分析！「修正篇」 (qq.com)</a></p>
+</blockquote>
+<ul>
+<li>迭代器（Iterator）方式遍历
+<ul>
+<li>EntrySet方式</li>
+<li>KeySet方式</li>
+</ul>
+</li>
+<li>For Each方式遍历
+<ul>
+<li>EntrySet方式</li>
+<li>KeySet方式</li>
+</ul>
+</li>
+<li>Lambda表达式遍历（JDK1.8+）</li>
+<li>Streams API遍历（JDK1.8+）
+<ul>
+<li>单线程方式</li>
+<li>多线程方式</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-9-ConcurrentHashMap和HashTable的区别？">5.9 <code>ConcurrentHashMap</code>和<code>HashTable</code>的区别？</h4>
+<ul>
+<li><strong>底层数据结构：</strong> JDK1.7 的 <code>ConcurrentHashMap</code> 底层采用 <strong>分段的数组+链表</strong> 实现，JDK1.8 采用的数据结构跟 <code>HashMap1.8</code> 的结构一样，数组+链表/红黑树。<code>Hashtable</code> 和 JDK1.8 之前的 <code>HashMap</code> 的底层数据结构类似都是采用 <strong>数组+链表</strong> 的形式，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突而存在的；</li>
+<li>实现线程安全的方式（重要）：
+<ul>
+<li><code>ConcurrentHashMap</code>，JDK1.8中，并发控制使用<code>synchronized</code>和CAS来操作。是一个优化过且线程安全的<code>HashMap</code>。</li>
+<li><code>HashTable</code>，使用<code>synchronized</code>来保证线程安全，效率非常低下。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-10-ConcurrentHashMap底层数据结构分析">5.10 <code>ConcurrentHashMap</code>底层数据结构分析</h4>
+<ol>
+<li>JDK 1.7</li>
+</ol>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303141819283.png" alt="Java 7 ConcurrentHashMap 存储结构"></p>
+<p><code>ConcurrentHashMap</code>由很多<code>Segment</code>组合（初始化后不可改变），而每个段是一个类似于<code>HashMap</code>的结构（内部可进行扩容）。默认<code>segment</code>个数为16，即<code>ConcurrentHashMap</code>默认支持最多16个线程并发。</p>
+<ol start="2">
+<li>JDK1.8</li>
+</ol>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303141819284.png" alt="Java8 ConcurrentHashMap 存储结构（图片来自 javadoop）"></p>
+<p>Java8 的 ConcurrentHashMap 相对于 Java7 来说变化比较大，不再是之前的 <strong>Segment 数组 + HashEntry 数组 + 链表</strong>，而是 <strong>Node 数组 + 链表 / 红黑树</strong>。当冲突链表达到一定长度时，链表会转换成红黑树。</p>
+<p>Java7 中 <code>ConcurrentHashMap</code> 使用的分段锁，也就是每一个 Segment 上同时只有一个线程可以操作，每一个 <code>Segment</code> 都是一个类似 <code>HashMap</code> 数组的结构，它可以扩容，它的冲突会转化为链表。但是 <code>Segment</code> 的个数一但初始化就不能改变。</p>
+<p>Java8 中的 <code>ConcurrentHashMap</code> 使用的 <code>Synchronized</code> 锁加 CAS 的机制。结构也由 Java7 中的 <strong><code>Segment</code> 数组 + <code>HashEntry</code> 数组 + 链表</strong> 进化成了 <strong>Node 数组 + 链表 / 红黑树</strong>，Node 是类似于一个 HashEntry 的结构。它的冲突再达到一定大小时会转化成红黑树，在冲突小于一定数量时又退回链表。</p>
+<h3 id="6-集合使用注意事项">6. 集合使用注意事项</h3>
+<ul>
+<li>
+<p>集合判空</p>
+<blockquote>
+<p><strong>判断所有集合内部的元素是否为空，使用 <code>isEmpty()</code> 方法，而不是 <code>size()==0</code> 的方式。</strong></p>
+</blockquote>
+</li>
+<li>
+<p>集合转Map</p>
+<blockquote>
+<p><strong>在使用 <code>java.util.stream.Collectors</code> 类的 <code>toMap()</code> 方法转为 <code>Map</code> 集合时，一定要注意当 value 为 null 时会抛 NPE 异常。</strong></p>
+</blockquote>
+</li>
+<li>
+<p>集合遍历</p>
+<blockquote>
+<p><strong>不要在 foreach 循环里进行元素的 <code>remove/add</code> 操作。remove 元素请使用 <code>Iterator</code> 方式，如果并发操作，需要对 <code>Iterator</code> 对象加锁。</strong></p>
+</blockquote>
+</li>
+<li>
+<p>集合去重</p>
+<blockquote>
+<p><strong>可以利用 <code>Set</code> 元素唯一的特性，可以快速对一个集合进行去重操作，避免使用 <code>List</code> 的 <code>contains()</code> 进行遍历去重或者判断包含操作。</strong></p>
+</blockquote>
+</li>
+<li>
+<p>集合转数组</p>
+<blockquote>
+<p><strong>使用集合转数组的方法，必须使用集合的 <code>toArray(T[] array)</code>，传入的是类型完全一致、长度为 0 的空数组(0 是为了节省空间，因为它只是为了说明返回的类型)。</strong></p>
+</blockquote>
+</li>
+<li>
+<p>数组转集合</p>
+<blockquote>
+<p>使用工具类 <code>Arrays.asList()</code> 把数组转换成集合时，不能使用其修改集合相关的方法， 它的 <code>add/remove/clear</code> 方法会抛出 <code>UnsupportedOperationException</code> 异常。</p>
+<p>正确转数组转为<code>ArrayList</code>：</p>
+<ul>
+<li>
+<p>最简单方法：<code>List list = new ArrayList&lt;&gt;(Arrays.asList(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;))</code></p>
+</li>
+<li>
+<p>使用Java8的<code>Stream</code>（推荐）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Integer [] myArray = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;;</span><br><span class="line"><span class="type">List</span> <span class="variable">myList</span> <span class="operator">=</span> Arrays.stream(myArray).collect(Collectors.toList());</span><br><span class="line"><span class="comment">//基本类型也可以实现转换（依赖boxed的装箱操作）</span></span><br><span class="line"><span class="type">int</span> [] myArray2 = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;;</span><br><span class="line"><span class="type">List</span> <span class="variable">myList</span> <span class="operator">=</span> Arrays.stream(myArray2).boxed().collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="Java-并发编程">Java 并发编程</h2>
+<h3 id="1-基础">1. 基础</h3>
+<h4 id="1-1-线程和进程是什么？">1.1 线程和进程是什么？</h4>
+<ul>
+<li>进程：进程是程序的一次执行过程，是系统运行程序的基本单位。系统运行一个程序即是一个进程从创建、运行到消亡的过程。在 Java 中，当我们启动 main 函数时其实就是启动了一个 JVM 的进程，而 main 函数所在的线程就是这个进程中的一个线程，也称主线程。</li>
+<li>线程：线程是一个比进程更小的执行单位。一个进程在执行过程中可以产生多个线程。同类的多个线程共享进程的堆和方法区资源，但每个线程有自己的程序计数器、虚拟机栈和本地方法栈，所以系统在产生一个线程，或者在各个线程间切换工作时，负担要比进程小得多，因此线程也被称为轻量级进程。</li>
+</ul>
+<h4 id="1-2-线程和进程之间的关系？">1.2 线程和进程之间的关系？</h4>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303141819285.png" alt="Java 运行时数据区域（JDK1.8 之后）"></p>
+<ul>
+<li>一个进程可以有多个线程，多个线程共享进程的堆和方法区（JDK1.8之后的元空间）资源，但是每个线程有自己的程序计数器、虚拟机栈和本地方法栈。</li>
+<li>线程是进程划分成的更小的运行单位。线程和进程最大的不同在于各进程是独立的，而各线程不一定，因为同一进程中的线程极有可能会相互影响。</li>
+<li>线程执行开销小，但不利于资源的管理和保护；而进程正相反。</li>
+</ul>
+<h4 id="1-3-为什么程序计数器、虚拟机栈和本地方法栈是线程私有的呢？为什么堆和方法区是线程共享的呢？">1.3 为什么<strong>程序计数器</strong>、<strong>虚拟机栈</strong>和<strong>本地方法栈</strong>是线程私有的呢？为什么堆和方法区是线程共享的呢？</h4>
+<ol>
+<li>
+<p>程序计数器为什么是私有的？</p>
+<blockquote>
+<p>程序计数器主要有两个作用：</p>
+<ul>
+<li>字节码解释器通过改变程序计数器来依次读取指令，从而实现代码的流程控制，如：顺序执行、选择、循环。</li>
+<li>在多线程的情况下，程序计数器用于记录当前线程执行的位置。（需要注意的是，如果执行的是 native 方法，那么程序计数器记录的是 undefined 地址，只有执行的是 Java 代码时程序计数器记录的才是下一条指令的地址。）</li>
+</ul>
+<p>所以，程序计数器私有主要是为了<strong>线程切换后能恢复到正确的执行位置</strong>。</p>
+</blockquote>
+</li>
+<li>
+<p>虚拟机栈和本地方法栈为什么是私有的？</p>
+<blockquote>
+<p>虚拟机栈：每个Java方法在执行的同时会创建一个栈帧用于存储局部变量表、操作数栈、常量池引用等信息。从方法调用直至执行完成的过程，就对应着一个栈帧在Java虚拟机栈中入栈和出栈的过程。</p>
+<p>本地方法栈：和虚拟机栈所发挥的作用类似。区别是：虚拟机栈为虚拟机执行java方法服务，而本地方法栈则为虚拟机使用到的Native方法服务。</p>
+<p>所有，为了<strong>保证线程中的局部变量不被别的线程访问到</strong>，虚拟机栈和本地方法栈是线程私有的。</p>
+</blockquote>
+</li>
+</ol>
+<p>堆和方法区是所有线程共享的资源，其中堆是进程中最大的一块内存，主要用于存放新创建的对象 (几乎所有对象都在这里分配内存)，方法区主要用于存放已被加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。</p>
+<h4 id="1-4-并发和并行的区别？">1.4 并发和并行的区别？</h4>
+<ul>
+<li>并发：两个及两个以上的作业在<strong>同一时间段内</strong>执行。</li>
+<li>并行：两个及两个以上的作业在<strong>同一时刻</strong>执行。</li>
+</ul>
+<h4 id="1-5-同步和异步的区别？">1.5 同步和异步的区别？</h4>
+<ul>
+<li>同步：发出一个调用后，该调用需要一直等待结果返回。</li>
+<li>异步：调用在发出后，不用等待返回结果，该调用直接返回。</li>
+</ul>
+<h4 id="1-6-为什么要用多线程？多线程可能带来什么问题？">1.6 为什么要用多线程？多线程可能带来什么问题？</h4>
+<ul>
+<li>从计算机底层来说：线程是轻量级的进程，线程间切换和调度的成本远远小于进程。单核时代，多线程主要是为了提高单进程利用 CPU 和 IO 系统的效率。核时代多线程主要是为了提高进程利用多核 CPU 的能力。</li>
+<li>从现代互联网发展趋势来说：现在的系统要求百万级甚至千万级的并发量，而多线程并发编程正是开发高并发系统的基础。</li>
+</ul>
+<p>并发编程的目的就是为了提高程序的执行效率和运行速度，但是并不总是能提高程序的运行速度，而且还可能产生很多问题，如内存泄漏、死锁、线程不安全等。</p>
+<h4 id="1-7-线程的生命周期和状态？">1.7 线程的生命周期和状态？</h4>
+<p>Java线程共有6种状态。</p>
+<ul>
+<li><strong>New</strong>：初始状态，线程被创建但没有调用<code>start()</code>。</li>
+<li><strong>Runnable</strong>：运行状态，线程被调用了<code>start()</code>等待运行的状态。</li>
+<li><strong>Blocked</strong>：阻塞状态，需要等待锁释放。</li>
+<li><strong>Waiting</strong>：等待状态，表示该线程需要等待其他线程做出一些特定动作（通知或中断）。</li>
+<li><strong>Time_waiting</strong>：超时等待状态，可以在指定时间后自行返回而不用向Waiting那样一直等待。</li>
+<li><strong>Terminated</strong>：终止状态，表示该线程已经运行完毕。</li>
+</ul>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303141819286.png" alt="Java 线程状态变迁图"></p>
+<h4 id="1-8-什么是上下文切换？">1.8 什么是上下文切换？</h4>
+<p>线程在执行过程中会有自己的运行条件和状态（这被称为上下文），比如上文所说到过的程序计数器，栈信息等。当出现如下情况的时候，线程会从占用 CPU 状态中退出。</p>
+<ul>
+<li>主动让出 CPU，比如调用了 <code>sleep()</code>, <code>wait()</code> 等。</li>
+<li>时间片用完，因为操作系统要防止一个线程或者进程长时间占用 CPU 导致其他线程或者进程饿死。</li>
+<li>调用了阻塞类型的系统中断，比如请求 IO，线程被阻塞。</li>
+<li>被终止或结束运行</li>
+</ul>
+<p>这其中前三种都会发生线程切换，线程切换意味着需要保存当前线程的上下文，留待线程下次占用 CPU 的时候恢复现场。并加载下一个将要占用 CPU 的线程上下文。这就是所谓的 <strong>上下文切换</strong>。</p>
+<p>上下文切换是现代操作系统的基本功能，因其每次需要保存信息恢复信息，这将会占用 CPU，内存等系统资源进行处理，也就意味着效率会有一定损耗，如果频繁切换就会造成整体效率低下。</p>
+<h4 id="1-9-什么是线程死锁？如何避免死锁？">1.9 什么是线程死锁？如何避免死锁？</h4>
+<p>线程 A 持有资源 2，线程 B 持有资源 1，他们同时都想申请对方的资源，所以这两个线程就会互相等待而进入死锁状态。</p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303141819287.png" alt="线程死锁示意图 "></p>
+<p>产生死锁的四个必要条件：</p>
+<ol>
+<li>互斥条件：该资源任意一个时刻只由一个线程占用。</li>
+<li>请求与保持条件：一个线程因请求资源而阻塞时，对已获得的资源保持不放。</li>
+<li>不剥夺条件：线程已获得的资源在未使用完之前不能被其他线程强行剥夺，只有自己使用完毕后才释放资源。</li>
+<li>循环等待条件：若干线程之间形成一种头尾相接的循环等待资源关系。</li>
+</ol>
+<p><strong>如何预防死锁？</strong> 破坏死锁的产生的必要条件即可：</p>
+<ol>
+<li><strong>破坏请求与保持条件</strong> ：一次性申请所有的资源。</li>
+<li><strong>破坏不剥夺条件</strong> ：占用部分资源的线程进一步申请其他资源时，如果申请不到，可以主动释放它占有的资源。</li>
+<li><strong>破坏循环等待条件</strong> ：靠按序申请资源来预防。按某一顺序申请资源，释放资源则反序释放。破坏循环等待条件。</li>
+</ol>
+<h4 id="1-10-sleep-方法和wait-方法对比">1.10 <code>sleep()</code>方法和<code>wait()</code>方法对比</h4>
+<p>共同点：两种都可以暂停线程的执行。</p>
+<p>区别：</p>
+<ul>
+<li><strong><code>sleep()</code>方法没有释放锁，而<code>wait()</code>方法释放了锁。</strong></li>
+<li><code>wait()</code> 通常被用于线程间交互/通信，<code>sleep()</code>通常被用于暂停执行。</li>
+<li><code>wait()</code> 方法被调用后，线程不会自动苏醒，需要别的线程调用同一个对象上的 <code>notify()</code>或者 <code>notifyAll()</code> 方法。<code>sleep()</code>方法执行完成后，线程会自动苏醒，或者也可以使用 <code>wait(long timeout)</code> 超时后线程会自动苏醒。</li>
+<li><code>sleep()</code> 是 <code>Thread</code> 类的静态本地方法，<code>wait()</code> 则是 <code>Object</code> 类的本地方法。</li>
+</ul>
+<h4 id="1-11-可以直接调用-Thread-类的-run-方法吗？">1.11 可以直接调用 <code>Thread</code> 类的 <code>run</code> 方法吗？</h4>
+<p>new 一个 <code>Thread</code>，线程进入了新建状态。调用 <code>start()</code>方法，会启动一个线程并使线程进入了就绪状态，当分配到时间片后就可以开始运行了。 <code>start()</code> 会执行线程的相应准备工作，然后自动执行 <code>run()</code> 方法的内容，这是真正的多线程工作。 但是，直接执行 <code>run()</code> 方法，会把 <code>run()</code> 方法当成一个 main 线程下的普通方法去执行，并不会在某个线程中执行它，所以这并不是多线程工作。</p>
+<p>总结：<strong>调用 <code>start()</code> 方法方可启动线程并使线程进入就绪状态，直接执行 <code>run()</code> 方法的话不会以多线程的方式执行。</strong></p>
+<h3 id="2-volatile-关键字">2. volatile 关键字</h3>
+<h4 id="2-1-如何保证变量可见性？">2.1 如何保证变量可见性？</h4>
+<p>在Java中，<code>volatile</code>关键字可以保证变量的可见性，如果将变量声明为<code>volatile</code>，这就指示JVM，这个变量是共享且不稳定的，每次使用它都到主存中进行读取。</p>
+<p><code>volatile</code> 关键字其实并非是 Java 语言特有的，在 C 语言里也有，它最原始的意义就是禁用 CPU 缓存。如果我们将一个变量使用 <code>volatile</code> 修饰，这就指示 编译器，这个变量是共享且不稳定的，每次使用它都到主存中进行读取。</p>
+<p><code>volatile</code> 关键字能保证数据的可见性，但不能保证数据的原子性。<code>synchronized</code> 关键字两者都能保证。</p>
+<h4 id="2-2-如何禁止指令重排序？">2.2 如何禁止指令重排序？</h4>
+<p>在Java中，<code>volatile</code>关键字除了可以保证变量的可见性，还有一个重要作用就是<strong>防止JVM的指令重排序</strong>。如果将变量声明为<code>volatile</code>，在对这个变量进行读写操作的时候，会通过插入特定的<strong>内存屏障</strong>的方式来禁止指令重排序。</p>
+<h4 id="2-3-volatile可以保证原子性吗？">2.3 <code>volatile</code>可以保证原子性吗？</h4>
+<p><code>volatile</code>关键字能保证变量的可见性，但不能保证对变量的操作时原子性的。</p>
+<h3 id="3-乐观锁和悲观锁">3. 乐观锁和悲观锁</h3>
+<h4 id="3-1-什么时乐观锁？使用场景是什么？">3.1 什么时乐观锁？使用场景是什么？</h4>
+<p>乐观锁总是假设最好的情况，认为共享资源每次被访问的时候不会出现问题，线程可以不停地执行，无需加锁也无需等待，只是在提交修改的时候去验证对应的资源是否被其他线程修改了。（具体方法可以使用版本号机制或CAS 算法）</p>
+<p><strong>乐观锁通常用于多读少写的情景，避免频繁加锁影响性能，大大提高了系统的吞吐量。</strong></p>
+<h4 id="3-2-什么是悲观锁，使用场景是什么？">3.2 什么是悲观锁，使用场景是什么？</h4>
+<p>悲观锁总是假设最坏的情况，认为共享资源每次被访问的时候就会出现问题，所以每次在获取资源操作的时候都会加锁，这样其他线程想拿到这个资源就会阻塞直到锁被上一个持有者释放。</p>
+<p><strong>悲观锁通常用于多写场景，避免频繁失败和重试影响性能。</strong></p>
+<h4 id="3-3-如何实现乐观锁？">3.3 如何实现乐观锁？</h4>
+<p>乐观锁一般使用版本号机制或CAS算法实现，CAS算法相对来说更多一些。</p>
+<ol>
+<li>
+<p>版本号机制</p>
+<blockquote>
+<p>在数据表中加上一个数据版本号<code>version</code>字段，表示数据被修改的次数，当数据被修改时，<code>version</code>值会加1。当线程A要更新数据值时，在读取数据的同时也会读取到<code>version</code>值，再提交更新时，若刚才读取到的<code>version</code>值为当前数据库中的<code>version</code>值相等时才更新，否则重试更新操作，直到更新成功。</p>
+</blockquote>
+</li>
+<li>
+<p>CAS算法</p>
+<blockquote>
+<ul>
+<li>
+<p>CAS（Compare And Swap, 比较与交换），用于实现乐观锁，被广泛用于各大框架中。CAS 的思想很简单，就是用一个预期值和要更新的变量值进行比较，两值相等才会进行更新。</p>
+</li>
+<li>
+<p>CAS是一个原子操作，底层依赖于一条CPU 的原子指令。（原子操作是最小不可拆分的操作，也就是说操作一旦开始，就不能被打断，直到操作完成。）</p>
+</li>
+<li>
+<p>CAS 涉及到三个操作数：</p>
+<ul>
+<li>V：要更新的变量值（Var）</li>
+<li>E：预期值（Expected）</li>
+<li>N：拟写入的新值（New）</li>
+</ul>
+<p>当且仅当V的值等于E时，CAS 通过原子方式用新值N来更新V的值。如果不等，说明已经有其他线程更新了V，则当前线程放弃更新。</p>
+</li>
+<li>
+<p>当多个线程同时使用CAS 操作一个变量时，只有一个会胜出，并成功更新，其余均会失败，但失败的线程并不会被挂起，仅是被告知失败，并且允许再次尝试，当然也允许失败的线程放弃操作。</p>
+</li>
+<li>
+<p>Java 语言并没有直接实现 CAS，CAS 相关的实现是通过 C++ 内联汇编的形式实现的（JNI 调用）。因此， CAS 的具体实现和操作系统以及 CPU 都有关系。</p>
+</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h4 id="3-4-乐观锁存在哪些问题？">3.4 乐观锁存在哪些问题？</h4>
+<ul>
+<li><strong>ABA问题是乐观锁最常见的问题。</strong></li>
+</ul>
+<p>ABA 问题：如果一个变量V 初次读取的时候是A值，并且在准备赋值的时候检查到它仍然是A 值，那我们就能说明它的值没有被其他线程修改过了吗？很明显是不能的，因为在这段时间它的值可能被改为其他值，然后又改为了A，那CAS 操作就会误认为他从来没有被修改过。这个问题被称为CAS操作的“<strong>ABA</strong>”问题。</p>
+<p>ABA问题的解决思路是在变量前面追加上<strong>版本号或者时间戳</strong>。JDK1.5以后的<code>AtomicStampedReference</code>类就是用来解决ABA问题的，其中的<code>compareAndSet()</code>方法就是首先检查当前引用是否等于预期引用，并且当前标志是否等于预期标志，如果全部相等，则以原子方式将该引用和该标志的值设置为给定的更新值。</p>
+<ul>
+<li>循环时间长开销大</li>
+</ul>
+<p>CAS操作经常会用到自旋操作来进行重试，也就是不成功就一直循环执行直到成功。如果长时间不成功，会给CPU带来非常大的执行开销。</p>
+<p>如果JVM能支持处理器提供的pause指令那么效率会有一定的提升，pause 指令有两个作用：</p>
+<ol>
+<li>可以延迟流水线执行指令，使CPU不会消耗过多的执行资源，延迟的时间取决于具体实现的版本，在一些处理器上延迟时间是0.</li>
+<li>可以避免在退出循环的时候因内存顺序冲突而引起CPU流水线被清空，从而提高CPU的执行效率。</li>
+</ol>
+<ul>
+<li>只能保证一个共享变量的原子操作</li>
+</ul>
+<p>CAS只对单个共享变量有效，当操作涉及跨多个共享变量时CAS无效。但是从JDK1.5开始，提供了<code>AtomicReference</code>类来保证引用对象间的原子性，你可以把多个变量放在一个对象里来进行CAS操作。所以我们可以利用锁或者利用<code>AtomicReference</code>类把多个共享变量合并成一个共享变量来操作。</p>
+<h3 id="4-synchronized关键字">4. synchronized关键字</h3>
+<h4 id="4-1-synchronized是什么？有什么用？">4.1 synchronized是什么？有什么用？</h4>
+<p><code>synchronized</code>是一个Java关键字，是同步的意思。主要解决的是多个线程之间访问资源的同步性，可以保证被它修饰的方法或者代码块在任意时刻只能有一个线程被执行。</p>
+<p>在Java6之前，<code>synchronized</code>属于重量级锁，效率低下。</p>
+<p>在Java6之后，<code>synchronized</code>引入了大量的优化如自旋锁、适应性自旋锁、锁消除、锁粗化、偏向锁、轻量级锁等技术来减少所操作的开销，提升了效率。</p>
+<h4 id="4-2-如何使用synchronized？">4.2 如何使用<code>synchronized</code>？</h4>
+<p><code>synchronized</code>关键字使用方式主要有三种：</p>
+<ol>
+<li>
+<p>修饰实例方法（锁当前对象实例）</p>
+<blockquote>
+<p>给当前对象实例加锁，进入同步代码前要获得<strong>当前对象实例的锁</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">method</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//业务代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li>
+<p>修饰静态方法（锁当前类）</p>
+<blockquote>
+<p>给当前类加锁，会作用于类的所有对象实例，进入同步代码前要获得<strong>当前class的锁</strong>。</p>
+<p>这是因为静态成员不属于任何一个实例对象，归属于整个类，不依赖于类的特定实例，被类的所有实例共享。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">method</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//业务代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li>
+<p>修饰代码块（锁指定对象/类）</p>
+<blockquote>
+<p>对括号里指定的对象/类加锁：</p>
+<ul>
+<li><code>synchronized(object)</code> 表示进入同步代码库前要获得 <strong>给定对象的锁</strong>。</li>
+<li><code>synchronized(类.class)</code> 表示进入同步代码前要获得 <strong>给定 Class 的锁</strong></li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<p>总结：</p>
+<ul>
+<li><code>synchronized</code> 关键字加到 <code>static</code> 静态方法和 <code>synchronized(class)</code> 代码块上都是是给 Class 类上锁；</li>
+<li><code>synchronized</code> 关键字加到实例方法上是给对象实例上锁；</li>
+<li>尽量不要使用 <code>synchronized(String a)</code> 因为 JVM 中，字符串常量池具有缓存功能。</li>
+</ul>
+<h4 id="4-3-synchronized可以修饰构造方法吗？">4.3 <code>synchronized</code>可以修饰构造方法吗？</h4>
+<p>**构造方法不能使用<code>synchronized</code>关键字修饰。**构造方法本身就属于线程安全的，不存在同步的构造方法一说。</p>
+<h4 id="4-4-JDK1-6-之后的synchronized底层做了哪些优化？">4.4 JDK1.6 之后的<code>synchronized</code>底层做了哪些优化？</h4>
+<p>JDK1.6 对锁的实现引入了大量的优化，如偏向锁、轻量级锁、自旋锁、适应性自旋锁、锁消除、锁粗化等技术来减少锁操作的开销。</p>
+<p>锁主要存在四种状态，依次是：无锁状态、偏向锁状态、轻量级锁状态、重量级锁状态，他们会随着竞争的激烈而逐渐升级。注意锁可以升级不可降级，这种策略是为了提高获得锁和释放锁的效率。</p>
+<h4 id="4-5-synchronized和volatile有什么区别？">4.5 <code>synchronized</code>和<code>volatile</code>有什么区别？</h4>
+<p><code>synchronized</code>和<code>volatile</code>是两个互补的存在。</p>
+<ul>
+<li><code>volatile</code>关键字是线程同步的轻量级实现，所以<code>volatile</code>性能更好。但是<code>volatile</code>关键字只能用于变量而<code>synchronized</code>关键字可以修饰方法和代码块。</li>
+<li><code>volatile</code>关键字能保证数据的可见性，但不能保证数据的原子性。<code>synchronized</code>关键字两者都能保证。</li>
+<li><code>volatile</code>关键字主要用于解决变量在多个线程之间的可见性，而<code>synchronized</code>关键字解决的是多个线程之间访问资源的同步性。</li>
+</ul>
+<h3 id="5-ThreadLocal">5. ThreadLocal</h3>
+<h4 id="5-1-ThreadLocal有什么用？">5.1 <code>ThreadLocal</code>有什么用？</h4>
+<p><code>ThreadLocal</code>类主要解决的就是让每个线程绑定自己的值，可以将<code>ThreadLocal</code>类形象地比喻成存放数据的盒子，盒子中可以存储每个线程的私有数据。</p>
+<p>如果创建了一个<code>ThreadLocal</code>变量，那么访问这个变量的每个线程都会有这个变量的本地副本，这也是<code>ThreadLocal</code>变量名的由来。可以使用<code>get()</code>和<code>set()</code>方法来获取默认值或将其值更改为当前线程所存的副本的值，从而避免了线程安全问题。</p>
+<h4 id="5-2-ThreadLocal内存泄漏是怎么导致的？">5.2 <code>ThreadLocal</code>内存泄漏是怎么导致的？</h4>
+<p><code>ThreadLocalMap</code> 中使用的 key 为 <code>ThreadLocal</code> 的弱引用，而 value 是强引用。所以，如果 <code>ThreadLocal</code> 没有被外部强引用的情况下，在垃圾回收的时候，key 会被清理掉，而 value 不会被清理掉。</p>
+<p>这样一来，<code>ThreadLocalMap</code> 中就会出现 key 为 null 的 Entry。假如我们不做任何措施的话，value 永远无法被 GC 回收，这个时候就可能会产生内存泄露。<code>ThreadLocalMap</code> 实现中已经考虑了这种情况，在调用 <code>set()</code>、<code>get()</code>、<code>remove()</code> 方法的时候，会清理掉 key 为 null 的记录。使用完 <code>ThreadLocal</code>方法后最好手动调用<code>remove()</code>方法。</p>
+<h3 id="6-线程池">6. 线程池</h3>
+<h4 id="6-1-什么是线程池？">6.1 什么是线程池？</h4>
+<p>线程池是管理一系列线程的资源池。当有任务要处理时，直接从线程中获取线程来处理，处理完之后线程并不会立即被销毁，而是等待下一个任务。</p>
+<h4 id="6-2-为什么要用线程池？">6.2 为什么要用线程池？</h4>
+<p>线程池提供了一种限制和管理资源的方式。使用线程池的好处有：</p>
+<ul>
+<li><strong>降低资源消耗</strong>。通过重复利用已创建的线程降低线程创建和销毁的消耗。</li>
+<li><strong>提高响应速度</strong>。当任务到达时，任务可以不需要等待线程创建就能立即执行。</li>
+<li><strong>提高线程的可管理性</strong>。线程是稀缺资源，如果无限制创建，不仅消耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一的分配、调优和监控。</li>
+</ul>
+<h3 id="7-JMM-Java-内存模型">7. JMM(Java 内存模型)</h3>
+<h2 id="JVM">JVM</h2>
+<h3 id="1-Java内存区域">1. Java内存区域</h3>
+<h4 id="1-1-运行时数据区域">1.1 运行时数据区域</h4>
+<p>JDK1.8之前：</p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303151808770.png" alt="Java 运行时数据区域（JDK1.8 之前）"></p>
+<p>jdk1.8之后：</p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303151808771.png" alt="Java 运行时数据区域（JDK1.8 之后）"></p>
+<h3 id="2-JVM垃圾回收">2. JVM垃圾回收</h3>
+<h3 id="3-类加载器">3. 类加载器</h3>
+<h4 id="3-1-类加载过程">3.1 类加载过程</h4>
+<ul>
+<li>
+<p>类加载过程：加载-&gt;连接-&gt;初始化。</p>
+</li>
+<li>
+<p>连接过程又可分为三步：验证-&gt;准备-&gt;解析</p>
+</li>
+</ul>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303151808772.png" alt="类加载过程"></p>
+<p>加载是类加载过程的第一步，主要完成：</p>
+<ul>
+<li>通过全类名获取定义此类的二进制字节流</li>
+<li>将字节流所代表的静态存储结构转换为方法区的运行时数据结构。</li>
+<li>在内存中生成一个代表该类的<code>Class</code>对象，作为方法区这些数据的访问入口。</li>
+</ul>
+<h4 id="3-2-类加载器是什么？">3.2 类加载器是什么？</h4>
+<ul>
+<li>类加载器是一个负责加载类的对象，用于实现类加载过程中的加载这一步。</li>
+<li>每个Java类都有一个引用指向加载它的<code>ClassLoader</code>。</li>
+<li>数组类不是通过<code>ClassLoader</code>创建的，而是由JVM在需要的时候自动创建的。</li>
+</ul>
+<p>简单来说，<strong>类加载器的主要作用就是加载 Java 类的字节码（ <code>.class</code> 文件）到 JVM 中（在内存中生成一个代表该类的 <code>Class</code> 对象）。</strong> 字节码可以是 Java 源程序（<code>.java</code>文件）经过 <code>javac</code> 编译得来，也可以是通过工具动态生成或者通过网络下载得来。</p>
+<h4 id="3-3-类加载器的加载规则？">3.3 类加载器的加载规则？</h4>
+<p>JVM 启动的时候，并不会一次性加载所有的类，而是根据需要去动态加载。也就是说，大部分类在具体用到的时候才会去加载，这样对内存更加友好。</p>
+<p>对于已经加载的类会被放在 <code>ClassLoader</code> 中。在类加载的时候，系统会首先判断当前类是否被加载过。已经被加载的类会直接返回，否则才会尝试加载。也就是说，对于一个类加载器来说，相同二进制名称的类只会被加载一次。</p>
+<h4 id="3-4-类加载器有哪几种？">3.4 类加载器有哪几种？</h4>
+<p>JVM 中内置了三个重要的 <code>ClassLoader</code>：</p>
+<ol>
+<li><strong><code>BootstrapClassLoader</code>(启动类加载器)</strong> ：最顶层的加载类，由 C++实现，通常表示为 null，并且没有父级，主要用来加载 JDK 内部的核心类库（ <code>%JAVA_HOME%/lib</code>目录下的 <code>rt.jar</code> 、<code>resources.jar</code> 、<code>charsets.jar</code>等 jar 包和类）以及被 <code>-Xbootclasspath</code>参数指定的路径下的所有类。</li>
+<li><strong><code>ExtensionClassLoader</code>(扩展类加载器)</strong> ：主要负责加载 <code>%JRE_HOME%/lib/ext</code> 目录下的 jar 包和类以及被 <code>java.ext.dirs</code> 系统变量所指定的路径下的所有类。</li>
+<li><strong><code>AppClassLoader</code>(应用程序类加载器)</strong> ：面向我们用户的加载器，负责加载当前应用 classpath 下的所有 jar 包和类。</li>
+</ol>
+<p>除了这三种类加载器之外，用户还可以加入自定义的类加载器来进行拓展，以满足自己的特殊需求。</p>
+<p><img src="https://picture-cloud-storage-bed.oss-cn-chengdu.aliyuncs.com/images/202303151808773.png" alt="类加载器层次关系图"></p>
+<p>除了 <code>BootstrapClassLoader</code> 是 JVM 自身的一部分之外，其他所有的类加载器都是在 JVM 外部实现的，并且全都继承自 <code>ClassLoader</code>抽象类。这样做的好处是用户可以自定义类加载器，以便让应用程序自己决定如何去获取所需的类。</p>
+<h4 id="3-5-什么是双亲委派模型？">3.5 什么是双亲委派模型？</h4>
+<ul>
+<li>
+<p><code>ClassLoader</code> 类使用委托模型来搜索类和资源。</p>
+</li>
+<li>
+<p>双亲委派模型要求除了顶层的启动类加载器外，其余的类加载器都应有自己的父类加载器。</p>
+</li>
+<li>
+<p><code>ClassLoader</code> 实例会在试图亲自查找类或资源之前，将搜索类或资源的任务委托给其父类加载器。</p>
+</li>
+</ul>
+<h4 id="3-6-双亲委派模型的执行流程">3.6 双亲委派模型的执行流程?</h4>
+<ul>
+<li>在类加载的时候，系统会首先判断当前类是否被加载过。已经被加载的类会直接返回，否则才会尝试加载（每个父类加载器都会走一遍这个流程）。</li>
+<li>类加载器在进行类加载的时候，它首先不会自己去尝试加载这个类，而是把这个请求委派给父类加载器去完成（调用父加载器 <code>loadClass()</code>方法来加载类）。这样的话，所有的请求最终都会传送到顶层的启动类加载器 <code>BootstrapClassLoader</code> 中。</li>
+<li>只有当父加载器反馈自己无法完成这个加载请求（它的搜索范围中没有找到所需的类）时，子加载器才会尝试自己去加载（调用自己的 <code>findClass()</code> 方法来加载类）。</li>
+</ul>
+<h4 id="3-7-双亲委派模型的好处？">3.7 双亲委派模型的好处？</h4>
+<p>双亲委派模型保证了 Java 程序的稳定运行，可以避免类的重复加载（JVM 区分不同类的方式不仅仅根据类名，相同的类文件被不同的类加载器加载产生的是两个不同的类），也保证了 Java 的核心 API 不被篡改。</p>
+<h2 id="Java8新特性">Java8新特性</h2>
+<blockquote>
+<p>Java8的新特性包括：</p>
+<ul>
+<li>Lambda表达式</li>
+<li>Stream流操作</li>
+<li>Optional类</li>
+<li>函数式接口</li>
+<li>Date-Time API</li>
+<li>默认方法</li>
+</ul>
+</blockquote>
+<h3 id="1-Lambda表达式">1. Lambda表达式</h3>
+<h4 id="1-1-Lambda语法">1.1 Lambda语法</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.不需要参数，没有返回值，输出 hello</span></span><br><span class="line">()-&gt;System.out.pritnln(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.不需要参数，返回 hello</span></span><br><span class="line">()-&gt;<span class="string">&quot;hello&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 接受2个参数(数字),返回两数之和 </span></span><br><span class="line">(x, y) -&gt; x + y  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 4. 接受2个数字参数,返回两数之和 </span></span><br><span class="line">(<span class="type">int</span> x, <span class="type">int</span> y) -&gt; x + y  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 5. 两个数字参数，如果都大于10，返回和，如果都小于10，返回差</span></span><br><span class="line">(<span class="type">int</span> x,<span class="type">int</span> y) -&gt;&#123;</span><br><span class="line">  <span class="keyword">if</span>( x &gt; <span class="number">10</span> &amp;&amp; y &gt; <span class="number">10</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>( x &lt; <span class="number">10</span> &amp;&amp; y &lt; <span class="number">10</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> Math.abs(x-y);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Java 中的函数接口在使用时，可以隐式的转换成 <code>Lambda</code> 表达式，在 <code>Java 8</code> 中已经有很多接口已经声明为函数接口，如 Runnable、Callable、Comparator 等。</li>
+</ul>
+<h4 id="1-2-Lambda使用">1.2 Lambda使用</h4>
+<ol>
+<li>对于函数接口</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Lambda 的使用，使用 Runnable 例子</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> InterruptedException</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">createLambda</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">    <span class="comment">// 使用 Lambda 之前</span></span><br><span class="line">    <span class="type">Runnable</span> <span class="variable">runnable</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;JDK8 之前的线程创建&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">   <span class="keyword">new</span> <span class="title class_">Thread</span>(runnable).start();</span><br><span class="line">   <span class="comment">// 使用 Lambda 之后</span></span><br><span class="line">   <span class="type">Runnable</span> <span class="variable">runnable1Jdk8</span> <span class="operator">=</span> () -&gt; System.out.println(<span class="string">&quot;JDK8 之后的线程创建&quot;</span>);</span><br><span class="line">   <span class="keyword">new</span> <span class="title class_">Thread</span>(runnable1Jdk8).start();</span><br><span class="line">   <span class="comment">// 更加紧凑的方式</span></span><br><span class="line">   <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; System.out.println(<span class="string">&quot;JDK8 之后的线程创建&quot;</span>)).start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>
+<p>对于方法引用</p>
+<blockquote>
+<p>方法引用可以让我们直接访问类的实例或者方法，在 Lambda 只是执行一个方法的时候，就可以不用 <code>Lambda</code> 的编写方式，而用方法引用的方式：<code>实例/类::方法</code>。这样不仅代码更加的紧凑，而且可以增加代码的可读性。</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@Setter</span></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;User&gt; userList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;User&gt;();</span><br><span class="line"><span class="keyword">static</span> &#123;</span><br><span class="line">    userList.add(<span class="keyword">new</span> <span class="title class_">User</span>(<span class="string">&quot;A&quot;</span>, <span class="number">26</span>));</span><br><span class="line">    userList.add(<span class="keyword">new</span> <span class="title class_">User</span>(<span class="string">&quot;B&quot;</span>, <span class="number">18</span>));</span><br><span class="line">    userList.add(<span class="keyword">new</span> <span class="title class_">User</span>(<span class="string">&quot;C&quot;</span>, <span class="number">23</span>));</span><br><span class="line">    userList.add(<span class="keyword">new</span> <span class="title class_">User</span>(<span class="string">&quot;D&quot;</span>, <span class="number">19</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 测试方法引用</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">methodRef</span><span class="params">()</span> &#123;</span><br><span class="line">    User[] userArr = <span class="keyword">new</span> <span class="title class_">User</span>[userList.size()];</span><br><span class="line">    userList.toArray(userArr);</span><br><span class="line">    <span class="comment">// User::getAge 调用 getAge 方法</span></span><br><span class="line">    Arrays.sort(userArr, Comparator.comparing(User::getAge));</span><br><span class="line">    <span class="keyword">for</span> (User user : userArr) &#123;</span><br><span class="line">        System.out.println(user);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>
+<p>对于遍历方式</p>
+<blockquote>
+<p>Lambda 带来了新的遍历方式，<code>Java 8</code> 为集合增加了 <code>foreach</code> 方法，它可以接受函数接口进行操作。</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 新的遍历方式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">foreachTest</span><span class="params">()</span> &#123;</span><br><span class="line">    List&lt;String&gt; skills = Arrays.asList(<span class="string">&quot;java&quot;</span>, <span class="string">&quot;golang&quot;</span>, <span class="string">&quot;c++&quot;</span>, <span class="string">&quot;c&quot;</span>, <span class="string">&quot;python&quot;</span>);</span><br><span class="line">    <span class="comment">// 使用 Lambda 之前</span></span><br><span class="line">    <span class="keyword">for</span> (String skill : skills) &#123;</span><br><span class="line">        System.out.print(skill+<span class="string">&quot;,&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println();</span><br><span class="line">    <span class="comment">// 使用 Lambda 之后</span></span><br><span class="line">    <span class="comment">// 方式1,forEach+lambda</span></span><br><span class="line">    skills.forEach((skill) -&gt; System.out.print(skill+<span class="string">&quot;,&quot;</span>));</span><br><span class="line">    System.out.println();</span><br><span class="line">    <span class="comment">// 方式2，forEach+方法引用</span></span><br><span class="line">    skills.forEach(System.out::print);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>
+<p>对于流式操作</p>
+<blockquote>
+<p><code>Java 8</code> 提供了 stream 类用于获取数据流，它专注对数据集合进行各种高效便利操作，提高了编程效率，且同时支持串行和并行的两种模式汇聚计算。能充分的利用多核优势。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 为集合创建串行流</span></span><br><span class="line">stream()</span><br><span class="line"><span class="comment">// 为集合创建并行流</span></span><br><span class="line">parallelStream()</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 流式操作的去重 distinct 和过滤 filter。</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">streamTest</span><span class="params">()</span> &#123;</span><br><span class="line">    List&lt;String&gt; skills = Arrays.asList(<span class="string">&quot;java&quot;</span>, <span class="string">&quot;golang&quot;</span>, <span class="string">&quot;c++&quot;</span>, <span class="string">&quot;c&quot;</span>, <span class="string">&quot;python&quot;</span>, <span class="string">&quot;java&quot;</span>);</span><br><span class="line">    <span class="comment">// Jdk8 之前</span></span><br><span class="line">    <span class="keyword">for</span> (String skill : skills) &#123;</span><br><span class="line">        System.out.print(skill + <span class="string">&quot;,&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println();</span><br><span class="line">    <span class="comment">// Jdk8 之后-去重遍历</span></span><br><span class="line">    skills.stream().distinct().forEach(skill -&gt; System.out.print(skill + <span class="string">&quot;,&quot;</span>));</span><br><span class="line">    System.out.println();</span><br><span class="line">    <span class="comment">// Jdk8 之后-去重遍历</span></span><br><span class="line">    skills.stream().distinct().forEach(System.out::print);</span><br><span class="line">    System.out.println();</span><br><span class="line">    <span class="comment">// Jdk8 之后-去重，过滤掉 ptyhon 再遍历</span></span><br><span class="line">    skills.stream().distinct().filter(skill -&gt; skill != <span class="string">&quot;python&quot;</span>).forEach(skill -&gt; System.out.print(skill + <span class="string">&quot;,&quot;</span>));</span><br><span class="line">    System.out.println();</span><br><span class="line">    <span class="comment">// Jdk8 之后转字符串</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">skillString</span> <span class="operator">=</span> String.join(<span class="string">&quot;,&quot;</span>, skills);</span><br><span class="line">    System.out.println(skillString);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 流式操作的数据转换（也称映射）map。</span></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 数据转换</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="meta">@Test</span></span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">mapTest</span><span class="params">()</span> &#123;</span><br><span class="line">     List&lt;Integer&gt; numList = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line">     <span class="comment">// 数据转换</span></span><br><span class="line">     numList.stream().map(num -&gt; num * num).forEach(num -&gt; System.out.print(num + <span class="string">&quot;,&quot;</span>));</span><br><span class="line"></span><br><span class="line">     System.out.println();</span><br><span class="line"></span><br><span class="line">     <span class="comment">// 数据收集</span></span><br><span class="line">     Set&lt;Integer&gt; numSet = numList.stream().map(num -&gt; num * num).collect(Collectors.toSet());</span><br><span class="line">     numSet.forEach(num -&gt; System.out.print(num + <span class="string">&quot;,&quot;</span>));</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 流式操作的数学计算。</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 数学计算测试</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">mapMathTest</span><span class="params">()</span> &#123;</span><br><span class="line">    List&lt;Integer&gt; list = Arrays.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line">    <span class="type">IntSummaryStatistics</span> <span class="variable">stats</span> <span class="operator">=</span> list.stream().mapToInt(x -&gt; x).summaryStatistics();</span><br><span class="line">    System.out.println(<span class="string">&quot;最小值：&quot;</span> + stats.getMin());</span><br><span class="line">    System.out.println(<span class="string">&quot;最大值：&quot;</span> + stats.getMax());</span><br><span class="line">    System.out.println(<span class="string">&quot;个数：&quot;</span> + stats.getCount());</span><br><span class="line">    System.out.println(<span class="string">&quot;和：&quot;</span> + stats.getSum());</span><br><span class="line">    System.out.println(<span class="string">&quot;平均数：&quot;</span> + stats.getAverage());</span><br><span class="line">    <span class="comment">// 求和的另一种方式</span></span><br><span class="line">    <span class="type">Integer</span> <span class="variable">integer</span> <span class="operator">=</span> list.stream().reduce((sum, cost) -&gt; sum + cost).get();</span><br><span class="line">    System.out.println(integer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-Stream流式操作">2. Stream流式操作</h3>
+<blockquote>
+<p>它完全不同于 <a target="_blank" rel="noopener" href="http://java.io">java.io</a> 包的 Input/Output Stream ，也不是大数据实时处理的 Stream 流。这个 Stream 流操作是 Java 8 对集合操作功能的增强，专注于对集合的各种高效、便利、优雅的<strong>聚合操作</strong>。借助于 <code>Lambda</code> 表达式，显著的提高<strong>编程效率</strong>和<strong>可读性</strong>。且 Stream 提供了<strong>并行计算</strong>模式，可以简洁的编写出并行代码，能充分发挥如今计算机的多核处理优势。</p>
+<p>Stream 流提供了<strong>惰性计算</strong>和<strong>并行处理</strong>的能力</p>
+</blockquote>
+<p>Stream 流的使用总是按照一定的步骤进行，可以抽象出下面的使用流程。</p>
+<blockquote>
+<p>数据源（source） -&gt; 数据处理 / 转换（intermedia） -&gt; 结果处理（terminal ）</p>
+</blockquote>
+<ul>
+<li>
+<p>数据源：可以通过多种方式获取Steam 数据源</p>
+<blockquote>
+<ul>
+<li>Collection.stream (); 从集合获取流。</li>
+<li>Collection.parallelStream (); 从集合获取<strong>并行流。</strong></li>
+<li>Arrays.stream (T array) or Stream.of (); 从数组获取流。</li>
+<li>BufferedReader.lines (); 从输入流中获取流。</li>
+<li>IntStream.of () ; 从静态方法中获取流。</li>
+<li>Stream.generate (); 自己生成流。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>数据处理</p>
+<blockquote>
+<p>在这个步骤中不管怎样操作，它返回的都是一个新的流对象，原始数据不会发生任何改变，而且这个步骤是<code>惰性计算</code>处理的，也就是说只调用方法并不会开始处理，只有在真正的开始收集结果时，中间操作才会生效，而且如果遍历没有完成，想要的结果已经获取到了（比如获取第一个值），会停止遍历，然后返回结果。<code>惰性计算</code>可以显著提高运行效率。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数据处理/转换操作自然不止是上面演示的过滤 filter 和 map 映射两种，另外还有 map (mapToInt, flatMap 等)、 filter、 distinct、 sorted、 peek、 limit、 skip、 parallel、 sequential、 unordered 等。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">streamDemo</span><span class="params">()</span>&#123;</span><br><span class="line">    List&lt;String&gt; nameList = Arrays.asList(<span class="string">&quot;Darcy&quot;</span>, <span class="string">&quot;Chris&quot;</span>, <span class="string">&quot;Linda&quot;</span>, <span class="string">&quot;Sid&quot;</span>, <span class="string">&quot;Kim&quot;</span>, <span class="string">&quot;Jack&quot;</span>, <span class="string">&quot;Poul&quot;</span>, <span class="string">&quot;Peter&quot;</span>);</span><br><span class="line">    <span class="comment">// 1. 筛选出名字长度为4的</span></span><br><span class="line">    <span class="comment">// 2. 名字前面拼接 This is</span></span><br><span class="line">    <span class="comment">// 3. 遍历输出</span></span><br><span class="line">    nameList.stream()</span><br><span class="line">            .filter(name -&gt; name.length() == <span class="number">4</span>)</span><br><span class="line">            .map(name -&gt; <span class="string">&quot;This is &quot;</span>+name)</span><br><span class="line">            .forEach(name -&gt; System.out.println(name));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出结果</span></span><br><span class="line"><span class="comment">// This is Jack</span></span><br><span class="line"><span class="comment">// This is Poul</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li>
+<p>结果处理</p>
+<blockquote>
+<p><code>结果处理（terminal ）</code>是流处理的最后一步，执行完这一步之后流会被彻底用尽，流也不能继续操作了。</p>
+<p>也只有到了这个操作的时候，流的<code>数据处理/转换</code>等中间过程才会开始计算，也就是上面所说的<code>惰性计算</code>。</p>
+<p>常见的<code>结果处理</code>操作有 forEach、 forEachOrdered、 toArray、 reduce、 collect、 min、 max、 count、 anyMatch、 allMatch、 noneMatch、 findFirst、 findAny、 iterator 等。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 转换成为大写然后收集结果，遍历输出</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">toUpperCaseDemo</span><span class="params">()</span> &#123;</span><br><span class="line">    List&lt;String&gt; nameList = Arrays.asList(<span class="string">&quot;Darcy&quot;</span>, <span class="string">&quot;Chris&quot;</span>, <span class="string">&quot;Linda&quot;</span>, <span class="string">&quot;Sid&quot;</span>, <span class="string">&quot;Kim&quot;</span>, <span class="string">&quot;Jack&quot;</span>, <span class="string">&quot;Poul&quot;</span>, <span class="string">&quot;Peter&quot;</span>);</span><br><span class="line">    List&lt;String&gt; upperCaseNameList = nameList.stream()</span><br><span class="line">            .map(String::toUpperCase)</span><br><span class="line">            .collect(Collectors.toList());</span><br><span class="line">    upperCaseNameList.forEach(name -&gt; System.out.println(name + <span class="string">&quot;,&quot;</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出结果</span></span><br><span class="line"><span class="comment">// DARCY,CHRIS,LINDA,SID,KIM,JACK,POUL,PETER,</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<h3 id="3-Optional类">3. Optional类</h3>
+<blockquote>
+<p>Optional类用来帮助更好地处理空指针问题。</p>
+</blockquote>
+<ol>
+<li>创建</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 创建一个 Optional</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">createOptionalTest</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// Optional 构造方式1 - of 传入的值不能为 null</span></span><br><span class="line">    Optional&lt;String&gt; helloOption = Optional.of(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Optional 构造方式2 - empty 一个空 optional</span></span><br><span class="line">    Optional&lt;String&gt; emptyOptional = Optional.empty();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Optional 构造方式3 - ofNullable 支持传入 null 值的 optional</span></span><br><span class="line">    Optional&lt;String&gt; nullOptional = Optional.ofNullable(<span class="literal">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>
+<p>Optional判断</p>
+<blockquote>
+<p>Optional 只是一个包装对象，想要判断里面有没有值可以使用 <code>isPresent</code> 方法检查其中是否有值 。</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 检查是否有值</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">checkOptionalTest</span><span class="params">()</span> &#123;</span><br><span class="line">    Optional&lt;String&gt; helloOptional = Optional.of(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">    System.out.println(helloOptional.isPresent());</span><br><span class="line"></span><br><span class="line">    Optional&lt;Object&gt; emptyOptional = Optional.empty();</span><br><span class="line">    System.out.println(emptyOptional.isPresent());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">false</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 如果有值，输出长度。使用 ifPresent 方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">whenIsPresent</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 如果没有值，获取默认值</span></span><br><span class="line">    Optional&lt;String&gt; helloOptional = Optional.of(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">    Optional&lt;String&gt; emptyOptional = Optional.empty();</span><br><span class="line">    helloOptional.ifPresent(s -&gt; System.out.println(s.length()));</span><br><span class="line">    emptyOptional.ifPresent(s -&gt; System.out.println(s.length()));</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>
+<p>Optional获取值</p>
+<blockquote>
+<p>使用 <code>get</code> 方法可以获取值，但是如果值不存在，会抛出 <code>NoSuchElementException</code> 异常。</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 如果没有值，会抛异常</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">getTest</span><span class="params">()</span> &#123;</span><br><span class="line">    Optional&lt;String&gt; stringOptional = Optional.of(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    System.out.println(stringOptional.get());</span><br><span class="line">    <span class="comment">// 如果没有值，会抛异常</span></span><br><span class="line">    Optional&lt;String&gt; emptyOptional = Optional.empty();</span><br><span class="line">    System.out.println(emptyOptional.get());</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>
+<p>Optional默认值</p>
+<blockquote>
+<p>使用 <code>orElse</code>, <code>orElseGet</code> 方法可以在没有值的情况下获取给定的默认值。</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 如果没有值，获取默认值</span></span><br><span class="line"><span class="comment"> *  orElseGet 传入的方法在有值的情况下并不会运行。而 orElse 却都会运行。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">whenIsNullGetTest</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 如果没有值，获取默认值</span></span><br><span class="line">    Optional&lt;String&gt; emptyOptional = Optional.empty();</span><br><span class="line">    <span class="type">String</span> <span class="variable">orElse</span> <span class="operator">=</span> emptyOptional.orElse(<span class="string">&quot;orElse default&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">orElseGet</span> <span class="operator">=</span> emptyOptional.orElseGet(() -&gt; <span class="string">&quot;orElseGet default&quot;</span>);</span><br><span class="line">    System.out.println(orElse);</span><br><span class="line">    System.out.println(orElseGet);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>
+<p>Optional异常</p>
+<blockquote>
+<p>使用 <code>orElseThrow</code> 在没有值的时候抛出异常</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 如果没有值，抛出异常</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">whenIsNullThrowExceTest</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="comment">// 如果没有值，抛出异常</span></span><br><span class="line">    Optional&lt;String&gt; emptyOptional = Optional.empty();</span><br><span class="line">    <span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> emptyOptional.orElseThrow(() -&gt; <span class="keyword">new</span> <span class="title class_">Exception</span>(<span class="string">&quot;发现空值&quot;</span>));</span><br><span class="line">    System.out.println(value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>
+<p>Optional函数接口</p>
+<blockquote>
+<p><code>Optional</code> 中主要有三个传入函数接口的方法，分别是 <code>filter</code>，<code>map</code>，<code>flatMap</code>。</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">functionTest</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// filter 过滤</span></span><br><span class="line">    Optional&lt;Integer&gt; optional123 = Optional.of(<span class="number">123</span>);</span><br><span class="line">    optional123.filter(num -&gt; num == <span class="number">123</span>).ifPresent(num -&gt; System.out.println(num));</span><br><span class="line"></span><br><span class="line">    Optional&lt;Integer&gt; optional456 = Optional.of(<span class="number">456</span>);</span><br><span class="line">    optional456.filter(num -&gt; num == <span class="number">123</span>).ifPresent(num -&gt; System.out.println(num));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// map 转换</span></span><br><span class="line">    Optional&lt;Integer&gt; optional789 = Optional.of(<span class="number">789</span>);</span><br><span class="line">    optional789.map(String::valueOf).map(String::length).ifPresent(length -&gt; System.out.println(length));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-函数式接口">4. 函数式接口</h3>
+<p>在 java 8 中专门有一个包放函数式接口<code>java.util.function</code>，该包下的所有接口都有 <code>@FunctionalInterface</code> 注解，提供函数式编程。</p>
+<h3 id="5-LocalDate、LocalDateTime-时间处理">5. LocalDate、LocalDateTime 时间处理</h3>
+<p>Jdk8 带来了全新的时间处理工具类，用于代替之前存在缺陷的时间处理。新的时间处理相比之前更加简单好用。</p>
+<p>常用的类有以下几个类。</p>
+<table>
+<thead>
+<tr>
+<th>时间相关类</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LocalDateTime</td>
+<td>时间处理类，最高精确到纳秒</td>
+</tr>
+<tr>
+<td>LocalDate</td>
+<td>时间处理类，最高精确到天</td>
+</tr>
+<tr>
+<td>DateTimeFormatter</td>
+<td>时间格式化</td>
+</tr>
+<tr>
+<td>ZoneId</td>
+<td>时区设置类</td>
+</tr>
+</tbody>
+</table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://GageLv.github.io/hexo-blog">JoeGoodyLv</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://gagelv.github.io/hexo-blog/2023/03/19/%E6%A0%A1%E6%8B%9B%E5%85%AB%E8%82%A1%E5%9F%BA%E7%A1%80%EF%BC%882%EF%BC%89/">https://gagelv.github.io/hexo-blog/2023/03/19/校招八股基础（2）/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://GageLv.github.io/hexo-blog" target="_blank">JoeGoodyLv</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/hexo-blog/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="https://w.wallhaven.cc/full/jx/wallhaven-jxep8y.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/hexo-blog/2023/03/19/%E6%A0%A1%E6%8B%9B%E5%85%AB%E8%82%A1%E5%9F%BA%E7%A1%80%EF%BC%881%EF%BC%89/"><img class="next-cover" src="https://w.wallhaven.cc/full/yx/wallhaven-yxqlzg.png" onerror="onerror=null;src='/hexo-blog/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">校招八股基础（1）</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">校招八股基础（2）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E5%9F%BA%E7%A1%80"><span class="toc-number">1.1.</span> <span class="toc-text">Java基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Java-vs-C"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. Java vs C++</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-JVM-vs-JDK-vs-JRE"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. JVM vs JDK vs JRE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AD%97%E8%8A%82%E7%A0%81%EF%BC%9F%E9%87%87%E7%94%A8%E5%AD%97%E8%8A%82%E7%A0%81%E7%9A%84%E5%A5%BD%E5%A4%84%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. 什么是字节码？采用字节码的好处是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-JIT%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.4.</span> <span class="toc-text">4. JIT是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Java%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.1.5.</span> <span class="toc-text">5. Java的数据类型有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.1.6.</span> <span class="toc-text">6. 基本类型和包装类型的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6%E4%BA%86%E8%A7%A3%E5%90%97%EF%BC%9F"><span class="toc-number">1.1.7.</span> <span class="toc-text">7. 包装类型的缓存机制了解吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.1.8.</span> <span class="toc-text">8. 自动装箱和拆箱的原理是什么?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BF%90%E7%AE%97%E7%9A%84%E7%B2%BE%E5%BA%A6%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-number">1.1.9.</span> <span class="toc-text">9. 浮点数运算的精度丢失问题？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E5%AF%B9%E8%B1%A1%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98"><span class="toc-number">1.1.10.</span> <span class="toc-text">10. 对象相关问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98"><span class="toc-number">1.1.11.</span> <span class="toc-text">11. 构造方法相关问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%85%B1%E5%90%8C%E7%82%B9%E5%92%8C%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.1.12.</span> <span class="toc-text">12. 接口和抽象类的共同点和区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%BA%86%E8%A7%A3%E5%90%97%EF%BC%9F%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%95%E7%94%A8%E6%8B%B7%E8%B4%9D"><span class="toc-number">1.1.13.</span> <span class="toc-text">13. 深拷贝和浅拷贝了解吗？什么是引用拷贝?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E4%BB%80%E4%B9%88%E6%98%AF%E6%B3%9B%E5%9E%8B%EF%BC%9F%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-number">1.1.14.</span> <span class="toc-text">14. 什么是泛型？有什么作用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%8D%E5%B0%84-%E5%8F%8D%E5%B0%84%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9%EF%BC%9F%E5%8F%8D%E5%B0%84%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9F"><span class="toc-number">1.1.15.</span> <span class="toc-text">15. 什么是反射?反射的优缺点？反射的应用场景？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-%E4%BB%80%E4%B9%88%E6%98%AF%E6%B3%A8%E8%A7%A3%EF%BC%9F%E6%B3%A8%E8%A7%A3%E7%9A%84%E8%A7%A3%E6%9E%90%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%EF%BC%9F"><span class="toc-number">1.1.16.</span> <span class="toc-text">16. 什么是注解？注解的解析方式有哪几种？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-%E4%BB%80%E4%B9%88%E6%98%AFSPI%EF%BC%9F"><span class="toc-number">1.1.17.</span> <span class="toc-text">17. 什么是SPI？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">1.1.18.</span> <span class="toc-text">18. 序列化和反序列化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E5%B8%B8%E8%A7%81%E7%B1%BB"><span class="toc-number">1.2.</span> <span class="toc-text">Java常见类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Object%E7%B1%BB"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.Object类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-Object%E7%B1%BB%E7%9A%84%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">1.1 Object类的常见方法有哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E5%92%8Ceuqals-%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">1.2 &#x3D;&#x3D;和euqals()的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-hashCode-%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8%EF%BC%9F"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">1.3 hashCode()有什么用？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%87%8D%E5%86%99equals-%E6%97%B6%E5%BF%85%E9%A1%BB%E9%87%8D%E5%86%99hashCode-%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">1.4 为什么重写equals()时必须重写hashCode()方法？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-String%E7%B1%BB"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. String类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-String%E3%80%81StringBuffer%E3%80%81StringBuilder%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.1 String、StringBuffer、StringBuilder的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-String%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%9A%84%EF%BC%9F"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.2 String为什么是不可变的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E7%94%A8%E2%80%9C-%E2%80%9D%E8%BF%98%E6%98%AFStringBuilder%EF%BC%9F"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">2.3 字符串拼接用“+”还是StringBuilder？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-String%E4%B8%AD%E7%9A%84equals-%E6%96%B9%E6%B3%95%E5%92%8CObject%E4%B8%AD%E7%9A%84equals-%E6%96%B9%E6%B3%95%E6%9C%89%E4%BD%95%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">2.4 String中的equals()方法和Object中的equals()方法有何区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0%E7%9A%84%E4%BD%9C%E7%94%A8%E4%BA%86%E8%A7%A3%E5%90%97"><span class="toc-number">1.2.2.5.</span> <span class="toc-text">2.5 字符串常量池的作用了解吗?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-String-s1-new-String-%E2%80%9Cabc%E2%80%9D-%E8%BF%99%E5%8F%A5%E8%AF%9D%E5%88%9B%E5%BB%BA%E4%BA%86%E5%87%A0%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1%EF%BC%9F"><span class="toc-number">1.2.2.6.</span> <span class="toc-text">2.6 String s1 &#x3D; new String(“abc”);这句话创建了几个字符串对象？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-intern%E6%96%B9%E6%B3%95%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-number">1.2.2.7.</span> <span class="toc-text">2.7 intern方法有什么作用？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E5%BC%82%E5%B8%B8"><span class="toc-number">1.3.</span> <span class="toc-text">Java异常</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Exception%E5%92%8CError%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. Exception和Error有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Checked-Exception-%E5%92%8C-Unchecked-Exception-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. Checked Exception 和 Unchecked Exception 有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Throwable%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.3.3.</span> <span class="toc-text">3. Throwable类常用方法有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-try-catch-finally%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%EF%BC%9F"><span class="toc-number">1.3.4.</span> <span class="toc-text">4. try-catch-finally如何使用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-try-with-resources%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%EF%BC%9F"><span class="toc-number">1.3.5.</span> <span class="toc-text">5. try-with-resources如何使用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%BC%82%E5%B8%B8%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9F"><span class="toc-number">1.3.6.</span> <span class="toc-text">6. 异常使用注意事项？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-IO"><span class="toc-number">1.4.</span> <span class="toc-text">Java IO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Java-IO%E6%B5%81%E7%AE%80%E4%BB%8B"><span class="toc-number">1.4.1.</span> <span class="toc-text">1. Java IO流简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Java-IO%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.4.2.</span> <span class="toc-text">2. Java IO中的设计模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%B8%B8%E8%A7%81%E7%9A%84IO%E6%A8%A1%E5%9E%8B%EF%BC%9F"><span class="toc-number">1.4.3.</span> <span class="toc-text">3. 常见的IO模型？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-BIO%E3%80%81NIO-%E5%92%8C-AIO-%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.4.4.</span> <span class="toc-text">4. BIO、NIO 和 AIO 的区别？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E9%9B%86%E5%90%88"><span class="toc-number">1.5.</span> <span class="toc-text">Java集合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-List%E3%80%81Set%E3%80%81Queue%E3%80%81Map%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.5.1.</span> <span class="toc-text">1. List、Set、Queue、Map的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9B%86%E5%90%88%E5%BA%95%E5%B1%82%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E7%BB%93"><span class="toc-number">1.5.2.</span> <span class="toc-text">2. 集合底层数据结构总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-List"><span class="toc-number">1.5.3.</span> <span class="toc-text">3. List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-ArrayList%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">3.1 ArrayList简要介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-ArrayList%E5%92%8CVector%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">3.1 ArrayList和Vector的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-ArrayList%E5%92%8CLinkedList%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.5.3.3.</span> <span class="toc-text">3.2 ArrayList和LinkedList的区别？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Set"><span class="toc-number">1.5.4.</span> <span class="toc-text">4. Set</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-Comparable%E5%92%8CComparator%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.5.4.1.</span> <span class="toc-text">4.1 Comparable和Comparator的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E6%AF%94%E8%BE%83-HashSet%E3%80%81LinkedHashSet-%E5%92%8C-TreeSet-%E4%B8%89%E8%80%85%E7%9A%84%E5%BC%82%E5%90%8C%EF%BC%9F"><span class="toc-number">1.5.4.2.</span> <span class="toc-text">4.2 比较 HashSet、LinkedHashSet 和 TreeSet 三者的异同？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Queue"><span class="toc-number">1.5.5.</span> <span class="toc-text">4. Queue</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-Queue%E5%92%8CDeque%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.5.5.1.</span> <span class="toc-text">4.1 Queue和Deque的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-ArrayDeque%E4%B8%8ELinkedList%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.5.5.2.</span> <span class="toc-text">4.2 ArrayDeque与LinkedList的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E8%AF%B4%E4%B8%80%E8%AF%B4PriorityQueue"><span class="toc-number">1.5.5.3.</span> <span class="toc-text">4.3 说一说PriorityQueue?</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Map"><span class="toc-number">1.5.6.</span> <span class="toc-text">5. Map</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-HashMap%E5%92%8CHashTable%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.5.6.1.</span> <span class="toc-text">5.1 HashMap和HashTable的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-HashMap%E5%92%8CHashSet%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.5.6.2.</span> <span class="toc-text">5.2 HashMap和HashSet的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-HashMap%E5%92%8CTreeMap%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.5.6.3.</span> <span class="toc-text">5.3 HashMap和TreeMap的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-HashSet%E5%A6%82%E4%BD%95%E6%A3%80%E6%9F%A5%E9%87%8D%E5%A4%8D%EF%BC%9F"><span class="toc-number">1.5.6.4.</span> <span class="toc-text">5.4 HashSet如何检查重复？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-HashMap%E7%AE%80%E4%BB%8B-%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.5.6.5.</span> <span class="toc-text">5.5 HashMap简介&amp;底层实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-6-HashMap%E7%9A%84%E9%95%BF%E5%BA%A6%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF2%E7%9A%84%E5%B9%82%E6%AC%A1%E6%96%B9%EF%BC%9F"><span class="toc-number">1.5.6.6.</span> <span class="toc-text">5.6 HashMap的长度为什么是2的幂次方？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-7-HashMap-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%93%8D%E4%BD%9C%E5%AF%BC%E8%87%B4%E6%AD%BB%E5%BE%AA%E7%8E%AF%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.6.7.</span> <span class="toc-text">5.7 HashMap 多线程操作导致死循环问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-8-HashMap%E5%B8%B8%E8%A7%81%E7%9A%84%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F%EF%BC%9F"><span class="toc-number">1.5.6.8.</span> <span class="toc-text">5.8 HashMap常见的遍历方式？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-9-ConcurrentHashMap%E5%92%8CHashTable%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.5.6.9.</span> <span class="toc-text">5.9 ConcurrentHashMap和HashTable的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-10-ConcurrentHashMap%E5%BA%95%E5%B1%82%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90"><span class="toc-number">1.5.6.10.</span> <span class="toc-text">5.10 ConcurrentHashMap底层数据结构分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E9%9B%86%E5%90%88%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.5.7.</span> <span class="toc-text">6. 集合使用注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B"><span class="toc-number">1.6.</span> <span class="toc-text">Java 并发编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E7%A1%80"><span class="toc-number">1.6.1.</span> <span class="toc-text">1. 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.6.1.1.</span> <span class="toc-text">1.1 线程和进程是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9F"><span class="toc-number">1.6.1.2.</span> <span class="toc-text">1.2 线程和进程之间的关系？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E4%B8%BA%E4%BB%80%E4%B9%88%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8%E3%80%81%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88%E5%92%8C%E6%9C%AC%E5%9C%B0%E6%96%B9%E6%B3%95%E6%A0%88%E6%98%AF%E7%BA%BF%E7%A8%8B%E7%A7%81%E6%9C%89%E7%9A%84%E5%91%A2%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A0%86%E5%92%8C%E6%96%B9%E6%B3%95%E5%8C%BA%E6%98%AF%E7%BA%BF%E7%A8%8B%E5%85%B1%E4%BA%AB%E7%9A%84%E5%91%A2%EF%BC%9F"><span class="toc-number">1.6.1.3.</span> <span class="toc-text">1.3 为什么程序计数器、虚拟机栈和本地方法栈是线程私有的呢？为什么堆和方法区是线程共享的呢？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E5%B9%B6%E5%8F%91%E5%92%8C%E5%B9%B6%E8%A1%8C%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.6.1.4.</span> <span class="toc-text">1.4 并发和并行的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.6.1.5.</span> <span class="toc-text">1.5 同步和异步的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E5%A4%9A%E7%BA%BF%E7%A8%8B%EF%BC%9F%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%8F%AF%E8%83%BD%E5%B8%A6%E6%9D%A5%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-number">1.6.1.6.</span> <span class="toc-text">1.6 为什么要用多线程？多线程可能带来什么问题？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-7-%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%92%8C%E7%8A%B6%E6%80%81%EF%BC%9F"><span class="toc-number">1.6.1.7.</span> <span class="toc-text">1.7 线程的生命周期和状态？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-8-%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2%EF%BC%9F"><span class="toc-number">1.6.1.8.</span> <span class="toc-text">1.8 什么是上下文切换？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-9-%E4%BB%80%E4%B9%88%E6%98%AF%E7%BA%BF%E7%A8%8B%E6%AD%BB%E9%94%81%EF%BC%9F%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E6%AD%BB%E9%94%81%EF%BC%9F"><span class="toc-number">1.6.1.9.</span> <span class="toc-text">1.9 什么是线程死锁？如何避免死锁？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-10-sleep-%E6%96%B9%E6%B3%95%E5%92%8Cwait-%E6%96%B9%E6%B3%95%E5%AF%B9%E6%AF%94"><span class="toc-number">1.6.1.10.</span> <span class="toc-text">1.10 sleep()方法和wait()方法对比</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-11-%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8-Thread-%E7%B1%BB%E7%9A%84-run-%E6%96%B9%E6%B3%95%E5%90%97%EF%BC%9F"><span class="toc-number">1.6.1.11.</span> <span class="toc-text">1.11 可以直接调用 Thread 类的 run 方法吗？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-volatile-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.6.2.</span> <span class="toc-text">2. volatile 关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E5%8F%98%E9%87%8F%E5%8F%AF%E8%A7%81%E6%80%A7%EF%BC%9F"><span class="toc-number">1.6.2.1.</span> <span class="toc-text">2.1 如何保证变量可见性？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%A6%82%E4%BD%95%E7%A6%81%E6%AD%A2%E6%8C%87%E4%BB%A4%E9%87%8D%E6%8E%92%E5%BA%8F%EF%BC%9F"><span class="toc-number">1.6.2.2.</span> <span class="toc-text">2.2 如何禁止指令重排序？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-volatile%E5%8F%AF%E4%BB%A5%E4%BF%9D%E8%AF%81%E5%8E%9F%E5%AD%90%E6%80%A7%E5%90%97%EF%BC%9F"><span class="toc-number">1.6.2.3.</span> <span class="toc-text">2.3 volatile可以保证原子性吗？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%B9%90%E8%A7%82%E9%94%81%E5%92%8C%E6%82%B2%E8%A7%82%E9%94%81"><span class="toc-number">1.6.3.</span> <span class="toc-text">3. 乐观锁和悲观锁</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E4%BB%80%E4%B9%88%E6%97%B6%E4%B9%90%E8%A7%82%E9%94%81%EF%BC%9F%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.6.3.1.</span> <span class="toc-text">3.1 什么时乐观锁？使用场景是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E4%BB%80%E4%B9%88%E6%98%AF%E6%82%B2%E8%A7%82%E9%94%81%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.6.3.2.</span> <span class="toc-text">3.2 什么是悲观锁，使用场景是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B9%90%E8%A7%82%E9%94%81%EF%BC%9F"><span class="toc-number">1.6.3.3.</span> <span class="toc-text">3.3 如何实现乐观锁？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E4%B9%90%E8%A7%82%E9%94%81%E5%AD%98%E5%9C%A8%E5%93%AA%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-number">1.6.3.4.</span> <span class="toc-text">3.4 乐观锁存在哪些问题？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-synchronized%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.6.4.</span> <span class="toc-text">4. synchronized关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-synchronized%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8%EF%BC%9F"><span class="toc-number">1.6.4.1.</span> <span class="toc-text">4.1 synchronized是什么？有什么用？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8synchronized%EF%BC%9F"><span class="toc-number">1.6.4.2.</span> <span class="toc-text">4.2 如何使用synchronized？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-synchronized%E5%8F%AF%E4%BB%A5%E4%BF%AE%E9%A5%B0%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E5%90%97%EF%BC%9F"><span class="toc-number">1.6.4.3.</span> <span class="toc-text">4.3 synchronized可以修饰构造方法吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-JDK1-6-%E4%B9%8B%E5%90%8E%E7%9A%84synchronized%E5%BA%95%E5%B1%82%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E4%BC%98%E5%8C%96%EF%BC%9F"><span class="toc-number">1.6.4.4.</span> <span class="toc-text">4.4 JDK1.6 之后的synchronized底层做了哪些优化？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-synchronized%E5%92%8Cvolatile%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.6.4.5.</span> <span class="toc-text">4.5 synchronized和volatile有什么区别？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-ThreadLocal"><span class="toc-number">1.6.5.</span> <span class="toc-text">5. ThreadLocal</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-ThreadLocal%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8%EF%BC%9F"><span class="toc-number">1.6.5.1.</span> <span class="toc-text">5.1 ThreadLocal有什么用？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-ThreadLocal%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%98%AF%E6%80%8E%E4%B9%88%E5%AF%BC%E8%87%B4%E7%9A%84%EF%BC%9F"><span class="toc-number">1.6.5.2.</span> <span class="toc-text">5.2 ThreadLocal内存泄漏是怎么导致的？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="toc-number">1.6.6.</span> <span class="toc-text">6. 线程池</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-%E4%BB%80%E4%B9%88%E6%98%AF%E7%BA%BF%E7%A8%8B%E6%B1%A0%EF%BC%9F"><span class="toc-number">1.6.6.1.</span> <span class="toc-text">6.1 什么是线程池？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E7%BA%BF%E7%A8%8B%E6%B1%A0%EF%BC%9F"><span class="toc-number">1.6.6.2.</span> <span class="toc-text">6.2 为什么要用线程池？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-JMM-Java-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.6.7.</span> <span class="toc-text">7. JMM(Java 内存模型)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM"><span class="toc-number">1.7.</span> <span class="toc-text">JVM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F"><span class="toc-number">1.7.1.</span> <span class="toc-text">1. Java内存区域</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">1.1 运行时数据区域</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-number">1.7.2.</span> <span class="toc-text">2. JVM垃圾回收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8"><span class="toc-number">1.7.3.</span> <span class="toc-text">3. 类加载器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B"><span class="toc-number">1.7.3.1.</span> <span class="toc-text">3.1 类加载过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.7.3.2.</span> <span class="toc-text">3.2 类加载器是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%A7%84%E5%88%99%EF%BC%9F"><span class="toc-number">1.7.3.3.</span> <span class="toc-text">3.3 类加载器的加载规则？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%EF%BC%9F"><span class="toc-number">1.7.3.4.</span> <span class="toc-text">3.4 类加载器有哪几种？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%A8%A1%E5%9E%8B%EF%BC%9F"><span class="toc-number">1.7.3.5.</span> <span class="toc-text">3.5 什么是双亲委派模型？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.7.3.6.</span> <span class="toc-text">3.6 双亲委派模型的执行流程?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%A5%BD%E5%A4%84%EF%BC%9F"><span class="toc-number">1.7.3.7.</span> <span class="toc-text">3.7 双亲委派模型的好处？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java8%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-number">1.8.</span> <span class="toc-text">Java8新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.8.1.</span> <span class="toc-text">1. Lambda表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-Lambda%E8%AF%AD%E6%B3%95"><span class="toc-number">1.8.1.1.</span> <span class="toc-text">1.1 Lambda语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-Lambda%E4%BD%BF%E7%94%A8"><span class="toc-number">1.8.1.2.</span> <span class="toc-text">1.2 Lambda使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Stream%E6%B5%81%E5%BC%8F%E6%93%8D%E4%BD%9C"><span class="toc-number">1.8.2.</span> <span class="toc-text">2. Stream流式操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Optional%E7%B1%BB"><span class="toc-number">1.8.3.</span> <span class="toc-text">3. Optional类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.8.4.</span> <span class="toc-text">4. 函数式接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-LocalDate%E3%80%81LocalDateTime-%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86"><span class="toc-number">1.8.5.</span> <span class="toc-text">5. LocalDate、LocalDateTime 时间处理</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By JoeGoodyLv</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/hexo-blog/js/utils.js"></script><script src="/hexo-blog/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/hexo-blog/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
